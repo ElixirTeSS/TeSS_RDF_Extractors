@@ -4,9 +4,13 @@ module Tess
 
       include Tess::Rdf::Extraction
 
-      def extract
+      def extract(&block)
         super do |params|
-          Tess::API::Material.new(params)
+          if block_given?
+            yield params
+          else
+            params
+          end
         end
       end
 
@@ -56,7 +60,6 @@ module Tess
             end
         ]
       end
-
     end
   end
 end

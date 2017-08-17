@@ -4,7 +4,7 @@ module Tess
 
       include Tess::Rdf::Extraction
 
-      def extract
+      def extract(&block)
         super do |params|
           # Need to check if this is a good solution...
           locality = params.delete(:locality)
@@ -29,7 +29,11 @@ module Tess
             params[:contact] = name
           end
 
-          Tess::API::Event.new(params)
+          if block_given?
+            yield params
+          else
+            params
+          end
         end
       end
 
@@ -99,7 +103,6 @@ module Tess
               pattern RDF::Query::Pattern.new(:contact_details, RDF::Vocab::SCHEMA.email, :contact_email, optional: true)
               pattern RDF::Query::Pattern.new(:contact_details, RDF::Vocab::SCHEMA.name, :contact_name, optional: true)
             end
-
         ]
       end
     end
