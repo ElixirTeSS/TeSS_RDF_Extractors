@@ -25,7 +25,7 @@ module Tess
 
             self.class.singleton_attributes.each do |attr|
               value = parse_values(bindings[attr]).first
-              params[attr] = value unless value.blank?
+              params[attr] = value unless (value.nil? || value == '')
             end
 
             self.class.array_attributes.each do |attr|
