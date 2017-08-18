@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Tools for parsing TeSS event & training material details from RDF.'
   s.authors     = ['Finn Bacall']
   s.email       = 'tess@elixir-uk.info'
-  s.files       = ['lib/tess_rdf.rb',
+  s.files       = ['lib/tess_rdf_extractors.rb',
                    'lib/tess/rdf/extraction.rb',
                    'lib/tess/rdf/material_extractor.rb',
                    'lib/tess/rdf/event_extractor.rb'
