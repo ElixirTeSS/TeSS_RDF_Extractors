@@ -53,7 +53,7 @@ module Tess
               else
                 v.object
             end
-          end.uniq
+          end.uniq.sort
         else
           []
         end
