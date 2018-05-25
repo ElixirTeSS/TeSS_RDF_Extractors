@@ -60,6 +60,9 @@ module Tess
       end
 
       def modify_date(date, duration)
+        if date.is_a?(String)
+          date = Date.parse(date)
+        end
         matches = duration.match(/P([^T]+)T?(.*)/)
         date_period = matches[1]
 
