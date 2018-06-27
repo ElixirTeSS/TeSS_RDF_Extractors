@@ -49,6 +49,7 @@ module Tess
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.audience, :target_audience_obs)
               pattern RDF::Query::Pattern.new(:target_audience_obs, RDF::RDFS.label, :target_audience, optional: true)
+              pattern RDF::Query::Pattern.new(:target_audience_obs, RDF::Vocab::SCHEMA.name, :target_audience, optional: true)
             end,
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SIOC.has_creator, :author_obs)
