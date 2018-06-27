@@ -24,13 +24,21 @@ module Tess
             bindings = graph.query(query).bindings
 
             self.class.singleton_attributes.each do |attr|
-              value = parse_values(bindings[attr]).first
-              params[attr] = value unless (value.nil? || value == '')
+              begin
+                value = parse_values(bindings[attr], attr).first
+                params[attr] = value unless (value.nil? || value == '')
+              rescue StandardError
+                raise "Error whilst trying to extract '#{attr}'"
+              end
             end
 
             self.class.array_attributes.each do |attr|
-              params[attr] ||= []
-              params[attr] |= parse_values(bindings[attr])
+              begin
+                params[attr] ||= []
+                params[attr] |= parse_values(bindings[attr], attr)
+              rescue StandardError
+                raise "Error whilst trying to extract '#{attr}'"
+              end
             end
           end
 
@@ -38,7 +46,7 @@ module Tess
         end
       end
 
-      def parse_values(values)
+      def parse_values(values, attr)
         if values
           values.map do |v|
             # Using 'v.class.name' instead of just 'v' here or things like RDF::Literal::DateTime fall into the RDF::Literal block
@@ -50,10 +58,12 @@ module Tess
                 v.value
               when 'RDF::Literal'
                 v.object.strip
+              when 'RDF::Node'
+                warn "WARNING: Unexpected value when trying to extract #{attr}"
               else
                 v.object
             end
-          end.uniq.sort
+          end.compact.uniq.sort
         else
           []
         end

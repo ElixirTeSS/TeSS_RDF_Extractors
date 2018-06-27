@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'tess_rdf_extractors'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2017-08-17'
   s.summary     = 'Tools for parsing TeSS event & training material details from RDF.'
   s.authors     = ['Finn Bacall']
