@@ -14,6 +14,7 @@ module Tess
       def extract(&block)
         graph = RDF::Graph.new
         graph << @reader
+        graph.entail!
 
         graph.query(self.class.type_query).map do |res|
           params = {}
