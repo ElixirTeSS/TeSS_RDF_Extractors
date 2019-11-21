@@ -5,6 +5,7 @@ module Tess
     require_relative 'tess/rdf/extraction'
     require_relative 'tess/rdf/event_extractor'
     require_relative 'tess/rdf/material_extractor'
+    require_relative 'tess/rdf/course_extractor'
   end
 end
 
