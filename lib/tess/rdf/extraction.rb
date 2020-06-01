@@ -6,7 +6,12 @@ module Tess
         @reader = RDF::Reader.for(format).new(source, { base_uri: base_uri })
         if format == :jsonld && !JSON::LD::Context::PRELOADED['http://schema.org/']
           puts 'Pre-loading schema.org context...'
-          ctx = JSON::LD::Context.new.parse('http://schema.org/')
+          begin
+            ctx = JSON::LD::Context.new.parse('http://schema.org/docs/jsonldcontext.jsonld')
+          rescue JSON::LD::JsonLdError::LoadingRemoteContextFailed
+            ctx = JSON::LD::Context.new.parse(File.join(File.dirname(__FILE__), 'schemaorgcontext.jsonld'))
+          end
+
           JSON::LD::Context.add_preloaded('http://schema.org/', ctx)
         end
       end
