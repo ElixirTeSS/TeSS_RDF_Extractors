@@ -29,6 +29,8 @@ module Tess
             params[:contact] = name
           end
 
+          params[:online] = true if params[:courseMode]
+
           if block_given?
             yield params
           else
@@ -42,8 +44,7 @@ module Tess
       def self.singleton_attributes
         [:title, :description, :start, :end, :venue, :postcode, :locality, 
           :organizer, :duration, :url, :country, :latitude, :longitude, 
-          :contact_name, :contact_email, :contact
-          ]
+          :contact_name, :contact_email, :contact, :online]
       end
 
       def self.array_attributes
@@ -56,7 +57,8 @@ module Tess
         end
       end
 
-      def self.individual_queries(event_uri)
+      def self.individual_queries(res)
+        event_uri = res.individual
         [
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(event_uri, RDF::Vocab::SCHEMA.name, :title, optional: true)

@@ -25,7 +25,7 @@ module Tess
 
           params[:url] = res.individual.value if res.individual.is_a?(RDF::URI)
 
-          self.class.individual_queries(res.individual).each do |query|
+          self.class.individual_queries(res).each do |query|
             bindings = graph.query(query).bindings
 
             self.class.singleton_attributes.each do |attr|

@@ -30,12 +30,13 @@ module Tess
         end
       end
 
-      def self.individual_queries(material_uri)
+      def self.individual_queries(res)
+        material_uri = res.individual
         [
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.name, :title, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.about, :short_description, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.description, :short_description, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.about, :description, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.description, :description, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.url, :url, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::DC.date, :remote_created_date, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.keywords, :keywords, optional: true)
