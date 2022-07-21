@@ -4,16 +4,6 @@ module Tess
 
       include Tess::Rdf::Extraction
 
-      def extract(&block)
-        super do |params|
-          if block_given?
-            yield params
-          else
-            params
-          end
-        end
-      end
-
       private
 
       def self.singleton_attributes

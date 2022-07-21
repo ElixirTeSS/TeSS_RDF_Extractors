@@ -1,0 +1,1559 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Introduction to RNA-seq and functional interpretation",
+    "description": "<p>This course will provide an introduction to the technology, data analysis, tools and resources used in RNA sequencing and transcriptomics. The content is intended to provide a broad overview of the subject area, and to introduce participants to simple data analysis using &nbsp;the command line and APIs. It will also highlight key resources, approaches and methodologies to begin the biological interpretation and analysis of transcriptomics data. Topics will be delivered using a mixture of lectures, practical sessions and open discussions. Practical work during the course will use small, example data-sets - there will be no opportunity to &nbsp;analyse personal data.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-0",
+    "provider": {
+      "@type": "Organization",
+      "name": "European Bioinformatics Institute",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_3170",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_3170",
+        "name": "RNA-Seq",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3170"
+      }
+    ],
+    "audience": "This course is aimed at life science researchers wanting to learn more about processing RNA-Seq data and later downstream analysis. It will help those wanting a basic introduction to handling RNA-Seq data, guiding them through several common approaches that can be applied to their own datasets. It features taught and practical sessions that cover how to interpret gene expression data and learn more about the&nbsp;biological significance of certain results.\r\n\r\nParticipants will require a basic knowledge of the Unix command line, the Ubuntu 18 operating system and the R statistical packages. We recommend these free tutorials:  \r\n\r\n\r\n\tBasic introduction to the Unix environment: &nbsp;www.ee.surrey.ac.uk/Teaching/Unix\r\n\tIntroduction and exercises for Linux: &nbsp;https://training.linuxfoundation.org/free-linux-training \r\n\tBasic R concept tutorials:  www.r-tutor.com/r-introduction\r\n\r\n\r\nRegardless of your current knowledge we encourage successful participants to use these, and other materials, to prepare for attending the course and future work in this area.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "European Bioinformatics Institute",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hinxton",
+            "addressCountry": "GB",
+            "addressRegion": "Cambridge",
+            "postalCode": "CB10 1SD"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-0",
+        "startDate": "2020-01-21",
+        "endDate": "2020-01-24",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Tom Hancocks"
+          },
+          {
+            "@type": "Person",
+            "name": "Malwina Prater"
+          },
+          {
+            "@type": "Person",
+            "name": "Suhaib Mohammed"
+          },
+          {
+            "@type": "Person",
+            "name": "Silvie Fexova"
+          },
+          {
+            "@type": "Person",
+            "name": "Pablo Moreno"
+          },
+          {
+            "@type": "Person",
+            "name": "Kostas Billis"
+          },
+          {
+            "@type": "Person",
+            "name": "Leanne Haggerty"
+          },
+          {
+            "@type": "Person",
+            "name": "Jamie Allen "
+          },
+          {
+            "@type": "Person",
+            "name": "Denye Ogeh"
+          },
+          {
+            "@type": "Person",
+            "name": "Simon Andrews "
+          },
+          {
+            "@type": "Person",
+            "name": "Liis Kolberg"
+          },
+          {
+            "@type": "Person",
+            "name": "Denise Carvalho-Silva"
+          },
+          {
+            "@type": "Person",
+            "name": "Thawfeek Mohamed Varusai "
+          },
+          {
+            "@type": "Person",
+            "name": "Asier Gonzalez"
+          },
+          {
+            "@type": "Person",
+            "name": "Irene Papatheodorou"
+          },
+          {
+            "@type": "Person",
+            "name": "Anton Petrov"
+          },
+          {
+            "@type": "Person",
+            "name": "Blake Sweeney "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Ensembl browser workshop, University of Cambridge",
+    "description": "<p>Work with the Ensembl Outreach team to get to grips with the Ensembl browser, accessing gene, variation, comparative genomics and regulation data, and mine these data with BioMart.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/ensembl-browser-workshop-university-cambridge-0",
+    "keywords": [
+      "Ensembl ",
+      "Ensembl Genomes ",
+      "Ensembl Variant Effect Predictor ",
+      "DNA & RNA (dna-rna)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "University of Cambridge",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0091",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0091",
+        "name": "Bioinformatics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0091"
+      }
+    ],
+    "audience": "Wet-lab researchers and bioinformaticians\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "University of Cambridge",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Downing Street",
+            "addressCountry": "GB",
+            "addressRegion": "Cambridge",
+            "postalCode": "CB2 3EA"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/ensembl-browser-workshop-university-cambridge-0",
+        "startDate": "2022-02-14",
+        "endDate": "2022-02-14",
+        "maximumAttendeeCapacity": null,
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Aleena Mushtaq"
+          },
+          {
+            "@type": "Person",
+            "name": "Benjamin Moore"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "CABANA Workshop: Bioinformatics approaches to viruses and genomic surveillance",
+    "description": "<p><span><span><span><span><span><span>This workshop will provide training on the use of bioinformatics tools to understand viral pathogens’ sequencing data. </span></span></span></span></span></span><span><span><span><span><span><span>Trainees will receive training on viral genome assembly, comparative viral genomics, </span></span></span></span></span></span><span><span><span><span><span><span>phylogenomics, metaviromics</span></span></span></span></span></span><span><span><span><span><span><span> and downstream applications of this data in research and applied contexts, including public health and policy.</span></span></span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-bioinformatics-approaches-viruses-and-genomic-surveillance-2022",
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "audience": "This course is suitable for postgraduate (MSc-level and above) scientists within Latin America (excluding Chile and Uruguay) who are working with or generating genomic datasets related to communicable diseases. Ideally, trainees will be working in the field of virology. We welcome applications from universities, research centres, hospitals, public health, and private laboratories.\r\n&nbsp;\r\n\r\nPrerequisites\r\n\r\nPlease note this course will be taught in English, however, the trainers are fluent in either Spanish/Portuguese, and can offer language support where feasible. Priority will also be given to those who have not attended a CABANA event yet.\r\n\r\nScientists from underrepresented ethnic and gender groups are especially encouraged to apply for this workshop, for example, women and those with Black and/or Indigenous heritage.\r\n\r\n&nbsp;\r\n\r\n&nbsp;\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-bioinformatics-approaches-viruses-and-genomic-surveillance-2022",
+        "startDate": "2022-02-14",
+        "endDate": "2022-02-18",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Dario Fernández Do Porto"
+          },
+          {
+            "@type": "Person",
+            "name": "Pedro E. Romero"
+          },
+          {
+            "@type": "Person",
+            "name": "Pablo Tsukayama "
+          },
+          {
+            "@type": "Person",
+            "name": "Guillermo Rangel-Pineros"
+          },
+          {
+            "@type": "Person",
+            "name": "Zulma Cucunubá"
+          },
+          {
+            "@type": "Person",
+            "name": "Piv Gopalasingam"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Vincent Thomas Lopez"
+          },
+          {
+            "@type": "Person",
+            "name": "Nadim Mahdi Rahman"
+          },
+          {
+            "@type": "Person",
+            "name": "Lucas Freitas"
+          },
+          {
+            "@type": "Person",
+            "name": "Nuno Faria"
+          },
+          {
+            "@type": "Person",
+            "name": "Nídia Trovão"
+          },
+          {
+            "@type": "Person",
+            "name": "Sergio Martinez Cuesta"
+          },
+          {
+            "@type": "Person",
+            "name": "Gabriel da Luz Wallau"
+          },
+          {
+            "@type": "Person",
+            "name": "Filipe Zimmer Dezordi"
+          },
+          {
+            "@type": "Person",
+            "name": "Marta Seczynska"
+          },
+          {
+            "@type": "Person",
+            "name": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Variant submission and data access at the European Variation Archive",
+    "description": "<p>This webinar will cover how to access data using the EVA UI/API and the methodology of variant data submission to the EVA, specifically focusing on data transformation and formats. With a new version of the variant ID data release now available, this webinar will also cover what has been updated and what to expect from future releases.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/variant-submission-and-data-access-european-variation-archive",
+    "keywords": [
+      "European Variation Archive "
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0199",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0199",
+        "name": "Genetic variation",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0199"
+      }
+    ],
+    "audience": "This webinar is targeted to those working with genetic variant data from any species, suitable for web lab scientists, bioinformaticians, and clinical specialists.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/variant-submission-and-data-access-european-variation-archive",
+        "startDate": "2020-11-4",
+        "endDate": "2020-11-4",
+        "maximumAttendeeCapacity": "200",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Baron Koylass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Exploring human genetic variation",
+    "description": "<p>Do you want to understand more about genetic variation? Are you aware of the resources available for finding, viewing and exploring variant data? Are you trying to link variant data to phenotypes?</p>\r\n\r\n<p>This two-day workshop will demonstrate resources and bioinformatics tools available at EMBL-EBI and the Sanger Institute that will aid understanding of human genetic variation.&nbsp;</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/exploring-human-genetic-variation",
+    "provider": {
+      "@type": "Organization",
+      "name": "European Bioinformatics Institute",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/operation_3197",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "operation_3197",
+        "name": "Genetic variation analysis",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Foperation_3197"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/operation_0331",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "operation_0331",
+        "name": "Variant effect prediction",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Foperation_0331"
+      }
+    ],
+    "audience": "No prior experience of bioinformatics is required, but an interest in finding out more about genetic variation resources and an undergraduate level understanding of biology would be of benefit. Experience with command line usage would be very beneficial.\r\n\r\nThis workshop will focus specifically on human genetic variation.\r\n\r\nPrerequisite\r\n\r\nWe encourage the audience&nbsp;to go through our&nbsp;online course on human genetic variation prior to attending the workshop -&nbsp;www.ebi.ac.uk/training/online/course/human-genetic-variation-i-introduction-2019&nbsp;.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "European Bioinformatics Institute",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hinxton",
+            "addressCountry": "GB",
+            "addressRegion": "Cambridge",
+            "postalCode": "CB10 1SD"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/exploring-human-genetic-variation",
+        "startDate": "2020-02-11",
+        "endDate": "2020-02-12",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Ajay Mishra"
+          },
+          {
+            "@type": "Person",
+            "name": "Julia Foreman "
+          },
+          {
+            "@type": "Person",
+            "name": "Baron Koylass"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthieu Vizuete-Forster"
+          },
+          {
+            "@type": "Person",
+            "name": "Andrew Nightingale"
+          },
+          {
+            "@type": "Person",
+            "name": "Maria Cerezo"
+          },
+          {
+            "@type": "Person",
+            "name": "Simon Forbes"
+          },
+          {
+            "@type": "Person",
+            "name": "Joannella Morales"
+          },
+          {
+            "@type": "Person",
+            "name": "Claire Rye"
+          },
+          {
+            "@type": "Person",
+            "name": "Jackie MacArthur "
+          },
+          {
+            "@type": "Person",
+            "name": "Emily Perry "
+          },
+          {
+            "@type": "Person",
+            "name": "Michal Szpak"
+          },
+          {
+            "@type": "Person",
+            "name": "Nidhi Bindal"
+          },
+          {
+            "@type": "Person",
+            "name": "Zbyslaw Sondka "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Methods in bioimage analysis",
+    "description": "<p><span><span><span><span><span><span>Microscopy is a key technology driving biological discovery. Nowadays, microscopy based scientific findings must be substantiated by quantitative image analysis. The discipline concerned with such quantification of biological microscopy images is called bioimage analysis.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>This webinar will walk us through the main concepts of a typical bioimage analysis workflow, including how to quantitatively interpret the content of microscopy images, how to automatically detect objects in images and derive object-based measurements. It will emphasise the importance of visual inspection and quality control of automated image analysis.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Finally, this webinar will also provide an overview of current bioimage analysis tools and communities.</span></span></span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/methods-bioimage-analysis",
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "audience": "This webinar is suitable for&nbsp;any researcher in life sciences&nbsp;with an interest in microscopy and imaging. No prior knowledge of bioinformatics is required, but an undergraduate level knowledge of biology would be useful.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/methods-bioimage-analysis",
+        "startDate": "2022-03-23",
+        "endDate": "2022-03-23",
+        "maximumAttendeeCapacity": "1000",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Christian Tischer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Annotate your proteins with the UniProt Functional Annotation system UniFire",
+    "description": "<p>UniProt is a high quality, comprehensive protein resource. Next to expert curation, one of the core activities at UniProt is to develop computational methods for the functional annotation of protein sequences. In this webinar, we will be introducing our functional annotation system UniFire that can be used by the community to share and run rule-based automatic annotation systems to add functional information to proteins.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/annotate-your-proteins-uniprot-functional-annotation-system-unifire",
+    "keywords": [
+      "UniProt: The Universal Protein Resource ",
+      "Proteins (proteins)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0078",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0078",
+        "name": "Proteins",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0078"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/operation_1777",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "operation_1777",
+        "name": "Protein function prediction",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Foperation_1777"
+      }
+    ],
+    "audience": "No prior knowledge of bioinformatics is required, but an undergraduate level knowledge of biology would be useful.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/annotate-your-proteins-uniprot-functional-annotation-system-unifire",
+        "startDate": "2019-07-10",
+        "endDate": "2019-07-10",
+        "maximumAttendeeCapacity": "200",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Hermann Zellner"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Cancer genomics ",
+    "description": "<p><span><span><span><span><span><span><span>This course will focus on the analysis of data from genomic studies of cancer.&nbsp; Lectures and interactive sessions&nbsp;will give an insight into the bioinformatic concepts required to analyse such data, whilst practical sessions will enable the participants to apply statistical methods to the analysis of cancer genomics data under the guidance of the lecturers.</span></span></span></span></span></span></span></p>\r\n\r\n<p><strong><span><span><span><span><span><span>Virtual course</span></span></span></span></span></span></strong></p>\r\n\r\n<p><span><span><span><span><span><span><span>The course will involve participants learning via pre-recorded lectures, live presentations, and trainer Q&amp;A sessions. The content will be delivered over </span></span></span></span></span></span></span><a href=\"https://zoom.us/\"><span><span><span><span><span><span><span><span><span>Zoom</span></span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><span>, with additional text communication over </span></span></span></span></span></span></span><a href=\"https://slack.com/intl/en-gb/\"><span><span><span><span><span><span><span><span><span>Slack</span></span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><span>.</span></span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><span>Computational practicals will be run on EMBL-EBI's virtual training infrastructure; this means there is no need to have a powerful computer to run exercises or a requirement to install complex software before the course. Trainers will be available to provide support, answer questions, and further explain the analysis during these practicals.</span></span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span><span>Participants will need to be available between the hours of 09:30-18:00 BST&nbsp;each day of the course.</span></span></span></span></span></span></span></p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/cancer-genomics-virtual",
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_2640",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_2640",
+        "name": "Oncology",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_2640"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0622",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0622",
+        "name": "Genomics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0622"
+      }
+    ],
+    "audience": "This course is aimed at advanced PhD students and post-doctoral researchers who are applying or planning to apply high throughput sequencing technologies in cancer research and wish to familiarise themselves with bioinformatics tools and data analysis methodologies specific to cancer data.\r\n\r\nFamiliarity with the technology and biological use cases of high throughput sequencing is required, as is some experience with R/Bioconductor (basic understanding of the R syntax and ability to manipulate R objects) and the Unix/Linux operating system.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/cancer-genomics-virtual",
+        "startDate": "2021-05-17",
+        "endDate": "2021-05-21",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Ajay Mishra"
+          },
+          {
+            "@type": "Person",
+            "name": "Moritz Gerstung"
+          },
+          {
+            "@type": "Person",
+            "name": "Robert Eveleigh"
+          },
+          {
+            "@type": "Person",
+            "name": "Tobias Rausch"
+          },
+          {
+            "@type": "Person",
+            "name": "Alexey Larionov"
+          },
+          {
+            "@type": "Person",
+            "name": "Francesco Iorio"
+          },
+          {
+            "@type": "Person",
+            "name": "Mathieu Bourgey "
+          },
+          {
+            "@type": "Person",
+            "name": "Aurélie Ernst"
+          },
+          {
+            "@type": "Person",
+            "name": "Ana Cvejic"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "EMBL-EBI Workshop in Stanford University: Transcriptomics data and resources",
+    "description": "<p>This is a one-day workshop to provide an overview of data management and ontology principles in addition to hands-on experience with functional genomics resources at the EBI which cover data submission, archive and visualisation. These resources are: Annotare, ArrayExpress and the transcriptomics knowledgebases Expression Atlases (bulk and single-cell).</p>\r\n\r\n<ul>\r\n\t<li><a href=\"https://www.ebi.ac.uk/training/offsite/module/arrayexpress-public-database-functional-genomics\">ArrayExpress: public database for functional genomics</a></li>\r\n\t<li><a href=\"https://www.ebi.ac.uk/training/offsite/module/expression-atlas-gene-expression-across-species-and-biological-conditions\">Expression Atlas: Gene expression across species and biological conditions</a></li>\r\n</ul>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/embl-ebi-workshop-stanford-university-transcriptomics-data-and-resources",
+    "keywords": [
+      "ArrayExpress Archive of Functional Genomics Data ",
+      "Expression Atlas ",
+      "Gene expression (gene-expression)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Stanford University",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0203",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0203",
+        "name": "Gene expression",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0203"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0085",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0085",
+        "name": "Functional genomics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0085"
+      }
+    ],
+    "audience": "This workshop is aimed at wet-lab scientists and bioinformaticians. Participants should have degree-level understanding of molecular biology/genetics and be proficient at using web browsers.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "Stanford University",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Li and Ma Science Library, 376 Lomita Drive",
+            "addressCountry": "US",
+            "addressRegion": "Stanford",
+            "postalCode": "94305"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/embl-ebi-workshop-stanford-university-transcriptomics-data-and-resources",
+        "startDate": "2020-01-21",
+        "endDate": "2020-01-21",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Nancy George"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "EMBO Practical Course: Research to service - Planning and running a bioinformatics core facility",
+    "description": "<p>Computational core facilities play a vital role in enabling molecular life sciences, and the number of such facilities has grown considerably. There are many relatively inexperienced managers of core facilities, who often have to juggle their own research projects with the development and operation of services. This can be exceptionally challenging, not least because scientific impact tends only to be recognised and rewarded for research. This EMBO Practical Course will provide an opportunity for aspiring new managers of core facilities, especially those with one foot in the research camp, to learn from experienced core facilities managers how to build a framework for the future development, resourcing, operation and impact assessment of their core services.</p>\r\n\r\n<p>The EMBO Practical Course will not be a ‘classical’ bioinformatics course, but it will focus on the business development and resource and data management aspects of running a core facility. It will have a high proportion of practical content in which participants solve problems relevant to their own core facility.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/embo-practical-course-research-service-planning-and-running-bioinformatics-core-facility",
+    "provider": {
+      "@type": "Organization",
+      "name": "Izmir Biomedicine and Genome Center (IBG)",
+      "url": "",
+      "email": ""
+    },
+    "audience": "This course is aimed at new managers of core facilities or those looking to embark on developing such a facility within their organisation.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "Izmir Biomedicine and Genome Center (IBG)",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dokuz Eylul University Health Campus, Mithatpasa St. 58/5",
+            "addressCountry": "TR",
+            "addressRegion": "Balcova",
+            "postalCode": "35340"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/embo-practical-course-research-service-planning-and-running-bioinformatics-core-facility",
+        "startDate": "2019-04-8",
+        "endDate": "2019-04-12",
+        "maximumAttendeeCapacity": null,
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Ezgi Karaca"
+          },
+          {
+            "@type": "Person",
+            "name": "Cath Brooksbank"
+          },
+          {
+            "@type": "Person",
+            "name": "Sarah Butcher"
+          },
+          {
+            "@type": "Person",
+            "name": "Alexandre Bonvin"
+          },
+          {
+            "@type": "Person",
+            "name": "Vera Matser "
+          },
+          {
+            "@type": "Person",
+            "name": "Revathi Nathaniel "
+          },
+          {
+            "@type": "Person",
+            "name": "Marta Teperek"
+          },
+          {
+            "@type": "Person",
+            "name": "Michaela Mayrhofer"
+          },
+          {
+            "@type": "Person",
+            "name": "Susan Chacko"
+          },
+          {
+            "@type": "Person",
+            "name": "Serap Erkek"
+          },
+          {
+            "@type": "Person",
+            "name": "Michael Stadler"
+          },
+          {
+            "@type": "Person",
+            "name": "Emre Karakoc"
+          },
+          {
+            "@type": "Person",
+            "name": "Gokhan Karakulah"
+          },
+          {
+            "@type": "Person",
+            "name": "Brent Richter"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "CABANA Workshop: Chemoinformatics in Drug Discovery",
+    "description": "<p>The aim of this workshop is to introduce researchers to the field of Chemoinformatics, especially in the areas of Structure-Based Drug Design (SBDD) and Ligand-Based Drug Design (LBDD). Trainees will cover the use of protein, ligand and drug databases, protein modelling, molecular docking and virtual screening for drug discovery applications. Managing and analysing virtual chemical libraries will also be covered, including the application of machine learning algorithms in drug discovery.</p>\r\n\r\n<p><br />\r\nThe workshop will be instructed by trainers from the University of Antioquia in Colombia, from CINVESTAV Unit for Advanced Genomics (LANGEBIO) in Mexico, as well as local expert researchers from the School of Chemistry at the National Autonomous University of Mexico (UNAM).</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-chemoinformatics-drug-discovery",
+    "provider": {
+      "@type": "Organization",
+      "name": "LANGEBIO, Cinvestav",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_3336",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_3336",
+        "name": "Drug discovery",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3336"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_2258",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_2258",
+        "name": "Cheminformatics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_2258"
+      }
+    ],
+    "audience": "This workshop is suitable for researchers working in Latin American countries. Early career researchers, including graduate students, postdocs and professors working, or planning to start working in Chemoinformatics, are warmly encouraged to apply.\r\n\r\n\r\nThis workshop will be located in a room with computers however we recommend participants bring their own laptops.\r\n\r\nA number of travel fellowships are available for this course - early-stage researchers and researchers from underrepresented groups are especially encouraged to apply for CABANA travel fellowships. You can apply for travel fellowships via the course application form.\r\n\r\nPrerequisites:&nbsp;\r\nUndergraduate-level knowledge of chemical and protein structures are required. Familiarity with basic chemoinformatics concepts and notions of programming (R, Python and/or UNIX) are recommended.&nbsp;Please note this course will be taught in English, however, the trainers are fluent in Spanish and can offer language support where needed.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "LANGEBIO, Cinvestav",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Libramiento Norte Carretera Leon Km 9.6",
+            "addressCountry": "MX",
+            "addressRegion": "Irapuato",
+            "postalCode": "36821"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-chemoinformatics-drug-discovery",
+        "startDate": "2019-10-15",
+        "endDate": "2019-10-18",
+        "maximumAttendeeCapacity": "20",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Fabien Plisson"
+          },
+          {
+            "@type": "Person",
+            "name": "Jose Medina-Franco"
+          },
+          {
+            "@type": "Person",
+            "name": "Rodrigo Ochoa Deossa"
+          },
+          {
+            "@type": "Person",
+            "name": "Barbara Diaz"
+          },
+          {
+            "@type": "Person",
+            "name": "Edgar Lopez"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "A guide to UniProt for students",
+    "description": "<p><a href=\"https://www.uniprot.org/\">UniProt</a> provides the scientific community with a comprehensive, high-quality and freely accessible resource of protein sequence and functional information.</p>\r\n\r\n<p>This webinar will guide you through ways in which students and researchers at all career stages may take a structured approach to access the data in the UniProtKB and Proteomes sections of the UniProt protein function database.</p>\r\n\r\n<p>The&nbsp;webinar will discuss&nbsp;the types of data that can be accessed, and using sequence analysis tools, how this data can be analysed to answer biological questions. We will demonstrate how to find the function of a protein, how the protein components of a pathway may be identified, features of proteins of interest can be compared, similar sections of sequence can be sought in other species and how whole data sets containing all the proteins expressed in an organism can be obtained. By accessing sequence, structural and functional data through UniProt, we want researchers to be part of data’s biological journey and support further work and adventures along the way!&nbsp;</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/guide-uniprot-students",
+    "keywords": [
+      "UniProt: The Universal Protein Resource ",
+      "Proteins (proteins)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/data_3021",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "data_3021",
+        "name": "UniProt accession",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Fdata_3021"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0078",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0078",
+        "name": "Proteins",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0078"
+      }
+    ],
+    "audience": "This webinar is aimed at students or early researchers beginning to use bioinformatics resources in their studies/research who wish to learn more about UniProt. No prior knowledge of bioinformatics is required, but&nbsp;undergraduate level knowledge of biology would be useful.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/guide-uniprot-students",
+        "startDate": "2021-12-2",
+        "endDate": "2021-12-2",
+        "maximumAttendeeCapacity": "1000",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Hema Bye-A-Jee"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Open Virtual Ensembl API Workshop",
+    "description": "<p>Work with Ensembl to master the Ensembl REST API and flexibly access genome-wide data, such as genes, variants, regulatory features, homologues and alignments.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/open-virtual-ensembl-api-workshop",
+    "keywords": [
+      "Ensembl ",
+      "DNA & RNA (dna-rna)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0091",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0091",
+        "name": "Bioinformatics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0091"
+      }
+    ],
+    "audience": "Bioinformaticians and wet-lab biologists who can program in Perl, Python or R.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/open-virtual-ensembl-api-workshop",
+        "startDate": "2021-05-25",
+        "endDate": "2021-05-27",
+        "maximumAttendeeCapacity": null,
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Emily Perry"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "A guide to analysing binding sites in protein structures",
+    "description": "<p>This webinar gives an introduction to the information required to effectively interpret ligand binding sites in protein structures. It will highlight tools available at the Protein Data Bank in Europe (PDBe) and PDBe Knowledge Base (PDBe-KB) to analyse ligand binding pockets and interactions. It will also highlight how this information can be used for the design of new inhibitors, through a specific case study.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/guide-analysing-binding-sites-protein-structures",
+    "keywords": [
+      "Protein Data Bank in Europe ",
+      "Proteins (proteins)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/data_1460",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "data_1460",
+        "name": "Protein structure",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Fdata_1460"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/operation_3897",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "operation_3897",
+        "name": "Ligand-binding site prediction",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Foperation_3897"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0078",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0078",
+        "name": "Proteins",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0078"
+      }
+    ],
+    "audience": "Researchers with a background in protein biology or biochemistry, with a reasonable knowledge&nbsp;of the basic concept of structural biology.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/guide-analysing-binding-sites-protein-structures",
+        "startDate": "2021-06-30",
+        "endDate": "2021-06-30",
+        "maximumAttendeeCapacity": "CAMBRIDGE",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "David Armstrong"
+          },
+          {
+            "@type": "Person",
+            "name": "James Tolchard"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Exploring human genetic variation",
+    "description": "<p><span><span><span><span><span><span>Do you want to understand more about genetic variation? Are you aware of the resources available for finding, viewing and exploring variant data? Are you trying to link variant data to phenotypes?</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>This three-day workshop will demonstrate resources and bioinformatics tools available at EMBL-EBI and the Wellcome Sanger Institute that will aid understanding of human genetic variation.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Participants will learn via a mix of lectures, trainer Q&amp;A sessions, and hands-on training. Practical experience will be developed through group activities and trainer-led exercises. Live sessions will be delivered using </span></span></span></span></span></span><a href=\"https://zoom.us/\"><span><span><span><span><span><span>Zoom</span></span></span></span></span></span></a><span><span><span><span><span><span> with additional support and communication via </span></span></span></span></span></span><a href=\"https://slack.com/intl/en-gb/\"><span><span><span><span><span><span>Slack</span></span></span></span></span></span></a><span><span><span><span><span><span>.&nbsp;</span></span></span></span></span></span></p>\r\n\r\n<p>This course will take place over three non-consecutive days: 16, 18, and 20 May 2022.</p>\r\n\r\n<p>Selected participants will be sent materials prior to the course. These might include pre-recorded talks and required reading or online training that will be essential to fully understand the course.</p>\r\n\r\n<p><span><span><span><span><span><span>Participants will need to be available between the hours of 09:00 - 17:30 BST each day of the course. Trainers will be available to assist, answer questions, and further explain the analysis during these times.</span></span></span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/exploring-genetic-variation-2022",
+    "keywords": [
+      "Ensembl ",
+      "UniProt: The Universal Protein Resource ",
+      "European Mouse Mutation Archive ",
+      "European Variation Archive ",
+      "NHGRI-EBI GWAS Catalog "
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0199",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0199",
+        "name": "Genetic variation",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0199"
+      }
+    ],
+    "audience": "No prior experience of bioinformatics is required, but an interest in finding out more about genetic variation resources and an undergraduate level understanding of biology would be of benefit. Experience with command line usage would be very beneficial.\r\n\r\nThis workshop will focus specifically on human genetic variation.\r\n\r\nWe encourage the audience to go through our introductory online course on human genetic variation prior to attending the workshop.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/exploring-genetic-variation-2022",
+        "startDate": "2022-05-16",
+        "endDate": "2022-05-20",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Silvia Bahena Hernandez"
+          },
+          {
+            "@type": "Person",
+            "name": "Julia Foreman"
+          },
+          {
+            "@type": "Person",
+            "name": "Baron Koylass"
+          },
+          {
+            "@type": "Person",
+            "name": "Dayane Rodrigues Araujo"
+          },
+          {
+            "@type": "Person",
+            "name": "Dona Shaju"
+          },
+          {
+            "@type": "Person",
+            "name": "James Stephenson"
+          },
+          {
+            "@type": "Person",
+            "name": "Jane Loveland"
+          },
+          {
+            "@type": "Person",
+            "name": "Aleena Mushtaq"
+          },
+          {
+            "@type": "Person",
+            "name": "Helder Pedro"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Introduction to metabolomics analysis",
+    "description": "<p>This course will provide an introduction to metabolomics data analysis using publicly available software and tools. Participants will become familiar with the current state of experimental design, data standards, analysis and sharing in metabolomics, particularly through using the EMBL-EBI’s MetaboLights repository and PhenoMeNal infrastructure. There will be a practical component, where participants will learn through hands-on tutorials to use some of the tools available for data analysis and data submission. The course will be completed with an interactive session which will build on the weeks learning to discuss how to develop a metabolomics workflow with a clinical case study.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/introduction-metabolomics-analysis-0",
+    "provider": {
+      "@type": "Organization",
+      "name": "European Bioinformatics Institute",
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_3172",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_3172",
+        "name": "Metabolomics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_3172"
+      }
+    ],
+    "audience": "This course is aimed at researchers who are new to the field of metabolomics and wish to learn about the process of developing a metabolomics study. Attendees will gain an understanding of the workflow process and some of the analysis techniques and so should benefit those who are planning to include metabolite profiling in their work, either moving into the field or as an addition to other omics. We will primarily focus on a basic introduction to metabolomics with a worked example using a predesigned LC-MS analysis workflow. The course assumes little prior knowledge of using bioinformatics tools.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "European Bioinformatics Institute",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hinxton",
+            "addressCountry": "GB",
+            "addressRegion": "Cambridge",
+            "postalCode": "CB10 1SD"
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/introduction-metabolomics-analysis-0",
+        "startDate": "2019-02-5",
+        "endDate": "2019-02-8",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Alexandra Holinski "
+          },
+          {
+            "@type": "Person",
+            "name": "Keeva Cochrane"
+          },
+          {
+            "@type": "Person",
+            "name": "Claire O’Donovan"
+          },
+          {
+            "@type": "Person",
+            "name": "Nicola Gray"
+          },
+          {
+            "@type": "Person",
+            "name": "Ralf Weber"
+          },
+          {
+            "@type": "Person",
+            "name": "Alyssa Imbert"
+          },
+          {
+            "@type": "Person",
+            "name": "Steffen Neumann"
+          },
+          {
+            "@type": "Person",
+            "name": "MetaboLights team"
+          },
+          {
+            "@type": "Person",
+            "name": "Kim Kultima"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Virtual Ensembl Browser workshop, 16th-18th March",
+    "description": "<p>Work with the Ensembl Outreach team to get to grips with the Ensembl browser, accessing gene, variation, comparative genomics and regulation data, mine these data with BioMart and visualising your own data in Ensembl.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/virtual-ensembl-browser-workshop-16th-18th-march",
+    "keywords": [
+      "Ensembl ",
+      "Ensembl Genomes ",
+      "Ensembl Variant Effect Predictor ",
+      "DNA & RNA (dna-rna)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0091",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0091",
+        "name": "Bioinformatics",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0091"
+      }
+    ],
+    "audience": "Wet-lab researchers and bioinformaticians\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/virtual-ensembl-browser-workshop-16th-18th-march",
+        "startDate": "2021-03-16",
+        "endDate": "2021-03-18",
+        "maximumAttendeeCapacity": null,
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Michal Szpak"
+          },
+          {
+            "@type": "Person",
+            "name": "Aleena Mushtaq"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "InterProScan",
+    "description": "<p>This webinar is about&nbsp;<a href=\"https://www.ebi.ac.uk/interpro/about/interproscan\">InterProScan</a>,&nbsp;the underlying software application that scans both protein and nucleic acid sequences against InterPro's predictive models, which are provided by the InterPro’s member databases.&nbsp;<a href=\"https://www.ebi.ac.uk/interpro/\">InterPro</a>&nbsp;is a freely available resource used to classify sequences into protein families and to predict the presence of important domains and sites.</p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/interproscan",
+    "keywords": [
+      "InterProScan ",
+      "Proteins (proteins)"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "EMBL-EBI",
+      "url": "https://www.ebi.ac.uk",
+      "email": ""
+    },
+    "about": [
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/data_2976",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "data_2976",
+        "name": "Protein sequence",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Fdata_2976"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_0623",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_0623",
+        "name": "Gene and protein families",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0623"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/topic_1775",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "topic_1775",
+        "name": "Function analysis",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_1775"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/operation_2479",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "operation_2479",
+        "name": "Protein sequence analysis",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Foperation_2479"
+      },
+      {
+        "@type": "DefinedTerm",
+        "@id": "edam:http://edamontology.org/data_1468",
+        "inDefinedTermSet": "http://edamontology.org",
+        "termCode": "data_1468",
+        "name": "Protein domain",
+        "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Fdata_1468"
+      }
+    ],
+    "audience": "This webinar is aimed at scientists and bioinformaticians with an interest in using InterProScan for protein functional analysis or anyone with interest in protein sequence annotation using InterPro. A basic knowledge of using the command line interface is recommended for this webinar.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/interproscan",
+        "startDate": "2020-06-24",
+        "endDate": "2020-06-24",
+        "maximumAttendeeCapacity": "200",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Gift Nuka"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "CABANA Workshop: Plant bioinformatics - analysis of crop genomics data ",
+    "description": "<p><span><span><span><span><span><span>This course will introduce crop biologists to methods and approaches for analysing crop genomics data for genotyping. During the course participants will learn about genotyping experimental design, variant calling, comparative genomics using Ensembl, analyse variation data with Ensembl Variant Effect Predictor and explore concepts of genome wide association studies (GWAS).&nbsp; The content will explain how to make use of existing public data, retrieve, submit and share your data with the community.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Trainers will cover the basics of diversity analysis using R, before analyzing various genomes to assess diversity, investigating gene-phenotype relationships and microsatellites. The course will be delivered through a combination of hands-on training sessions and lectures.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>This course will be a virtual event. The content will be delivered over</span></span></span></span></span></span><a href=\"https://zoom.us/\"><span><span><span><span><span><span><span><span> </span></span></span></span></span></span></span></span><span><span><span><span><span><span><span><span>Zoom</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>.&nbsp; In order to make the most out of the course, you should make sure to have a stable internet connection throughout the week.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Computational practicals will be run on EMBL-EBI's virtual training infrastructure; this means there is no need to have a powerful computer to run exercises or a requirement to install complex software before the course.</span></span></span></span></span></span></p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-plant-bioinformatics-analysis-crop-genomics-data",
+    "provider": {
+      "@type": "Organization",
+      "name": "University of Costa Rica (UCR)",
+      "url": "",
+      "email": ""
+    },
+    "audience": "This course is aimed at wet-lab researchers within Latin America (excluding Chile and Uruguay due to funding restrictions) who are working with and/or generating their own crop genomic data or who are working on genotyping technologies, including data analysis software development.&nbsp;\r\n\r\nResearchers who apply for CABANA courses should have projects in one or more of the CABANA challenge areas (sustainable crop production, communicable diseases, protection of biodiversity).\r\n\r\nPlease note this course will be taught in English, however some trainers are fluent in either Spanish/Portuguese, and can offer language support where feasible. Priority will also be given to those who have not attended a CABANA event yet.\r\n\r\nScientists from underrepresented ethnic and gender groups are especially encouraged to apply for this workshop, for example women and those with Black and/or Indigenous heritage.\r\n\r\n\r\nPrerequisites: basic computational or previous bioinformatics experience is required for this workshop, such as basic commands in R. Undergraduate-level knowledge of plant biology would be an advantage. \r\n\r\nPlease note: The course will use genomic data from crop plant species throughout the week. It will not explore in detail methods for assembling genomes.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": "University of Costa Rica (UCR)",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ciudad universitaria Rodrigo Facio Brenes",
+            "addressCountry": "CR",
+            "addressRegion": "San Jose",
+            "postalCode": ""
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/cabana-workshop-plant-bioinformatics-analysis-crop-genomics-data",
+        "startDate": "2021-12-13",
+        "endDate": "2021-12-17",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Andrés Gatica-Arias"
+          },
+          {
+            "@type": "Person",
+            "name": "José Pablo Jiménez"
+          },
+          {
+            "@type": "Person",
+            "name": "Alexandra Holinski"
+          },
+          {
+            "@type": "Person",
+            "name": "Sarah Dyer"
+          },
+          {
+            "@type": "Person",
+            "name": "Ensembl Outreach Team"
+          },
+          {
+            "@type": "Person",
+            "name": "Carla Filippi"
+          },
+          {
+            "@type": "Person",
+            "name": "Baron Koylass"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Barboza"
+          },
+          {
+            "@type": "Person",
+            "name": "Brad Till"
+          },
+          {
+            "@type": "Person",
+            "name": "Noelle Anglin"
+          },
+          {
+            "@type": "Person",
+            "name": "Manuel Humberto Reyes-Valdés"
+          },
+          {
+            "@type": "Person",
+            "name": "Diana Lopez"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Course",
+    "name": "Introduction to RNA-seq and functional interpretation",
+    "description": "<p><span><span><span><span><span><span>Gain an introduction to the technology, data analysis, tools, and resources used in RNA sequencing and transcriptomics. The content will provide a broad overview of the subject area, and introduce participants to basic analysis of transcriptomics data using the command line. It will also highlight key public data repositories and methodologies that can be used to start the biological interpretation of expression data. Topics will be delivered using a mixture of lectures, practical exercises, and open discussions. Computational work during the course will use small, example data-sets; and there will be no opportunity to analyse personal data.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><strong><span><span>Virtual course</span></span></strong></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Participants will learn via a mix of pre-recorded lectures, live presentations, and trainer Q&amp;A sessions. Practical experience will be developed through group activities and trainer-led computational exercises. Live sessions will be delivered using <a href=\"https://zoom.us/\">Zoom</a> with additional support and communication via <a href=\"https://slack.com/intl/en-gb/\">Slack</a>.&nbsp;</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Pre-recorded material will be made available to registered participants prior to the start of the course and in the week before the course, there will be a brief induction session. Computational practicals will run on EMBL-EBI's virtual training infrastructure, meaning participants will not require access to a powerful computer or install complex software on their own machines.</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Participants will need to be available between the hours of 09:30-16:00 GMT each day of the course. Trainers will be available to assist, answer questions, and further explain the analysis during these times.</span></span></span></span></span></span></p>\r\n",
+    "url": "https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-2022",
+    "provider": {
+      "@type": "Organization",
+      "name": null,
+      "url": "",
+      "email": ""
+    },
+    "audience": "This course is aimed at life science researchers wanting to learn more about processing RNA-seq data and later downstream analysis. It will help those wanting a basic introduction to handling RNA-seq data, guiding them through several common approaches that can be applied to their own datasets. It features taught and practical sessions that cover how to interpret gene expression data and learn more about the biological significance of certain results.\r\n\r\nParticipants will require a basic knowledge of the Unix command line, the Ubuntu 18 operating system, and the R statistical packages. We recommend these free tutorials:\r\n\r\n\r\n\tBasic introduction to the Unix environment: www.ee.surrey.ac.uk/Teaching/Unix\r\n\tIntroduction and exercises for Linux: https://training.linuxfoundation.org/free-linux-training\r\n\tBasic R concept tutorials: www.r-tutor.com/r-introduction\r\n\r\n\r\nRegardless of your current knowledge, we encourage successful participants to use these, and other materials, to prepare for attending the course and future work in this area.\r\n",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "location": {
+          "@type": "Place",
+          "name": null,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": null,
+            "addressCountry": null,
+            "addressRegion": null,
+            "postalCode": null
+          }
+        },
+        "url": "https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-2022",
+        "startDate": "2022-02-21",
+        "endDate": "2022-02-25",
+        "maximumAttendeeCapacity": "30",
+        "instructor": [
+          {
+            "@type": "Person",
+            "name": "Simon Andrews"
+          },
+          {
+            "@type": "Person",
+            "name": "Helena Cornu"
+          },
+          {
+            "@type": "Person",
+            "name": "Selene L. Fernández-Valverde"
+          },
+          {
+            "@type": "Person",
+            "name": "Nancy George"
+          },
+          {
+            "@type": "Person",
+            "name": "Andrew Hercules"
+          },
+          {
+            "@type": "Person",
+            "name": "Liis Kolberg"
+          },
+          {
+            "@type": "Person",
+            "name": "Jonathan Manning"
+          },
+          {
+            "@type": "Person",
+            "name": "Irene Papatheodorou"
+          },
+          {
+            "@type": "Person",
+            "name": "Konstantinos Tsirigos"
+          },
+          {
+            "@type": "Person",
+            "name": "Eliot Ragueneau"
+          },
+          {
+            "@type": "Person",
+            "name": "Silvie Korena Fexova"
+          },
+          {
+            "@type": "Person",
+            "name": "Victor Flores"
+          },
+          {
+            "@type": "Person",
+            "name": "Krishna Kumar Tiwari"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -9,4 +9,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/ElixirTeSS/TeSS_RDF_Extractors'
   s.license     = 'BSD'
   s.add_runtime_dependency 'linkeddata', '~> 2.0'
+  s.add_development_dependency 'rake', '~> 13.0.0'
+  s.add_development_dependency 'test-unit', '~> 3.2.3'
+  s.add_development_dependency 'simplecov', '~> 0.21.2'
+  s.add_development_dependency 'pry', '~> 0.14.1'
 end

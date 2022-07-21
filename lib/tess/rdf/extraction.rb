@@ -1,6 +1,7 @@
 module Tess
   module Rdf
     module Extraction
+      attr_reader :_graph
 
       def initialize(source, format, base_uri: nil)
         @reader = RDF::Reader.for(format).new(source, { base_uri: base_uri })
@@ -16,9 +17,14 @@ module Tess
         end
       end
 
+      def transform(params)
+        params
+      end
+
       def extract(&block)
         graph = RDF::Graph.new
         graph.insert_statements(@reader)
+        @_graph = graph # To help with debugging
 
         graph.query(self.class.type_query).map do |res|
           params = {}
@@ -47,7 +53,11 @@ module Tess
             end
           end
 
-          yield params
+          if block_given?
+            yield params
+          else
+            params
+          end
         end
       end
 

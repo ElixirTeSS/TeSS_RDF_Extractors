@@ -15,10 +15,9 @@ module Tess
         course_uri = res.course
         [
             RDF::Query.new do
-              pattern RDF::Query::Pattern.new(course_uri, RDF::Vocab::SCHEMA.name, :title, optional: true)
-              pattern RDF::Query::Pattern.new(course_uri, RDF::Vocab::SCHEMA.description, :description, optional: true)
-              pattern RDF::Query::Pattern.new(course_uri, RDF::Vocab::SCHEMA.url, :url, optional: true)
-            end
+              pattern RDF::Query::Pattern.new(course_uri, RDF::Vocab::SCHEMA.courseMode, :course_mode, optional: true)
+            end,
+            *shared_queries(course_uri)
         ] + super
       end
     end
