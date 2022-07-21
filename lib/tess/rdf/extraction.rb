@@ -3,7 +3,9 @@ module Tess
     module Extraction
 
       def initialize(source, format, base_uri: nil)
-        @reader = RDF::Reader.for(format).new(source, { base_uri: base_uri })
+        @source = source
+        @opts = { format: format}
+        @opts[:base_uri] = base_uri if base_uri
         if format == :jsonld && !JSON::LD::Context::PRELOADED['http://schema.org/']
           puts 'Pre-loading schema.org context...'
           begin
@@ -17,8 +19,7 @@ module Tess
       end
 
       def extract(&block)
-        graph = RDF::Graph.new
-        graph << @reader
+        graph = RDF::Graph.load(@source, **@opts)
 
         graph.query(self.class.type_query).map do |res|
           params = {}
