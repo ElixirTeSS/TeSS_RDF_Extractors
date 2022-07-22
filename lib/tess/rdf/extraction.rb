@@ -4,7 +4,7 @@ module Tess
       attr_reader :_graph
 
       def initialize(source, format, base_uri: nil)
-        @reader = RDF::Reader.for(format).new(source, { base_uri: base_uri })
+        @reader = RDF::Reader.for(format).new(source, base_uri: base_uri)
         if format == :jsonld && !JSON::LD::Context::PRELOADED['http://schema.org/']
           puts 'Pre-loading schema.org context...'
           begin
