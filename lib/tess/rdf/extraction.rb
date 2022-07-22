@@ -53,6 +53,8 @@ module Tess
             end
           end
 
+          params = transform(params)
+
           if block_given?
             yield params
           else

@@ -17,6 +17,8 @@ module Tess
 
         params[:contact] = [params.delete(:contact_name), params.delete(:contact_email)].compact.join( ' - ')
         params[:online] = true if params.delete(:course_mode) == 'online'
+
+        params
       end
 
       private

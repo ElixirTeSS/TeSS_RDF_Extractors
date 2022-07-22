@@ -16,4 +16,12 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 14, extractor.extract.count
   end
+
+  test 'extract events from HTML' do
+    file = fixture_file('career-counseling-antwerp-0-vib.html')
+
+    extractor = Tess::Rdf::EventExtractor.new(file.read, :rdfa, base_uri: 'https://training.vib.be/all-trainings/career-counseling-antwerp-0')
+
+    assert_equal 1, extractor.extract.count
+  end
 end
