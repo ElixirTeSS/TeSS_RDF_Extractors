@@ -1,8 +1,8 @@
 module Tess
   module Rdf
     class EventExtractor
-
       include Tess::Rdf::Extraction
+      extend Tess::Rdf::SharedQueries
 
       def transform(params)
         # Concat Venue + Street Address since we don't have a field for that
@@ -30,7 +30,7 @@ module Tess
       end
 
       def self.array_attributes
-        [:keywords, :scientific_topic_names, :host_institutions, :sponsors]
+        [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors]
       end
 
       def self.type_query
@@ -74,16 +74,18 @@ module Tess
             pattern RDF::Query::Pattern.new(event_uri, RDF::Vocab::SCHEMA.location, :location)
             pattern RDF::Query::Pattern.new(:location, RDF::Vocab::SCHEMA.address, :address)
             pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.location, :location, optional: true)
-            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.postalCode, :postcode, optional: true)
-            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.addressCountry, :country, optional: true)
+            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.streetAddress, :street_address, optional: true)
             pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.addressLocality, :locality, optional: true)
+            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.addressRegion, :region, optional: true)
+            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.addressCountry, :country, optional: true)
+            pattern RDF::Query::Pattern.new(:address, RDF::Vocab::SCHEMA.postalCode, :postcode, optional: true)
           end,
-          *shared_queries(event_uri)
+          *event_queries(event_uri)
         ]
       end
 
-      # Query for attributes that are shared between Course, CourseInstance and Event
-      def self.shared_queries(uri)
+      # Query for attributes that are shared between CourseInstance and Event
+      def self.event_queries(uri)
         [
           RDF::Query.new do
             pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.name, :title, optional: true)
@@ -114,17 +116,8 @@ module Tess
             pattern RDF::Query::Pattern.new(:contact_details, RDF::Vocab::SCHEMA.email, :contact_email, optional: true)
             pattern RDF::Query::Pattern.new(:contact_details, RDF::Vocab::SCHEMA.name, :contact_name, optional: true)
           end,
-          #Audience
-          RDF::Query.new do
-            pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.audience, :audience_details)
-            pattern RDF::Query::Pattern.new(:audience_details, RDF::Vocab::SCHEMA.audienceType, :target_audience, optional: true)
-          end,
-          #Scientific topics
-          RDF::Query.new do
-            pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.about, :topics)
-            pattern RDF::Query::Pattern.new(:topics, RDF.type, RDF::Vocabulary::Term.new('http://schema.org/DefinedTerm', attributes: {}))
-            pattern RDF::Query::Pattern.new(:topics, RDF::Vocab::SCHEMA.name, :scientific_topic_names, optional: true)
-          end
+          *audience_queries(uri),
+          *topic_queries(uri)
         ]
       end
     end

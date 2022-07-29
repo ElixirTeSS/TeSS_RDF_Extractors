@@ -17,7 +17,7 @@ module Tess
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(course_uri, RDF::Vocab::SCHEMA.courseMode, :course_mode, optional: true)
             end,
-            *shared_queries(course_uri)
+            *event_queries(course_uri)
         ] + super
       end
     end

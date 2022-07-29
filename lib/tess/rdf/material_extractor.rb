@@ -1,8 +1,8 @@
 module Tess
   module Rdf
     class MaterialExtractor
-
       include Tess::Rdf::Extraction
+      extend Tess::Rdf::SharedQueries
 
       private
 
@@ -11,7 +11,7 @@ module Tess
       end
 
       def self.array_attributes
-        [:scientific_topic_names, :keywords, :authors, :target_audience, :resource_type, :contributors]
+        [:scientific_topic_names, :scientific_topic_uris, :keywords, :authors, :target_audience, :resource_type, :contributors]
       end
 
       def self.type_query
@@ -33,9 +33,6 @@ module Tess
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.learningResourceType, :resource_type, optional: true)
             end,
             RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.about, :description, optional: true)
-            end,
-            RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.genre, :scientific_topics)
               pattern RDF::Query::Pattern.new(:scientific_topics, RDF::RDFS.label, :scientific_topic_names, optional: true)
             end,
@@ -51,32 +48,11 @@ module Tess
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.contributor, :contributor_obs)
               pattern RDF::Query::Pattern.new(:contributor_obs, RDF::Vocab::SCHEMA.name, :contributors, optional: true)
             end,
-            #Audience
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.audience, :audience_details)
-              pattern RDF::Query::Pattern.new(:audience_details, RDF::Vocab::SCHEMA.educationalRole, :target_audience, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.audience, :audience_details)
-              pattern RDF::Query::Pattern.new(:audience_details, RDF::Vocab::SCHEMA.audienceType, :target_audience, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.audience, :audience_details)
-              pattern RDF::Query::Pattern.new(:audience_details, RDF::Vocab::SCHEMA.name, :target_audience, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.audience, :audience_details)
-              pattern RDF::Query::Pattern.new(:audience_details, RDF::RDFS.label, :target_audience, optional: true)
-            end,
-            #Scientific topics
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.about, :topics)
-              pattern RDF::Query::Pattern.new(:topics, RDF.type, RDF::Vocabulary::Term.new('http://schema.org/DefinedTerm', attributes: {}))
-              pattern RDF::Query::Pattern.new(:topics, RDF::Vocab::SCHEMA.name, :scientific_topic_names, optional: true)
-            end,
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.educationalLevel, :difficulty_level, optional: true)
-            end
+            end,
+            *audience_queries(material_uri),
+            *topic_queries(material_uri)
         ]
       end
     end

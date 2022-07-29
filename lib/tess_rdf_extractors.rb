@@ -2,6 +2,7 @@ module Tess
   module Rdf
     require 'linkeddata'
 
+    require_relative 'tess/rdf/shared_queries'
     require_relative 'tess/rdf/extraction'
     require_relative 'tess/rdf/event_extractor'
     require_relative 'tess/rdf/material_extractor'
