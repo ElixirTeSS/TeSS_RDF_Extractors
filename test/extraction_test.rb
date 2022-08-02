@@ -24,11 +24,11 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 14, resources.count
     rna_seq = resources.detect { |r| r[:url] == 'https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-0' }
-    assert_equal [], rna_seq[:keywords]
+    refute rna_seq.key?(:keywords)
     assert_equal ["RNA-Seq"], rna_seq[:scientific_topic_names]
     assert_equal ["edam:http://edamontology.org/topic_3170"], rna_seq[:scientific_topic_uris]
-    assert_equal [], rna_seq[:host_institutions]
-    assert_equal [], rna_seq[:sponsors]
+    refute rna_seq.key?(:host_institutions)
+    refute rna_seq.key?(:sponsors)
     assert_equal "Introduction to RNA-seq and functional interpretation", rna_seq[:title]
     assert rna_seq[:description].include?('This course will provide an introduction to the technology')
     assert_equal "https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-0", rna_seq[:url]
@@ -55,11 +55,11 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "Career Counseling (Antwerp)", params[:title]
     assert_equal "2022-12-01", params[:start]
     assert_equal "2022-12-01", params[:end]
-    assert_equal [], params[:keywords]
-    assert_equal [], params[:scientific_topic_names]
-    assert_equal [], params[:scientific_topic_uris]
-    assert_equal [], params[:host_institutions]
-    assert_equal [], params[:sponsors]
+    refute params.key?(:keywords)
+    refute params.key?(:scientific_topic_names)
+    refute params.key?(:scientific_topic_uris)
+    refute params.key?(:host_institutions)
+    refute params.key?(:sponsors)
     assert_equal "UAntwerpen Campus Drie Eiken", params[:venue]
     assert_equal "51.162826", params[:latitude]
     assert_equal "4.402365", params[:longitude]
@@ -80,8 +80,8 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "Hands-on for 'De Bruijn Graph Assembly' tutorial", params[:title]
     assert params[:description].start_with?('The questions this')
     assert_equal "https://spdx.org/licenses/CC-BY-4.0.html", params[:licence]
-    assert_equal [], params[:scientific_topic_names]
-    assert_equal [], params[:scientific_topic_uris]
+    refute params.key?(:scientific_topic_names)
+    refute params.key?(:scientific_topic_uris)
     assert_equal ["assembly"], params[:keywords]
     assert_equal ["Helena Rasche", "Saskia Hiltemann", "Simon Gladman"], params[:authors]
     assert_equal ["Students"], params[:target_audience]
@@ -103,9 +103,9 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "Introduction to 'Metagenomics'", params[:title]
     assert_equal "Slides for Metagenomics", params[:description]
     assert_equal "https://spdx.org/licenses/CC-BY-4.0.html", params[:licence]
-    assert_equal [], params[:scientific_topic_names]
+    refute params.key?(:scientific_topic_names)
     assert_equal ["http://edamontology.org/topic_3174"], params[:scientific_topic_uris]
-    assert_equal [], params[:keywords]
+    refute params.key?(:keywords)
     assert_equal ["Bérénice Batut", "Saskia Hiltemann"], params[:authors]
     assert_equal ["Students"], params[:target_audience]
     assert_equal ["slides"], params[:resource_type]

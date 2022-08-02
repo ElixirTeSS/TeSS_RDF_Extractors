@@ -36,7 +36,7 @@ module Tess
 
             self.class.singleton_attributes.each do |attr|
               begin
-                value = parse_values(bindings[attr], attr).first
+                value = parse_values(bindings[attr], attr)&.first
                 params[attr] = value unless (value.nil? || value == '')
               rescue StandardError
                 raise "Error whilst trying to extract '#{attr}'"
@@ -45,8 +45,11 @@ module Tess
 
             self.class.array_attributes.each do |attr|
               begin
-                params[attr] ||= []
-                params[attr] |= parse_values(bindings[attr], attr)
+                values = parse_values(bindings[attr], attr)
+                if values
+                  params[attr] ||= []
+                  params[attr] |= values
+                end
               rescue StandardError
                 raise "Error whilst trying to extract '#{attr}'"
               end
@@ -82,7 +85,7 @@ module Tess
             end
           end.compact.uniq.sort
         else
-          []
+          nil
         end
       end
 
