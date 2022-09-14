@@ -23,7 +23,14 @@ module Tess
 
       def extract(&block)
         graph = RDF::Graph.new
-        graph.insert_statements(@reader)
+        statements = []
+        @reader.each_statement do |s|
+          [s.subject, s.object, s.predicate].each do |u|
+            u.scheme = 'http' if u.is_a?(RDF::URI) && u.host == 'schema.org'
+          end
+          statements << s
+        end
+        graph.insert_statements(statements)
         @_graph = graph # To help with debugging
 
         graph.query(self.class.type_query).map do |res|

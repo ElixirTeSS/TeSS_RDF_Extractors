@@ -1,0 +1,75 @@
+[
+  {
+    "@id": "https://catalogue.france-bioinformatique.fr/api/event/489/?format=json-ld",
+    "@type": [
+      "http://schema.org/CourseInstance"
+    ],
+    "http://schema.org/alternateName": [
+      {
+        "@type": "http://schema.org/Text",
+        "@value": "ETBII 2023"
+      }
+    ],
+    "http://schema.org/description": [
+      {
+        "@type": "http://schema.org/Text",
+        "@value": "Dans l’objectif de développer et fédérer des compétences en bioinformatique intégrative au sein de la communauté, l’IFB propose une nouvelle école thématique ayant un double objectif :\r\n- une montée en compétences théoriques et pratiques des bioinformaticiens, biostatisticiens et bioanalystes\r\n- la constitution de matériel pédagogique partagé sur ce sujet.\r\n\r\nCette école mobilise une équipe pédagogique de 10 personnes et pourra accueillir 30 participants.\r\nL’ensemble de la formation reposera sur l’utilisation des ressources de calcul et de la plateforme pédagogique de l’Institut Français de Bioinformatique.\r\n\r\nObjectifs pédagogiques \r\n\r\nLa formation a pour but :\r\n- d’introduire les concepts de bases et les différents types d’approches utilisées en bioinformatique intégrative,\r\n- de proposer un approfondissement et une mise en pratique d’une de ces approches sur un/des jeux de données intégrant différents types de données omiques. \r\n- de créer, améliorer et partager des ressources pédagogiques (supports de formation, jeux de données, tutoriels) sur le thème de la bioinformatique intégrative.\r\n\r\nA la fin de cette formation les participants :\r\n- auront acquis un socle de connaissances générales en bioinformatique intégrative, \r\n- auront mis en oeuvre une analyse intégrative depuis la préparation des données jusqu’à l’analyse critique de résultats sur un/des jeux de données proposés lors de la formation,\r\n- auront contribué à constituer du matériel pédagogique partagé sur le sujet.\r\n\r\nPré-requis\r\n- Connaissances de base en Unix/shell, R, Python \r\n- Autonomie dans la gestion de son poste de travail (installation de librairies et maîtrise des environnements de packaging type conda)"
+      }
+    ],
+    "http://schema.org/endDate": [
+      {
+        "@type": "http://schema.org/Date",
+        "@value": "2023-01-20"
+      }
+    ],
+    "http://schema.org/funder": [
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/eventsponsor/CNRS%20-%20IFB/?format=json-ld"
+      }
+    ],
+    "http://schema.org/location": [
+      {
+        "@type": "http://schema.org/Place",
+        "@value": "Fréjus, France"
+      }
+    ],
+    "http://schema.org/maximumAttendeeCapacity": [
+      {
+        "@type": "http://schema.org/Integer",
+        "@value": "30"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@type": "http://schema.org/Text",
+        "@value": "Ecole Thématique de Bioinformatique Intégrative - session 2023 / Integrative Bioinforformatics training school - 2023 session"
+      }
+    ],
+    "http://schema.org/offers": [
+      {
+        "@type": "http://schema.org/Demand",
+        "@value": "770 TTC pour les académiques  et 1540 TTC pour les privés"
+      }
+    ],
+    "http://schema.org/organizer": [
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/organisation/IFB/?format=json-ld"
+      },
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/team/IFB%20Core/?format=json-ld"
+      }
+    ],
+    "http://schema.org/startDate": [
+      {
+        "@type": "http://schema.org/Date",
+        "@value": "2023-01-16"
+      }
+    ],
+    "http://schema.org/url": [
+      {
+        "@type": "http://schema.org/URL",
+        "@value": "https://www.france-bioinformatique.fr/formation/etbii/"
+      }
+    ]
+  }
+]

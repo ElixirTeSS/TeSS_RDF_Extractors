@@ -111,4 +111,42 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ["slides"], params[:resource_type]
     assert_equal ["Bérénice Batut", "Saskia Hiltemann"], params[:contributors]
   end
+
+  test 'extract course instance IFB JSON-LD (HTTPS)' do
+    file = fixture_file('ifb-event.json')
+    base_uri = 'https://catalogue.france-bioinformatique.fr/api/event/489/?format=json-ld'
+
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(file.read, :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal params[:url], "https://www.france-bioinformatique.fr/formation/etbii/"
+    assert_equal "Ecole Thématique de Bioinformatique Intégrative - session 2023 / Integrative Bioinforformatics training school - 2023 session", params[:title]
+    assert params[:description].start_with?("Dans l’objectif de développer et fédérer")
+    assert_equal '2023-01-16', params[:start]
+    assert_equal '2023-01-20', params[:end]
+    assert_equal '30', params[:capacity]
+    refute params.key?(:scientific_topic_names)
+    refute params.key?(:keywords)
+  end
+
+  test 'extract course instance IFB JSON-LD (HTTP)' do
+    file = fixture_file('http-ifb-event.json')
+    base_uri = 'https://catalogue.france-bioinformatique.fr/api/event/489/?format=json-ld'
+
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(file.read, :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal params[:url], "https://www.france-bioinformatique.fr/formation/etbii/"
+    assert_equal "Ecole Thématique de Bioinformatique Intégrative - session 2023 / Integrative Bioinforformatics training school - 2023 session", params[:title]
+    assert params[:description].start_with?("Dans l’objectif de développer et fédérer")
+    assert_equal '2023-01-16', params[:start]
+    assert_equal '2023-01-20', params[:end]
+    assert_equal '30', params[:capacity]
+    refute params.key?(:scientific_topic_names)
+    refute params.key?(:keywords)
+  end
 end
