@@ -28,11 +28,14 @@ module Tess
       def extract(&block)
         graph = RDF::Graph.new
         statements = []
-        @reader.each_statement do |s|
-          [s.subject, s.object, s.predicate].each do |u|
-            u.scheme = 'http' if u.is_a?(RDF::URI) && u.host == 'schema.org'
+        @reader.each_statement do |statement|
+          [:subject, :object, :predicate].each do |part|
+            uri = statement.send(part)
+            if uri.is_a?(RDF::URI) && uri.host == 'schema.org' && uri.scheme == 'https'
+              statement.send("#{part}=", RDF::URI(uri.to_s.sub(/\A(https)/, 'http')))
+            end
           end
-          statements << s
+          statements << statement
         end
         graph.insert_statements(statements)
         @_graph = graph # To help with debugging

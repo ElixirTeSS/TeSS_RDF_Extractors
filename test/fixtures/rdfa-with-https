@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+	<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PTVR4GD');</script>
+<!-- End Google Tag Manager -->
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+		<base href="https://www.sib.swiss/training/upcoming-training-courses" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ISBSIB" />
+	<meta name="twitter:image" content="https://www.sib.swiss/images/sib/4-training/training_header_2018.jpg" />
+	<meta name="twitter:title" content="Upcoming training courses" />
+	<meta name="twitter:description" content="The SIB Swiss Institute of Bioinformatics is an academic not-for-profit organization whose mission is to lead and coordinate the field of bioinformatics in Switzerland." />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Upcoming training courses" />
+	<meta property="og:description" content="The SIB Swiss Institute of Bioinformatics is an academic not-for-profit organization whose mission is to lead and coordinate the field of bioinformatics in Switzerland." />
+	<meta property="og:image" content="https://www.sib.swiss/images/sib/4-training/training_header_2018.jpg" />
+	<meta property="og:url" content="https://www.sib.swiss/training/upcoming-training-courses" />
+	<meta name="description" content="The SIB Swiss Institute of Bioinformatics is an academic not-for-profit organization whose mission is to lead and coordinate the field of bioinformatics in Switzerland." />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>Upcoming training courses</title>
+	<link href="/templates/sib/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="https://www.sib.swiss/search-new?format=opensearch" rel="search" title="Search SIB Swiss Institute of Bioinformatics" type="application/opensearchdescription+xml" />
+	<link href="/media/com_courses/css/sib.css" rel="stylesheet" type="text/css" />
+	<link href="/media/jui/css/chosen.css?cacf8cd1d881ddca0be0843736ed86c7" rel="stylesheet" type="text/css" />
+	<link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?0072da39200af2a5f0dbaf1a155242cd" rel="stylesheet" type="text/css" />
+	<link href="https://www.sib.swiss/media/com_acymailing/css/module_default.css?v=1661759653" rel="stylesheet" type="text/css" />
+	<link href="/plugins/system/cookiehint/css/style-sib.css?cacf8cd1d881ddca0be0843736ed86c7" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+#redim-cookiehint-bottom {position: fixed; z-index: 99999; left: 0px; right: 0px; bottom: 0px; top: auto !important;}
+	</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"b3a248695a00831c749c9eb3929aca92","system.paths":{"root":"","base":""}}</script>
+	<script src="/media/jui/js/jquery.min.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="/media/system/js/multiselect.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="/media/jui/js/chosen.jquery.min.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?d67233ea942db0e502a9d3ca48545fb9" type="text/javascript"></script>
+	<script src="/templates/sib/js/popper.min.js" type="text/javascript"></script>
+	<script src="/templates/sib/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/templates/sib/js/template.js" type="text/javascript"></script>
+	<script src="/media/system/js/mootools-core.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script>
+	<script src="https://www.sib.swiss/media/com_acymailing/js/acymailing_module.js?v=5113" type="text/javascript" async="async"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?cacf8cd1d881ddca0be0843736ed86c7" type="text/javascript"></script><![endif]-->
+	<script type="text/javascript">
+jQuery(function($){ initTooltips(); $("body").on("subform-row-add", initTooltips); function initTooltips (event, container) { container = container || document;$(container).find(".hasTooltip").tooltip({"html": true,"container": "body"});} });jQuery(document).ready(function() {
+				Joomla.JMultiSelect('adminForm');
+			});
+	jQuery(function ($) {
+		initChosen();
+		$("body").on("subform-row-add", initChosen);
+
+		function initChosen(event, container)
+		{
+			container = container || document;
+			$(container).find("select").chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
+		}
+	});
+	jQuery(document).ready(function(){WfMediabox.init({"base":"\/","theme":"shadow","width":"","height":"","lightbox":0,"shadowbox":0,"icons":1,"overlay":1,"overlay_opacity":0.8,"overlay_color":"#000000","transition_speed":500,"close":2,"scrolling":"fixed","labels":{"close":"Close","next":"Next","previous":"Previous","cancel":"Cancel","numbers":"{{numbers}}","numbers_count":"{{current}} of {{total}}","download":"Download"}});});	if(typeof acymailingModule == 'undefined'){
+				var acymailingModule = [];
+			}
+			
+			acymailingModule['emailRegex'] = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*\@([a-z0-9-]+\.)+[a-z0-9]{2,20}$/i;
+
+			acymailingModule['NAMECAPTION'] = 'Name';
+			acymailingModule['NAME_MISSING'] = 'Please enter your name';
+			acymailingModule['EMAILCAPTION'] = 'E-mail';
+			acymailingModule['VALID_EMAIL'] = 'Please enter a valid e-mail address';
+			acymailingModule['ACCEPT_TERMS'] = 'Please check the Terms and Conditions';
+			acymailingModule['CAPTCHA_MISSING'] = 'The captcha is invalid, please try again';
+			acymailingModule['NO_LIST_SELECTED'] = 'Please select the lists you want to subscribe to';
+		
+		acymailingModule['level'] = 'enterprise';
+		acymailingModule['reqFieldsformAcymailing41511'] = Array('name','html','lastname','firstname');
+		acymailingModule['validFieldsformAcymailing41511'] = Array('Please enter a value for the field Name','Please enter a value for the field Receive','Please enter a value for the field Lastname','Please enter a value for the field Firstname');
+	</script>
+	
+
+		<link href="/templates/sib/css/template.css" rel="stylesheet" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10907247-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-10907247-1', { 'anonymize_ip': true });
+</script>
+
+		<!--[if lt IE 9]>
+		<script src="/media/jui/js/html5.js"></script>
+		<![endif]-->
+	<script>
+    function gdprConfirmed() {
+        return true;
+    }
+    if (gdprConfirmed()) {
+    document.write("\
+    \
+    <!-- Google Analytics -->\
+    <gascript async src=\"https://www.googletagmanager.com/gtag/js?id=10907247\"></gascript>\
+    <gascript>\
+        window.dataLayer = window.dataLayer || [];\
+        function gtag(){dataLayer.push(arguments);}\
+        gtag('js', new Date());\
+        gtag('config', '10907247');\
+    </gascript>\
+    <!-- End Google Analytics -->\
+    ".replace(/gascript/g, 'script'));
+    }
+    </script></head>
+	<body itemscope itemtype="https://schema.org/WebPage">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTVR4GD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<header class="navbar navbar-expand-lg fixed-top bg-white">
+
+			<div class="container">
+
+								<div class="side-menu-toggler d-lg-none">
+					<img src="/templates/sib/images/burger.svg" alt="Menu" class="burger-open" />
+					<img src="/templates/sib/images/burger_hover.svg" alt="Menu" class="burger-close" />
+				</div>
+
+								<a href="https://www.sib.swiss/" class="logo-container py-1">
+					<img 
+						class="d-none d-lg-block"
+						style="width:160px;height:90px"
+						src="https://www.sib.swiss//templates/sib/images/SIB_LogoQ_GBv.svg"
+						alt="SIB - Swiss Institute of Bioinformatics"
+					/>
+					<img
+						class="d-block d-lg-none"
+						src="https://www.sib.swiss//templates/sib/images/SIB_logo_mobile.svg"
+						alt="SIB - Swiss Institute of Bioinformatics"
+					/>
+				</a>
+
+								<div class="search-toggler d-lg-none">
+					<img src="/templates/sib/images/search.svg" alt="Search" />
+				</div>
+
+								<div class="navbar-menus">
+					<div class="menu-container" id="top-menu">
+						<ul class="menu">
+<li class="nav-item item-10021"><a href="/careers" class="nav-link">Careers</a></li><li class="nav-item item-10011"><a href="/contact" class="nav-link">Contact</a></li><li class="nav-item item-10012"><a href="/directory" class="nav-link">Directory</a></li></ul>
+
+
+						<div class="search-toggler d-none d-lg-block">
+							<img src="/templates/sib/images/search.svg" alt="Search" />
+						</div>
+					</div>
+					<div class="menu-container" id="main-menu">
+						<ul class="menu ">
+							<li class=" nav-item item-10001 deeper parent">
+			<span class="nav-link">Research infrastructure</span>
+
+			
+				<div class="full-width-wrapper">
+					<ul class="container row">
+																				<li class="col ">
+								<span class="nav-item">Database &amp; Software tools</span>
+
+																									<div class="menu-modules">
+																					<div class="module menu-module">
+												<ul class="mt-3 list-unstyled ">
+	<li class="nav-item item-10054"><a href="/research-infrastructure/database-software-tools/sib-resources" >SIB Resources</a>&nbsp;&raquo;</li><li class="nav-item item-10055"><a href="https://www.expasy.org/resources" target="_blank" rel="noopener noreferrer">All resources on Expasy</a>&nbsp;&raquo;</li><li class="nav-item item-10490"><a href="https://2d-gel-analysis.com/" target="_blank" rel="noopener noreferrer">2D gel analysis software - MELANIE</a>&nbsp;&raquo;</li></ul>
+											</div>
+																			</div>
+															</li>
+																				<li class="col ">
+								<span class="nav-item">Competence Centers</span>
+
+								<ul><li class=" nav-item item-10024"><a href="/research-infrastructure/competence-centers/clinical-bioinformatics" >Clinical Bioinformatics</a></li><li class=" nav-item item-10023"><a href="/research-infrastructure/competence-centers/phi" >Personalized Health Informatics</a></li><li class=" nav-item item-10387"><a href="/vital-it" >Vital-IT - Computational Biology</a></li><li class=" nav-item item-10496"><a href="/alan-bridge-group" >Swiss-Prot - Knowledgebases</a></li><li class=" nav-item item-10499"><a href="/training/training-group" >Training</a></li><li class=" nav-item item-10019"><a href="/research-infrastructure/competence-centers/all-facilities" >All affiliated Core Facilities</a></li></ul>															</li>
+											</ul>
+				</div>
+
+			
+		</li>
+																																													<li class=" nav-item item-10002 deeper parent">
+			<span class="nav-link">Community</span>
+
+			
+				<div class="full-width-wrapper">
+					<ul class="container row">
+																				<li class="col modules-only">
+								<span class="nav-item">Find an expert/expertise</span>
+
+																									<div class="menu-modules">
+																					<div class="module ">
+												
+<form action="/experts-search" method="post" accept-charset="utf-8" class="">
+
+	<input type="hidden" name="areas[]" value="sib_experts" />
+	<input type="hidden" name="ordering" value="alpha" />
+
+	<div class="form-group activities-group">
+		<select
+			name="searchFields[activities][]"
+			title="Activity"
+			data-placeholder="by activity"
+			autocomplete="off"
+			multiple
+		>
+			
+				<option
+					value="Core facility and competence centre"
+					class="font-weight-bold"
+				>
+						Core facility and competence centre				</option>
+
+			
+				<option
+					value="Evolution and phylogeny"
+					class="font-weight-bold"
+				>
+						Evolution and phylogeny				</option>
+
+			
+				<option
+					value="Genes and genomes"
+					class="font-weight-bold"
+				>
+						Genes and genomes				</option>
+
+			
+				<option
+					value="Proteins and proteomes"
+					class="font-weight-bold"
+				>
+						Proteins and proteomes				</option>
+
+			
+				<option
+					value="Structural biology"
+					class="font-weight-bold"
+				>
+						Structural biology				</option>
+
+			
+				<option
+					value="Systems biology"
+					class="font-weight-bold"
+				>
+						Systems biology				</option>
+
+			
+				<option
+					value="Text mining and machine learning"
+					class="font-weight-bold"
+				>
+						Text mining and machine learning				</option>
+
+			
+				<option
+					value="Advanced software optimization"
+					class=""
+				>
+						Advanced software optimization				</option>
+
+			
+				<option
+					value="APIs"
+					class=""
+				>
+						APIs				</option>
+
+			
+				<option
+					value="Benchmarking"
+					class=""
+				>
+						Benchmarking				</option>
+
+			
+				<option
+					value="Biochemistry"
+					class=""
+				>
+						Biochemistry				</option>
+
+			
+				<option
+					value="Biomarkers"
+					class=""
+				>
+						Biomarkers				</option>
+
+			
+				<option
+					value="Biophysics"
+					class=""
+				>
+						Biophysics				</option>
+
+			
+				<option
+					value="Biostatistics"
+					class=""
+				>
+						Biostatistics				</option>
+
+			
+				<option
+					value="Biotechnology"
+					class=""
+				>
+						Biotechnology				</option>
+
+			
+				<option
+					value="Blockchain"
+					class=""
+				>
+						Blockchain				</option>
+
+			
+				<option
+					value="Cell mechanobiology"
+					class=""
+				>
+						Cell mechanobiology				</option>
+
+			
+				<option
+					value="Comparative genomics"
+					class=""
+				>
+						Comparative genomics				</option>
+
+			
+				<option
+					value="Database curation"
+					class=""
+				>
+						Database curation				</option>
+
+			
+				<option
+					value="Data management"
+					class=""
+				>
+						Data management				</option>
+
+			
+				<option
+					value="Data mining"
+					class=""
+				>
+						Data mining				</option>
+
+			
+				<option
+					value="Data security"
+					class=""
+				>
+						Data security				</option>
+
+			
+				<option
+					value="Data visualisation"
+					class=""
+				>
+						Data visualisation				</option>
+
+			
+				<option
+					value="Deep sequencing data"
+					class=""
+				>
+						Deep sequencing data				</option>
+
+			
+				<option
+					value="DNA Microarrays"
+					class=""
+				>
+						DNA Microarrays				</option>
+
+			
+				<option
+					value="Drug design"
+					class=""
+				>
+						Drug design				</option>
+
+			
+				<option
+					value="Drug metabolism"
+					class=""
+				>
+						Drug metabolism				</option>
+
+			
+				<option
+					value="Drug resistance"
+					class=""
+				>
+						Drug resistance				</option>
+
+			
+				<option
+					value="Electronic health record"
+					class=""
+				>
+						Electronic health record				</option>
+
+			
+				<option
+					value="Epigenetics"
+					class=""
+				>
+						Epigenetics				</option>
+
+			
+				<option
+					value="Evo-Devo"
+					class=""
+				>
+						Evo-Devo				</option>
+
+			
+				<option
+					value="Evolutionary biology"
+					class=""
+				>
+						Evolutionary biology				</option>
+
+			
+				<option
+					value="Experimental biology"
+					class=""
+				>
+						Experimental biology				</option>
+
+			
+				<option
+					value="Functional genomics"
+					class=""
+				>
+						Functional genomics				</option>
+
+			
+				<option
+					value="Gene regulatory network analysis"
+					class=""
+				>
+						Gene regulatory network analysis				</option>
+
+			
+				<option
+					value="Genome reconstruction"
+					class=""
+				>
+						Genome reconstruction				</option>
+
+			
+				<option
+					value="Gene regulation"
+					class=""
+				>
+						Gene regulation				</option>
+
+			
+				<option
+					value="Glycomics"
+					class=""
+				>
+						Glycomics				</option>
+
+			
+				<option
+					value="GWAS"
+					class=""
+				>
+						GWAS				</option>
+
+			
+				<option
+					value="Homology modelling"
+					class=""
+				>
+						Homology modelling				</option>
+
+			
+				<option
+					value="Human genetics"
+					class=""
+				>
+						Human genetics				</option>
+
+			
+				<option
+					value="Immunology"
+					class=""
+				>
+						Immunology				</option>
+
+			
+				<option
+					value="Infectious diseases"
+					class=""
+				>
+						Infectious diseases				</option>
+
+			
+				<option
+					value="In silico organogenesis"
+					class=""
+				>
+						In silico organogenesis				</option>
+
+			
+				<option
+					value="Lipids"
+					class=""
+				>
+						Lipids				</option>
+
+			
+				<option
+					value="Machine learning"
+					class=""
+				>
+						Machine learning				</option>
+
+			
+				<option
+					value="Mass spectroscopy"
+					class=""
+				>
+						Mass spectroscopy				</option>
+
+			
+				<option
+					value="Mass spectrometry"
+					class=""
+				>
+						Mass spectrometry				</option>
+
+			
+				<option
+					value="Mathematical modelling"
+					class=""
+				>
+						Mathematical modelling				</option>
+
+			
+				<option
+					value="Metabolomics"
+					class=""
+				>
+						Metabolomics				</option>
+
+			
+				<option
+					value="Metagenomics"
+					class=""
+				>
+						Metagenomics				</option>
+
+			
+				<option
+					value="Microbiology"
+					class=""
+				>
+						Microbiology				</option>
+
+			
+				<option
+					value="Microfluidics"
+					class=""
+				>
+						Microfluidics				</option>
+
+			
+				<option
+					value="Molecular dynamics"
+					class=""
+				>
+						Molecular dynamics				</option>
+
+			
+				<option
+					value="Molecular evolution"
+					class=""
+				>
+						Molecular evolution				</option>
+
+			
+				<option
+					value="Next generation sequencing"
+					class=""
+				>
+						Next generation sequencing				</option>
+
+			
+				<option
+					value="Ontology"
+					class=""
+				>
+						Ontology				</option>
+
+			
+				<option
+					value="Oncology"
+					class=""
+				>
+						Oncology				</option>
+
+			
+				<option
+					value="Paleogenomics"
+					class=""
+				>
+						Paleogenomics				</option>
+
+			
+				<option
+					value="Particle-based methods"
+					class=""
+				>
+						Particle-based methods				</option>
+
+			
+				<option
+					value="Peptidomics"
+					class=""
+				>
+						Peptidomics				</option>
+
+			
+				<option
+					value="Personalised medicine"
+					class=""
+				>
+						Personalised medicine				</option>
+
+			
+				<option
+					value="Phylogeny"
+					class=""
+				>
+						Phylogeny				</option>
+
+			
+				<option
+					value="Phylogenetic tree analysis (natural selection)"
+					class=""
+				>
+						Phylogenetic tree analysis (natural selection)				</option>
+
+			
+				<option
+					value="Population genetics"
+					class=""
+				>
+						Population genetics				</option>
+
+			
+				<option
+					value="Protein engineering"
+					class=""
+				>
+						Protein engineering				</option>
+
+			
+				<option
+					value="Protein interactions"
+					class=""
+				>
+						Protein interactions				</option>
+
+			
+				<option
+					value="Proteomics"
+					class=""
+				>
+						Proteomics				</option>
+
+			
+				<option
+					value="Scientific programming support"
+					class=""
+				>
+						Scientific programming support				</option>
+
+			
+				<option
+					value="Semantic web format"
+					class=""
+				>
+						Semantic web format				</option>
+
+			
+				<option
+					value="Signaling pathways"
+					class=""
+				>
+						Signaling pathways				</option>
+
+			
+				<option
+					value="Single-cell biology"
+					class=""
+				>
+						Single-cell biology				</option>
+
+			
+				<option
+					value="Software engineering"
+					class=""
+				>
+						Software engineering				</option>
+
+			
+				<option
+					value="Synthetic biology"
+					class=""
+				>
+						Synthetic biology				</option>
+
+			
+				<option
+					value="Training"
+					class=""
+				>
+						Training				</option>
+
+			
+				<option
+					value="Text mining"
+					class=""
+				>
+						Text mining				</option>
+
+			
+				<option
+					value="Transcriptomics"
+					class=""
+				>
+						Transcriptomics				</option>
+
+			
+				<option
+					value="Vaccines"
+					class=""
+				>
+						Vaccines				</option>
+
+			
+				<option
+					value="Workflows"
+					class=""
+				>
+						Workflows				</option>
+
+			
+				<option
+					value="Machine learning and text mining"
+					class=""
+				>
+						Machine learning and text mining				</option>
+
+					</select>
+	</div>
+
+	<div class="form-group">
+		<select
+			name="searchFields[application][]"
+			title="Application"
+			data-placeholder="by application"
+			autocomplete="off"
+			multiple
+		>
+							<option value="Agriculture">Agriculture</option>
+							<option value="Basic research">Basic research</option>
+							<option value="Medicine and health">Medicine and health</option>
+							<option value="Ecology">Ecology</option>
+					</select>
+	</div>
+
+	<div class="form-group">
+		<select
+			name="searchFields[place][]"
+			title="Place"
+			data-placeholder="by place"
+			autocomplete="off"
+			multiple
+		>
+							<option value="Basel">Basel</option>
+							<option value="Bellinzona">Bellinzona</option>
+							<option value="Bern">Bern</option>
+							<option value="Davos">Davos</option>
+							<option value="Epalinges">Epalinges</option>
+							<option value="Fribourg">Fribourg</option>
+							<option value="Geneva">Geneva</option>
+							<option value="Lausanne">Lausanne</option>
+							<option value="Lugano">Lugano</option>
+							<option value="Martigny">Martigny</option>
+							<option value="Muttenz">Muttenz</option>
+							<option value="St. Gallen">St. Gallen</option>
+							<option value="Villigen">Villigen</option>
+							<option value="Wädenswil">Wädenswil</option>
+							<option value="Yverdon-Les-Bains">Yverdon-Les-Bains</option>
+							<option value="Zurich">Zurich</option>
+					</select>
+	</div>
+
+	<div class="form-group">
+		<input name="searchword" type="text" title="Keywords" placeholder="by any keywords" value="" autocomplete="off">
+	</div>
+
+	<div class="from-group">
+		<button type="submit" class="btn btn-primary">Search</button>
+	</div>
+</form>
+											</div>
+																			</div>
+															</li>
+																				<li class="col ">
+								<span class="nav-item">National network</span>
+
+								<ul><li class=" nav-item item-10033"><a href="/scientific-community/research/groups-and-group-leaders" >Groups and Group Leaders</a></li><li class=" nav-item item-10040"><a href="/scientific-community/research/fields-of-activity" >Fields of activity </a></li><li class=" nav-item item-10042"><a href="/scientific-community/research/embedded-bioinformaticians" >Embedded bioinformaticians</a></li><li class=" nav-item item-10608"><a href="https://www.ls2.ch/sections/bioinformatics" target="_blank" rel="noopener noreferrer">LS2 Intersection Bioinformatics</a></li></ul>															</li>
+																				<li class="col ">
+								<span class="nav-item">Education &amp; science promotion</span>
+
+								<ul><li class=" nav-item item-10020"><a href="/training/upcoming-training-courses" >Upcoming training courses</a></li><li class=" nav-item item-10056"><a href="/training/e-learning" >e-learning</a></li><li class=" nav-item item-10044"><a href="/training/who-can-benefit" >Who can benefit</a></li><li class=" nav-item item-10057"><a href="/training/in-silico-talks" >in silico talks</a></li><li class=" nav-item item-10498"><a href="/scientific-community/training/sib-remarkable-outputs" >SIB Remarkable Outputs</a></li><li class=" nav-item item-10041"><a href="/scientific-community/training/sib-awards" >Bioinformatics Awards</a></li><li class=" nav-item item-10043"><a href="/scientific-community/training/scientific-publications" >Scientific publications</a></li></ul>															</li>
+											</ul>
+				</div>
+
+			
+		</li>
+																																																											<li class="dropdown supporting nav-item item-10604 deeper parent position-relative">
+			<span class="nav-link">Services</span>
+
+			
+				<ul><li class=" nav-item item-10605"><a href="/collaborations" >Portfolio of services</a></li><li class=" nav-item item-10606"><a href="/collaborations/approach" >Approach</a></li><li class=" nav-item item-10607"><a href="/collaborations/testimonials" >References</a></li></ul>
+			
+		</li>
+											<li class="dropdown nav-item item-10003 deeper parent position-relative">
+			<span class="nav-link">About</span>
+
+			
+				<ul><li class=" nav-item item-10015"><a href="/about-sib/what-we-do" >What we do</a></li><li class=" nav-item item-10016"><a href="/about-sib/organization" >Organization</a></li><li class=" nav-item item-10017"><a href="/about-sib/partners" >Partners</a></li><li class=" nav-item item-10603"><a href="/about-sib/corporate-identity" >Corporate identity</a></li><li class=" nav-item item-10089"><a href="/about-sib/funding-sources" >Funding sources</a></li><li class=" nav-item item-10157"><a href="/about-sib/history" >History</a></li><li class=" nav-item item-10045"><a href="/about-sib/sib-publications" >SIB publications</a></li><li class=" nav-item item-10242"><a href="/what-is-bioinformatics" >What is bioinformatics</a></li><li class=" nav-item item-10491"><a href="/about-sib/equality-diversity-inclusion" >Equality, Diversity, Inclusion</a></li><li class=" nav-item item-10028"><a href="/about-sib/events" >Events</a></li></ul>
+			
+		</li>
+																							</ul>
+
+					</div>
+				</div>
+
+								<div id="header-search-container">
+					<form action="/training/upcoming-training-courses" method="post" class="form-inline ">
+
+	<div class="input-group">
+		
+		<input
+			type="search"
+			name="searchword"
+			id="mod-search-searchword10025"
+			title="Keyword to search"
+			class="form-control search-query"
+			maxlength="200"
+						placeholder="Search ..."
+		/>
+
+					<div class="input-group-append">
+				<button type="submit" class="btn btn-primary btn-filled">Search</button>
+			</div>
+			</div>
+
+	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="10037" />
+</form>
+
+				</div>
+			</div>
+		</header>
+
+		
+
+		<main id="content" role="main">
+			<div id="system-message-container">
+	</div>
+
+
+			
+				<script>
+	$(function() {
+		$(".course-register-button").tooltip({
+			show: {
+				delay: 0,
+			}
+		});
+	});
+</script>
+<style>
+	label {
+		display: inline-block;
+		width: 5em;
+	}
+</style>
+
+
+<div class="item-page pt-5">
+	<div class="container position-relative">
+
+								<div class="page-header clearfix d-lg-none">
+				<h1 class="h1 page-title">Upcoming training courses</h1>
+			</div>
+		
+		<div class="row justify-content-center">
+
+			<div class="col-12 col-lg-3 order-lg-last courses-right-column">
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-12 mb-3 mb-md-0">
+						<div class="row">
+															<div class="well  col-12 col-sm-24 col-lg-12"><h2 class="page-header">Stay Tuned</h2><div class="mb-3">
+	Sign up to remain informed about training activities</div>
+
+<button type="button" class="btn btn-primary" id="machFormModalButton10108">
+	Leave us your email</button>
+
+
+<div class="modal fade" id="machFormModal10108" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Leave us your email</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<iframe
+					src="https://www.sib.swiss/form/embed.php?id=51040"
+					style="width: 100%; border: none;"
+					scrolling="no"
+					width="100%"
+					height="375"
+					frameborder="0"
+				>
+				</iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	jQuery(document).ready(function() {
+		document.getElementById('machFormModalButton' + 10108).addEventListener('click', function() {
+			jQuery('#machFormModal' + 10108).modal('show');
+		});
+	});
+</script>
+</div>													</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-12 mt-3 mt-lg-5">
+						<div class="row mb-3">
+							<div class="col-12 mb-1">
+								<span class="course-register-button compact status-open">
+									Open								</span>
+							</div>
+							<div class="col-12 small">
+								Applications are open, but there may be a waiting list.							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-12 mb-1">
+								<span class="course-register-button compact status-closed">
+									Closed								</span>
+							</div>
+							<div class="col-12 small">
+								Applications are closed because the course is full with a long waiting list or has just passed.							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-12 mb-1">
+								<span class="course-register-button compact status-upcoming">
+									Upcoming								</span>
+							</div>
+							<div class="col-12 small">
+								Applications are not open yet, and this usually happens ~2 months before a course starts. Sign up above to receive the notifications when a course opens for applications.							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-9">
+
+				
+									<div class="page-header clearfix d-none d-lg-block">
+						<span class="h1 page-title">Upcoming training courses</span>
+					</div>
+				
+				<div class="" itemscope itemtype="http://schema.org/ItemList">
+											
+						<div class="course-list">
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221020_INTPY" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="This course is now full with a waiting list. Overview Python is an open-source and general-purpose scripting language which runs on all major operating systems. It was designed to be easily read and written with comparatively simple syntax." />
+										<meta itemprop="startDate" content="2022-10-20" />
+										<meta itemprop="endDate" content="2022-10-20" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221020_INTPY"
+																					>
+											Intermediate Python										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">20</div>
+												<div class="month">Oct</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										20 October 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-closed" title="Applications closed">
+																							Closed											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221026_DOCK" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content=" This course is now full with a long waiting list." />
+										<meta itemprop="startDate" content="2022-10-26" />
+										<meta itemprop="endDate" content="2022-10-26" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221026_DOCK"
+																					>
+											Docker and Singularity for reproducible research: getting started with containers										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">26</div>
+												<div class="month">Oct</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										26 October 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-closed" title="Applications closed">
+																							Closed											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221027_RDMP" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="    Overview Recent studies have shown that worldwide, between 51% and 89% of published life sciences research is not reproducible, with consequent losses estimated at around $100 billions/year in biomedical research (Chalmers et al., 2009; Freedman" />
+										<meta itemprop="startDate" content="2022-10-27" />
+										<meta itemprop="endDate" content="2022-10-28" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221027_RDMP"
+																					>
+											Research Data Management and Data Management Plan										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">27</div>
+												<div class="month">Oct</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										27 - 28 October 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Bern</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-closed" title="Applications closed">
+																							Closed											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221101_CASPM" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="More information on the CAS of Personalized Molecular Oncology" />
+										<meta itemprop="startDate" content="2022-11-01" />
+										<meta itemprop="endDate" content="2023-10-31" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221101_CASPM"
+																					>
+											CAS Personalized Molecular Oncology										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">01</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										1 November 2022 - 31 October 2023									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Basel</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221107_ADVU" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content=" Overview Scripting allows shell users to automate repetitive tasks, thus improving reproducibility, reducing the risk of errors, freeing time, and avoiding boredom." />
+										<meta itemprop="startDate" content="2022-11-07" />
+										<meta itemprop="endDate" content="2022-11-08" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221107_ADVU"
+																					>
+											UNIX Shell Scripting for Life Scientists										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">07</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										7 - 8 November 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Bern</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221114_ISCTR" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content=" The course is now full with a long waiting list." />
+										<meta itemprop="startDate" content="2022-11-14" />
+										<meta itemprop="endDate" content="2022-11-16" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221114_ISCTR"
+																					>
+											Single-cell Transcriptomics										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">14</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										14 - 16 November 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Bern</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-closed" title="Applications closed">
+																							Closed											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221121_NGSQC" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="  Overview Next Generation Sequencing (NGS) methods have had a large impact on many biological fields due to a very rapid decrease in cost and throughput. It often results in hundreds of gigabytes of data." />
+										<meta itemprop="startDate" content="2022-11-21" />
+										<meta itemprop="endDate" content="2022-11-23" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221121_NGSQC"
+																					>
+											NGS - Quality control, Alignment, Visualisation										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">21</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										21 - 23 November 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221123_OPEMP" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content=" Overview We currently live in the era of multicore computers, where almost every computing machine has many CPUs. In order to benefit from this computational power, we need to devise programs explicitly written for parallel machines." />
+										<meta itemprop="startDate" content="2022-11-23" />
+										<meta itemprop="endDate" content="2022-11-23" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221123_OPEMP"
+																					>
+											First Steps in Parallelization with OpenMP										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">23</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										23 November 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221128_IBAYE" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="The course is now full with a long waiting list. But you can still register to Day 3 (long talks), which is free of charge, but registration is mandatory please use this form to register." />
+										<meta itemprop="startDate" content="2022-11-28" />
+										<meta itemprop="endDate" content="2022-11-30" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221128_IBAYE"
+																					>
+											Introduction to Bayesian statistics with R										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">28</div>
+												<div class="month">Nov</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										28 - 30 November 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Basel</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-closed" title="Applications closed">
+																							Closed											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221202_ENRIC" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content=" Overview Experiments designed to quantify gene expression often yield hundreds of genes that show statistically significant differences between groups of interest." />
+										<meta itemprop="startDate" content="2022-12-02" />
+										<meta itemprop="endDate" content="2022-12-02" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221202_ENRIC"
+																					>
+											Enrichment Analysis										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">02</div>
+												<div class="month">Dec</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										2 December 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221207_IHPC" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="This course is susceptible to be streamed to the registered participants, depending on the evolution of the sanitary situation  Overview This full-day course has a practical focus, where participants will learn how to use the Linux command line and" />
+										<meta itemprop="startDate" content="2022-12-07" />
+										<meta itemprop="endDate" content="2022-12-07" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221207_IHPC"
+																					>
+											Introduction to high-performance computing (sciCORE cluster)										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">07</div>
+												<div class="month">Dec</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										7 December 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+							
+																<div class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Event">
+																			<meta itemprop="url" content="https://www.sib.swiss/training/course/20221208_STAML" />
+										<meta itemprop="eventType" content="Workshops and courses" />
+										<div itemprop="contact" itemscope itemtype="http://schema.org/contact" style="display:none;">
+											<meta itemprop="email" content="training@sib.swiss" />
+										</div>
+										<div itemprop='hostInstitution' itemscope itemtype="http://schema.org/hostInstitution" style="display:none;">
+											<meta itemprop="name" content="SIB" />
+										</div>
+										<meta itemprop="description" content="Overview Statistics are an integral aspect of scientific research, and in particular of life sciences that heavily rely on quantitative methodologies." />
+										<meta itemprop="startDate" content="2022-12-08" />
+										<meta itemprop="endDate" content="2022-12-09" />
+									
+									<h2 class="title" itemprop="name">
+										<a
+																							href="https://www.sib.swiss/training/course/20221208_STAML"
+																					>
+											Statistics and Machine Learning for Life Sciences										</a>
+									</h2>
+
+									<div class="start-date-container">
+										<div class="start-date">
+											<div class="align-middle">
+												<div class="day">08</div>
+												<div class="month">Dec</div>
+												<div class="year">2022</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="date-interval">
+										<i class="icon-calendar"></i>
+										8 - 9 December 2022									</div>
+
+																			<div class="location" itemprop="location" itemscope itemtype="http://schema.org/Place">
+											<i class="icon-location icon-map-marker"></i>
+											<span itemprop="address name">Streamed</span>
+										</div>
+									
+																			<div class="register-button-container">
+																						<span class="course-register-button status-open" title="Applications available in course page">
+																							Open											</span>
+										</div>
+									
+								</div>
+
+													</div>
+									</div>
+
+				
+									<h2 class="border-top mt-5 courses-other-view-link">
+						<a href="/training/past-training-courses">
+							Past training courses						</a>
+					</h2>
+				
+				
+			</div>
+
+		</div>
+	</div>
+</div>
+
+			
+		</main>
+
+
+		
+		<footer class="footer" role="contentinfo">
+			<div class="container">
+				<div class="row">
+					<div class="well  col-12 col-sm-8 col-lg-4"><h2 class="page-header">About SIB</h2>
+
+<div class="custom"  >
+	<p>The SIB Swiss Institute of Bioinformatics is an internationally recognized non-profit organization, dedicated to biological and biomedical data science. The institute contributes to keeping Switzerland at the forefront of innovation by fostering progress in biological research and enhancing health.</p>
+<p><strong><a href="/about-sib/what-we-do">What we do »</a></strong></p></div>
+</div><div class="well  col-12 col-sm-4 col-lg-2"><h2 class="page-header">Press contacts</h2>
+
+<div class="custom"  >
+	<p>Are you a journalist? Find out how we can help <a href="/about-sib/news"></a><br /> <a href="/index.php?option=com_content&amp;view=article&amp;layout=edit&amp;id=10251"></a></p>
+<p><a href="/index.php?option=com_content&amp;view=article&amp;layout=edit&amp;id=10251"><strong>More »</strong></a></p></div>
+</div><div class="well  col-12 col-sm-6 col-lg-3"><h2 class="page-header">Contact</h2>
+
+<div class="custom"  >
+	<p>Quartier Sorge - Batiment Amphipole<br />1015 Lausanne / Switzerland</p>
+<p>Tel: +41 21 692 40 50</p>
+<p><a href="/index.php?option=com_content&amp;view=article&amp;layout=edit&amp;id=10252"><strong>Contact us »</strong></a></p></div>
+</div><div class="well  col-12 col-sm-6 col-lg-3"><h2 class="page-header">Stay tuned</h2><div class="acymailing_module" id="acymailing_module_formAcymailing41511">
+		<div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing41511">
+		<form id="formAcymailing41511" action="/training/upcoming-training-courses" onsubmit="return submitacymailingform('optin', 'formAcymailing41511')" method="post" name="formAcymailing41511" >
+
+							<p>Subscribe to our newsletter</p>
+			
+			<div class="acymailing_module_form" id="newsletterForm">
+				<div class="input-group mb-3">
+					<input
+						id="user_email_formAcymailing41511"
+						name="user[email]"
+						class="form-control"
+						type="text"
+						placeholder="Leave us your email"
+						aria-label="Your email"
+					/>
+					<div class="input-group-append">
+						<input
+							class="btn btn-primary btn-filled"
+							type="submit"
+							value="Send"
+							name="Submit"
+							onclick="try{ return submitacymailingform('optin','formAcymailing41511'); }catch(err){alert('The form could not be submitted '+err);return false;}"
+						/>
+					</div>
+				</div>
+
+								<input type="hidden" name="ajax" value="0" />
+				<input type="hidden" name="acy_source" value="module_10015" />
+				<input type="hidden" name="ctrl" value="sub"/>
+				<input type="hidden" name="task" value="notask"/>
+				<input type="hidden" name="redirect" value="https%3A%2F%2Fwww.sib.swiss%2Ftraining%2Fupcoming-training-courses"/>
+				<input type="hidden" name="redirectunsub" value="https%3A%2F%2Fwww.sib.swiss%2Ftraining%2Fupcoming-training-courses"/>
+				<input type="hidden" name="option" value="com_acymailing"/>
+								<input type="hidden" name="hiddenlists" value="1"/>
+				<input type="hidden" name="acyformname" value="formAcymailing41511" />
+															</div>
+		</form>
+	</div>
+</div>
+
+	<p class="my-3">
+		<span>Or follow us</span>
+		<a href="https://www.facebook.com/SIBbioinformatics" target="_blank" class="social-icon">
+			<img src="https://www.sib.swiss//templates/sib/images/social/facebook_0.svg" alt="Facebook" />
+		</a>
+		<a href="https://www.twitter.com/ISBSIB" target="_blank" class="social-icon">
+			<img src="https://www.sib.swiss//templates/sib/images/social/twitter_0.svg" alt="Twitter" />
+		</a>
+		<a href="https://www.linkedin.com/company/sib-swiss-institute-of-bioinformatics" target="_blank" class="social-icon">
+			<img src="https://www.sib.swiss//templates/sib/images/social/linkedin_0.svg" alt="LinkedIn" />
+		</a>
+		<a href="https://www.youtube.com/c/SIBSwissInstituteofBioinformatics" target="_blank" class="social-icon">
+			<img src="https://www.sib.swiss//templates/sib/images/social/youtube_0.svg" alt="YouTube" />
+		</a>
+	</p>
+
+	<div id="footer-menu">
+					<ul class="menu">
+<li class="nav-item item-10030"><a href="https://www.sib.swiss/form/view.php?id=28585" class="nav-link" target="_blank" rel="noopener noreferrer">Sign up for our Activity Report</a></li><li class="nav-item item-10029"><a href="/privacy-policy" class="nav-link">Privacy policy</a></li></ul>
+			</div>
+
+</div><div class="well ">
+
+<div class="custom"  >
+	<style>
+	#at4-share,
+	#at4-soc {
+		top: 55% !important;
+	}
+</style>
+<script>
+	var atButtons = document.getElementById("at4-share);
+			atButtons.classList.remove("atss-right"); atButtons.classList.add("atss-left");
+</script></div>
+</div><div class="well ">
+
+<div class="custom"  >
+	<script>
+	jQuery(function($) {
+				$(".news-card").attr("target", "_blank");
+			}
+		   );
+</script></div>
+</div>
+				</div>
+				<hr />
+				<div class="footer-bottom">
+					
+
+<div class="custom partners-module"  >
+	<h2 class="h3">DATA SCIENTISTS FOR LIFE</h2>
+<div id="targ_nav_tab" role="tablist"></div></div>
+
+				</div>
+			</div>
+		</footer>
+
+		<button class="btn btn-back-to-top" title="Back to Top">
+			<i class="fa fa-arrow-up"></i>
+		</button>
+
+		
+
+		<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b84f4558bcd383d"></script>
+<script type="text/javascript">
+	// <![CDATA[
+	//remove send button
+
+
+	jQuery(function($) {
+		$(".at-share-btn.at-svc-email").css({
+			'display': 'none'
+		});
+	});
+	// ]]>
+</script>
+	
+<div id="redim-cookiehint-bottom">   <div id="redim-cookiehint">     <div class="cookiecontent">   We use cookies to ensure you get the best experience while browsing our website and to extract visits’ statistics. By using SIB’s website, we assume that you agree to their use. <a href="/privacy-policy" target="_blank">Read our privacy policy</a>.    </div>     <div class="cookiebuttons">        <a id="cookiehintsubmit" onclick="return cookiehintsubmit(this);" href="https://www.sib.swiss/training/upcoming-training-courses?rCH=2"         class="btn"><span style="margin-right:25px;margin-left:25px;">OK</span></a>          <div class="text-center" id="cookiehintinfo">                      </div>      </div>     <div class="clr"></div>   </div> </div>  <script type="text/javascript">        document.addEventListener("DOMContentLoaded", function(event) {         if (!navigator.cookieEnabled){           document.getElementById('redim-cookiehint-bottom').remove();         }       });        function cookiehintfadeOut(el) {         el.style.opacity = 1;         (function fade() {           if ((el.style.opacity -= .1) < 0) {             el.style.display = "none";           } else {             requestAnimationFrame(fade);           }         })();       }         function cookiehintsubmit(obj) {         document.cookie = 'reDimCookieHint=1; expires=0;29; path=/';         cookiehintfadeOut(document.getElementById('redim-cookiehint-bottom'));         return true;       }        function cookiehintsubmitno(obj) {         document.cookie = 'reDimCookieHint=-1; expires=0; path=/';         cookiehintfadeOut(document.getElementById('redim-cookiehint-bottom'));         return true;       }  </script>  
+</body>
+</html>

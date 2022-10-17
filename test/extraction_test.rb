@@ -165,6 +165,15 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal '2022-08-25', params[:end]
     assert_equal ['training', 'biostatistics', 'raphael gottardo group'].sort, params[:keywords].sort
     assert_equal 'Patricia Palagi', params[:organizer]
+  end
 
+  test 'handle JSON-LD containing https://schema prefix instead' do
+    file = fixture_file('rdfa-with-https')
+    base_uri = 'https://www.sib.swiss/training/upcoming-training-courses'
+
+    assert_nothing_raised do
+      extractor = Tess::Rdf::EventExtractor.new(file.read, :rdfa, base_uri: base_uri)
+      extractor.extract
+    end
   end
 end
