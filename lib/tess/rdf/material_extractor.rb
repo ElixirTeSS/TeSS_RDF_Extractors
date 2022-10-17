@@ -4,6 +4,14 @@ module Tess
       include Tess::Rdf::Extraction
       extend Tess::Rdf::SharedQueries
 
+      def transform(params)
+        # Rough check to see if the DOI is actually a DOI
+        doi = params.delete(:doi)
+        params[:doi] = doi if doi =~ /10\.\d{4,}/
+
+        super(params)
+      end
+
       private
 
       def self.singleton_attributes
@@ -31,6 +39,7 @@ module Tess
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.url, :url, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.license, :licence, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.learningResourceType, :resource_type, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.identifier, :doi, optional: true)
             end,
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.genre, :scientific_topics)
@@ -48,9 +57,7 @@ module Tess
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.contributor, :contributor_obs)
               pattern RDF::Query::Pattern.new(:contributor_obs, RDF::Vocab::SCHEMA.name, :contributors, optional: true)
             end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.educationalLevel, :difficulty_level, optional: true)
-            end,
+            *difficulty_level_queries(material_uri),
             *audience_queries(material_uri),
             *topic_queries(material_uri)
         ]

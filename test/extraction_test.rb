@@ -149,4 +149,22 @@ class ExtractionTest < Test::Unit::TestCase
     refute params.key?(:scientific_topic_names)
     refute params.key?(:keywords)
   end
+
+  test 'extract SIB courses from JSON' do
+    file = fixture_file('sib-upcoming-training-courses.html')
+    base_uri = 'https://www.sib.swiss/training/upcoming-training-courses'
+
+    extractor = Tess::Rdf::CourseExtractor.new(file.read, :rdfa, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 29, resources.count
+    params = resources.detect { |r| r[:url] == 'https://www.sib.swiss/training2/website/course/20220822_XXXX3' }
+    assert_equal 'Advanced Statistics: Statistical Modelling', params[:title]
+    assert params[:description].start_with?("**This course is now full with a long waiting list")
+    assert_equal '2022-08-22', params[:start]
+    assert_equal '2022-08-25', params[:end]
+    assert_equal ['training', 'biostatistics', 'raphael gottardo group'].sort, params[:keywords].sort
+    assert_equal 'Patricia Palagi', params[:organizer]
+
+  end
 end

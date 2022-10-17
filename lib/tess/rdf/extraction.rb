@@ -18,6 +18,10 @@ module Tess
       end
 
       def transform(params)
+        if params[:keywords].is_a?(Array) && params[:keywords].length == 1
+          params[:keywords] = params[:keywords].first.split(',').map(&:strip)
+        end
+
         params
       end
 

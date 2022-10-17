@@ -31,6 +31,19 @@ module Tess
           end
         ]
       end
+
+      def difficulty_level_queries(uri)
+        [
+          RDF::Query.new do
+            pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.educationalLevel, :difficulty_level, optional: true)
+          end,
+          RDF::Query.new do
+            pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.educationalLevel, :difficulty_level_terms)
+            pattern RDF::Query::Pattern.new(:difficulty_level_terms, RDF.type, RDF::Vocabulary::Term.new('http://schema.org/DefinedTerm', attributes: {}))
+            pattern RDF::Query::Pattern.new(:difficulty_level_terms, RDF::Vocab::SCHEMA.name, :difficulty_level, optional: true)
+          end
+        ]
+      end
     end
   end
 end

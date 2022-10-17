@@ -6,19 +6,22 @@ module Tess
 
       def transform(params)
         # Concat Venue + Street Address since we don't have a field for that
-        params[:venue] = [params[:venue], params.delete(:street_address)].compact.join(' ')
-        params[:city] = params.delete(:locality)
-        params[:county] = params.delete(:region)
+        venue = [params[:venue], params.delete(:street_address)].compact
+        params[:venue] = venue.join(' ') unless venue.empty?
+        params[:city] = params.delete(:locality) if params.key?(:locality)
+        params[:county] = params.delete(:region) if params.key?(:region)
 
         duration = params.delete(:duration)
         if !params[:end] && params[:start] && duration
           params[:end] = modify_date(params[:start], duration)
         end
+        contact = [params.delete(:contact_name), params.delete(:contact_email)].compact
+        params[:contact] = contact.join(' - ') unless contact.empty?
 
-        params[:contact] = [params.delete(:contact_name), params.delete(:contact_email)].compact.join( ' - ')
-        params[:online] = true if params.delete(:course_mode) == 'online'
+        course_mode = params.delete(:course_mode) || []
+        params[:online] = true if course_mode.include?('online')
 
-        params
+        super(params)
       end
 
       private
@@ -26,11 +29,11 @@ module Tess
       def self.singleton_attributes
         [:title, :description, :start, :end, :venue, :postcode, :locality, :region, :country,
          :organizer, :duration, :url, :country, :latitude, :longitude, :capacity,
-         :contact_name, :contact_email, :contact, :course_mode]
+         :contact_name, :contact_email, :contact]
       end
 
       def self.array_attributes
-        [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors]
+        [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors, :course_mode]
       end
 
       def self.type_query
