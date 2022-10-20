@@ -135,6 +135,13 @@ module Tess
         date
       end
 
+      def extract_topics(params)
+        topic_uris = params.delete(:scientific_topic_uris) || []
+        topic_uris = topic_uris.map { |u| u.match(/http:\/\/edamontology\.org\/.+/)&.to_s }.compact
+        params[:scientific_topic_uris] = topic_uris if topic_uris.any?
+        params
+      end
+
     end
   end
 end

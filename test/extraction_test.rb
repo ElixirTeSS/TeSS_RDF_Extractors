@@ -26,7 +26,7 @@ class ExtractionTest < Test::Unit::TestCase
     rna_seq = resources.detect { |r| r[:url] == 'https://www.ebi.ac.uk/training/events/introduction-rna-seq-and-functional-interpretation-0' }
     refute rna_seq.key?(:keywords)
     assert_equal ["RNA-Seq"], rna_seq[:scientific_topic_names]
-    assert_equal ["edam:http://edamontology.org/topic_3170"], rna_seq[:scientific_topic_uris]
+    assert_equal ["http://edamontology.org/topic_3170"], rna_seq[:scientific_topic_uris]
     refute rna_seq.key?(:host_institutions)
     refute rna_seq.key?(:sponsors)
     assert_equal "Introduction to RNA-seq and functional interpretation", rna_seq[:title]

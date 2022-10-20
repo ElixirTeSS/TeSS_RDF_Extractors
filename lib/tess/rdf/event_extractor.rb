@@ -21,6 +21,8 @@ module Tess
         course_mode = params.delete(:course_mode) || []
         params[:online] = true if course_mode.include?('online')
 
+        extract_topics(params)
+
         super(params)
       end
 

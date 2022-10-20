@@ -7,7 +7,9 @@ module Tess
       def transform(params)
         # Rough check to see if the DOI is actually a DOI
         doi = params.delete(:doi)
-        params[:doi] = doi if doi =~ /10\.\d{4,}/
+        params[:doi] = doi if doi && doi =~ /10\.\d{4,}/
+
+        extract_topics(params)
 
         super(params)
       end
