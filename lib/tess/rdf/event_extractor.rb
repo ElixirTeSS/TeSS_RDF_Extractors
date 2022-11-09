@@ -7,7 +7,7 @@ module Tess
       def transform(params)
         # Concat Venue + Street Address since we don't have a field for that
         venue = [params[:venue], params.delete(:street_address)].compact
-        params[:venue] = venue.join(' ') unless venue.empty?
+        params[:venue] = venue.join(', ') unless venue.empty?
         params[:city] = params.delete(:locality) if params.key?(:locality)
         params[:county] = params.delete(:region) if params.key?(:region)
 
@@ -29,7 +29,7 @@ module Tess
       private
 
       def self.singleton_attributes
-        [:title, :description, :start, :end, :venue, :postcode, :locality, :region, :country,
+        [:title, :description, :start, :end, :venue, :street_address, :postcode, :locality, :region, :country,
          :organizer, :duration, :url, :country, :latitude, :longitude, :capacity,
          :contact_name, :contact_email, :contact]
       end

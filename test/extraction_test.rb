@@ -35,7 +35,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "2020-01-21", rna_seq[:start]
     assert_equal "2020-01-24", rna_seq[:end]
     assert_equal "30", rna_seq[:capacity]
-    assert_equal "European Bioinformatics Institute", rna_seq[:venue]
+    assert_equal "European Bioinformatics Institute, Hinxton", rna_seq[:venue]
     assert_equal "CB10 1SD", rna_seq[:postcode]
     assert_equal "GB", rna_seq[:country]
     assert_equal "Cambridge", rna_seq[:county]
@@ -60,7 +60,7 @@ class ExtractionTest < Test::Unit::TestCase
     refute params.key?(:scientific_topic_uris)
     refute params.key?(:host_institutions)
     refute params.key?(:sponsors)
-    assert_equal "UAntwerpen Campus Drie Eiken", params[:venue]
+    assert_equal "UAntwerpen Campus Drie Eiken, Universiteitsplein 1", params[:venue]
     assert_equal "51.162826", params[:latitude]
     assert_equal "4.402365", params[:longitude]
     assert_equal "2610", params[:postcode]
@@ -175,5 +175,15 @@ class ExtractionTest < Test::Unit::TestCase
       extractor = Tess::Rdf::EventExtractor.new(file.read, :rdfa, base_uri: base_uri)
       extractor.extract
     end
+  end
+
+  test 'extract street address as venue' do
+    file = fixture_file('nbis-courses.json')
+    base_uri = 'https://nbis.se/assets/training/courses.json'
+
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(file.read, :jsonld, base_uri: base_uri)
+    events = extractor.extract
+    sample = events.detect { |e| e[:title] = 'Neural Networks and Deep Learning' }
+    assert_equal 'SciLifeLab Uppsala - Navet, Husargatan 3', sample[:venue]
   end
 end
