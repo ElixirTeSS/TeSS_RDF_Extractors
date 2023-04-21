@@ -16,7 +16,7 @@ end
 task :console do
   require 'irb'
   require 'irb/completion'
-  require 'ro_crate'
+  require 'tess_rdf_extractors'
   ARGV.clear
   IRB.start
 end
