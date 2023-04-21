@@ -186,4 +186,14 @@ class ExtractionTest < Test::Unit::TestCase
     sample = events.detect { |e| e[:title] = 'Neural Networks and Deep Learning' }
     assert_equal 'SciLifeLab Uppsala - Navet, Husargatan 3', sample[:venue]
   end
+
+  test 'extract courseMode as online' do
+    file = fixture_file('sib-online-course.html')
+    base_uri = 'https://www.sib.swiss/training/course/20230426_DOCK'
+
+    extractor = Tess::Rdf::CourseExtractor.new(file.read, :rdfa, base_uri: base_uri)
+    events = extractor.extract
+    sample = events.detect { |e| e[:start] = '2023-04-26' }
+    assert sample[:online]
+  end
 end

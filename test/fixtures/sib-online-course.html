@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="G7g03unyC6xhsjcqdZwpAgJfsSSObKDDxnE72W92">
+    
+    
+
+    <link href="https://www.sib.swiss/training/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <!-- Styles -->
+    <link href="https://www.sib.swiss/training/css/website.css?id=c1a7374bce9e01084128cd2dd7ee92b6" rel="stylesheet">
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "//matomo.sib.swiss/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '1']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <!-- End Matomo Code -->
+
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-PTVR4GD');
+        </script>
+        <!-- End Google Tag Manager -->
+
+
+
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10907247-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-10907247-1', {
+                'anonymize_ip': true
+            });
+        </script>
+    
+        <title>Docker and Singularity for Reproducible Research: Getting Started with Containers</title>
+<meta name="description" content="
+
+Overview
+Reproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment wi">
+<meta name="keywords" content="reproducibility,training,container,data management,data security,high-performance computing,rémy bruggmann group">
+
+    <meta property="og:title" content="Docker and Singularity for Reproducible Research: Getting Started with Containers">
+<meta property="og:description" content="
+
+Overview
+Reproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment wi">
+<meta property="og:type" content="articles">
+<meta property="og:url" content="https://www.sib.swiss/training/course/20230426_DOCK">
+
+
+    <meta name="twitter:description" content="
+
+Overview
+Reproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment wi">
+<meta name="twitter:title" content="Docker and Singularity for Reproducible Research: Getting Started with Containers">
+<meta name="twitter:site" content="@ISBSIB">
+<meta name="twitter:image" content="https://www.sib.swiss/images/sib/4-training/training_header_2018.jpg">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Docker and Singularity for Reproducible Research: Getting Started with Containers","description":"\n\n\n\n# Overview\n\nReproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment with many different programs, libraries and settings. For the sake of reproducibility, but also for productivity, you might want to store, reuse, and share your environments using container software such as Docker and Singularity. Containerization is a lightweight and scalable way of working with such isolated environments. For example, with Docker you can develop, store and manage environments based on Linux operating systems which can run in mostly any computer. \n\nOften, bioinformatic calculations also require large memory and CPU resources, therefore you might want to use a shared computer environment (e.g. a HPC cluster). However, to run Docker you need to have privileged rights (i.e. as root), which is not the case for Singularity, a program that enables you to run environments from a wide range of resources (including Docker) in a safe manner without the need for privileged access. Combining Singularity and Docker thus makes you extremely flexible in how, when and where you use your computer environments and those of others. \n\nTo introduce you to working with containers in the context of bioinformatics research, we will take a practical approach with several hands-on exercises to go through the basics of using, developing and sharing containers.\n\nThe course materials can be found in the dedicated [GitHub page](https://sib-swiss.github.io/containers-introduction-training/latest/).\n# Audience\nThis course is addressed to bioinformaticians and life scientists that are doing bioinformatic analyses and want to get introduced to containers.\n\n# Learning outcomes\nAt the end of the course, the participants are expected to:\n* Understand the basic concepts and terminology associated with virtualization with containers\n* Customize, store, manage and share containerized environments with Docker\n* Describe and understand the essential differences between Docker and Singularity\n* Use Singularity to run containers on a shared computer environment (e.g. a HPC cluster)\n\n# Prerequisites\n##### Knowledge / competencies\nThis course is designed for those interested to work with containers in the context of bioinformatics. Practical experience on the basic UNIX commands is required. You can test your skills with Unix with the quiz [here](https://docs.google.com/forms/d/e/1FAIpQLSd2BEWeOKLbIRGBT_aDEGPce1FOaVYBbhBiaqcaHoBKNB27MQ/viewform?usp=sf_link). If you do not feel comfortable with UNIX commands, you can refresh your knowledge with our [Unix fundamentals](https://edu.sib.swiss/course/view.php?id=82) e-learning module.\n\n##### Technical\nYou are required to bring your own laptop with [Docker pre-installed](https://docs.docker.com/get-docker/), and have created an account on [dockerhub](https://hub.docker.com/). Note that you need admin rights in your computer to install and use Docker. In addition, Windows users require a recent version of [Windows](https://docs.docker.com/docker-for-windows/install/). \n\n# Schedule \nThe schedule and course material are in the dedicated [GitHub page]( https://sib-swiss.github.io/containers-introduction-training/latest/course_schedule/\n ).\n# Application\n\n\n\n\nSIB courses usually open for applications 1-2 months before the course takes place. If not yet done, I suggest you sign up for our mailing list [here](https://lists.sib.swiss/mailman/listinfo/courses) so that you are informed when the courses accept applications as some courses fill up very quickly. \n\nRegistration fees for academics are **100 CHF** and **500 CHF** for for-profit companies. While participants are registered on a first come, first served basis, exceptions may be made to ensure diversity and equity, which may increase the time before your registration is confirmed.\n\nApplications will close as soon as the places will be filled up. Deadline for free-of-charge cancellation is set to **12/04/2023**. Cancellation after this date will not be reimbursed. \n\nYou will be informed by email of your registration confirmation. Upon reception of the confirmation email, participants will be asked to confirm attendance by paying the fees within 5 days.\n\n# Venue and Time\nThis course will only be streamed. \n\n\nThe course will start at 9:00 CET and end around 17:00 CET. Precise information will be provided to the participants in due time.\n\n\n#  Additional information\nCoordination: Diana Marek\n\nWe will recommend 0.25 ECTS credits for this course (given a passed exam at the end of the course).\n\nYou are welcome to register to the SIB courses mailing list to be informed of all future courses and workshops, as well as all important deadlines using the form [here](https://lists.sib.swiss/mailman/listinfo/courses).\n\nPlease note that participation in SIB courses is subject to our [general conditions](http://www.sib.swiss/training/terms-and-conditions).\n\nSIB abides by the [ELIXIR Code of Conduct](https://elixir-europe.org/events/code-of-conduct). Participants of SIB courses are also required to abide by the same code.\n\nFor more information, please contact [training@sib.swiss](mailto://training@sib.swiss).","inLanguage":"en-GB","provider":{"@type":"Organization","name":"SIB Swiss Institute of Bioinformatics","@id":"https://ror.org/002n09z45"},"abstract":"In this course, you will see how Singularity and Docker can help make bioinformatics analysis reproducible, and go beyond good documentation and code shari","about":"reproducibility,training,container,data management,data security,high-performance computing,rémy bruggmann group","keywords":"reproducibility,training,container,data management,data security,high-performance computing,rémy bruggmann group","educationalLevel":"Beginner","http://purl.org/dc/terms/conformsTo":{"@id":"https://bioschemas.org/profiles/Course/1.0-RELEASE","@type":"CreativeWork"},"hasCourseInstance":[{"@type":"CourseInstance","name":"Docker and Singularity for Reproducible Research: Getting Started with Containers","description":"\n\n\n\n# Overview\n\nReproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment with many different programs, libraries and settings. For the sake of reproducibility, but also for productivity, you might want to store, reuse, and share your environments using container software such as Docker and Singularity. Containerization is a lightweight and scalable way of working with such isolated environments. For example, with Docker you can develop, store and manage environments based on Linux operating systems which can run in mostly any computer. \n\nOften, bioinformatic calculations also require large memory and CPU resources, therefore you might want to use a shared computer environment (e.g. a HPC cluster). However, to run Docker you need to have privileged rights (i.e. as root), which is not the case for Singularity, a program that enables you to run environments from a wide range of resources (including Docker) in a safe manner without the need for privileged access. Combining Singularity and Docker thus makes you extremely flexible in how, when and where you use your computer environments and those of others. \n\nTo introduce you to working with containers in the context of bioinformatics research, we will take a practical approach with several hands-on exercises to go through the basics of using, developing and sharing containers.\n\nThe course materials can be found in the dedicated [GitHub page](https://sib-swiss.github.io/containers-introduction-training/latest/).\n# Audience\nThis course is addressed to bioinformaticians and life scientists that are doing bioinformatic analyses and want to get introduced to containers.\n\n# Learning outcomes\nAt the end of the course, the participants are expected to:\n* Understand the basic concepts and terminology associated with virtualization with containers\n* Customize, store, manage and share containerized environments with Docker\n* Describe and understand the essential differences between Docker and Singularity\n* Use Singularity to run containers on a shared computer environment (e.g. a HPC cluster)\n\n# Prerequisites\n##### Knowledge / competencies\nThis course is designed for those interested to work with containers in the context of bioinformatics. Practical experience on the basic UNIX commands is required. You can test your skills with Unix with the quiz [here](https://docs.google.com/forms/d/e/1FAIpQLSd2BEWeOKLbIRGBT_aDEGPce1FOaVYBbhBiaqcaHoBKNB27MQ/viewform?usp=sf_link). If you do not feel comfortable with UNIX commands, you can refresh your knowledge with our [Unix fundamentals](https://edu.sib.swiss/course/view.php?id=82) e-learning module.\n\n##### Technical\nYou are required to bring your own laptop with [Docker pre-installed](https://docs.docker.com/get-docker/), and have created an account on [dockerhub](https://hub.docker.com/). Note that you need admin rights in your computer to install and use Docker. In addition, Windows users require a recent version of [Windows](https://docs.docker.com/docker-for-windows/install/). \n\n# Schedule \nThe schedule and course material are in the dedicated [GitHub page]( https://sib-swiss.github.io/containers-introduction-training/latest/course_schedule/\n ).\n# Application\n\n\n\n\nSIB courses usually open for applications 1-2 months before the course takes place. If not yet done, I suggest you sign up for our mailing list [here](https://lists.sib.swiss/mailman/listinfo/courses) so that you are informed when the courses accept applications as some courses fill up very quickly. \n\nRegistration fees for academics are **100 CHF** and **500 CHF** for for-profit companies. While participants are registered on a first come, first served basis, exceptions may be made to ensure diversity and equity, which may increase the time before your registration is confirmed.\n\nApplications will close as soon as the places will be filled up. Deadline for free-of-charge cancellation is set to **12/04/2023**. Cancellation after this date will not be reimbursed. \n\nYou will be informed by email of your registration confirmation. Upon reception of the confirmation email, participants will be asked to confirm attendance by paying the fees within 5 days.\n\n# Venue and Time\nThis course will only be streamed. \n\n\nThe course will start at 9:00 CET and end around 17:00 CET. Precise information will be provided to the participants in due time.\n\n\n#  Additional information\nCoordination: Diana Marek\n\nWe will recommend 0.25 ECTS credits for this course (given a passed exam at the end of the course).\n\nYou are welcome to register to the SIB courses mailing list to be informed of all future courses and workshops, as well as all important deadlines using the form [here](https://lists.sib.swiss/mailman/listinfo/courses).\n\nPlease note that participation in SIB courses is subject to our [general conditions](http://www.sib.swiss/training/terms-and-conditions).\n\nSIB abides by the [ELIXIR Code of Conduct](https://elixir-europe.org/events/code-of-conduct). Participants of SIB courses are also required to abide by the same code.\n\nFor more information, please contact [training@sib.swiss](mailto://training@sib.swiss).","url":"https://www.sib.swiss/training/course/20230426_DOCK","@id":"https://www.sib.swiss/training/course/20230426_DOCK","http://purl.org/dc/terms/conformsTo":{"@id":"https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE","@type":"CourseInstance"},"about":[{"@type":"Event","name":"Docker and Singularity for Reproducible Research: Getting Started with Containers"}],"courseMode":["online","synchronous"],"keywords":"reproducibility,training,container,data management,data security,high-performance computing,rémy bruggmann group","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Streamed","addressCountry":"Switzerland"}},"endDate":"2023-04-26","inLanguage":"en-GB","instructor":[{"@type":"Person","name":"Geert van Geest"}],"organizer":[{"@type":"Organization","@id":"https://ror.org/002n09z45","name":"SIB Swiss Institute of Bioinformatics"}],"offers":[{"@type":"Offer","name":"Academic Price","price":100,"eligibleCustomerType":{"@type":"BusinessEntityType","name":"Academic"},"priceCurrency":"CHF"},{"@type":"Offer","name":"Industry Price","price":500,"priceCurrency":"CHF","eligibleCustomerType":{"@type":"BusinessEntityType","name":"Industrial"}}],"startDate":"2023-04-26","duration":"PT7H"},{"@type":"CourseInstance","name":"Docker and Singularity for Reproducible Research: Getting Started with Containers","description":"\n\n\n\n# Overview\n\nReproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment with many different programs, libraries and settings. For the sake of reproducibility, but also for productivity, you might want to store, reuse, and share your environments using container software such as Docker and Singularity. Containerization is a lightweight and scalable way of working with such isolated environments. For example, with Docker you can develop, store and manage environments based on Linux operating systems which can run in mostly any computer. \n\nOften, bioinformatic calculations also require large memory and CPU resources, therefore you might want to use a shared computer environment (e.g. a HPC cluster). However, to run Docker you need to have privileged rights (i.e. as root), which is not the case for Singularity, a program that enables you to run environments from a wide range of resources (including Docker) in a safe manner without the need for privileged access. Combining Singularity and Docker thus makes you extremely flexible in how, when and where you use your computer environments and those of others. \n\nTo introduce you to working with containers in the context of bioinformatics research, we will take a practical approach with several hands-on exercises to go through the basics of using, developing and sharing containers.\n\n# Audience\nThis course is addressed to bioinformaticians and life scientists that are doing bioinformatic analyses and want to get introduced to containers.\n\n# Learning outcomes\nAt the end of the course, the participants are expected to:\n* Understand the basic concepts and terminology associated with virtualization with containers\n* Customize, store, manage and share containerized environments with Docker\n* Describe and understand the essential differences between Docker and Singularity\n* Use Singularity to run containers on a shared computer environment (e.g. a HPC cluster)\n\n# Prerequisites\n##### Knowledge / competencies\nThis course is designed for those interested to work with containers in the context of bioinformatics. Practical experience on the basic UNIX commands is required. You can test your skills with Unix with the quiz [here](https://docs.google.com/forms/d/e/1FAIpQLSd2BEWeOKLbIRGBT_aDEGPce1FOaVYBbhBiaqcaHoBKNB27MQ/viewform?usp=sf_link). If you do not feel comfortable with UNIX commands, you can refresh your knowledge with our [Unix fundamentals](https://edu.sib.swiss/course/view.php?id=82) e-learning module.\n\n##### Technical\nYou are required to bring your own laptop with [Docker pre-installed](https://docs.docker.com/get-docker/), and have created an account on [dockerhub](https://hub.docker.com/). Note that you need admin rights in your computer to install and use Docker. In addition, Windows users require a recent version of [Windows](https://docs.docker.com/docker-for-windows/install/). \n\n# Schedule \nThe schedule and course material are in the dedicated [GitHub page]( https://sib-swiss.github.io/containers-introduction-training/latest/course_schedule/\n ).\n# Application\n\n\n\n\nRegistration fees for academics are **100 CHF** and **500 CHF** for for-profit companies. While participants are registered on a first come, first served basis, exceptions may be made to ensure diversity and equity, which may increase the time before your registration is confirmed.\n\nApplications will close as soon as the places will be filled up. Deadline for free-of-charge cancellation is set to **September 29, 2023**. Cancellation after this date will not be reimbursed. Please note that participation in SIB courses is subject to our [general conditions](http://www.sib.swiss/training/terms-and-conditions).\n\nYou will be informed by email of your registration confirmation. Upon reception of the confirmation email, participants will be asked to confirm attendance by paying the fees within 5 days.\n\n# Venue and Time\nThis course will only be streamed. The course will start at 9:00 CET and end around 17:00 CET. \n\n\nPrecise information will be provided to the participants in due time.\n\n\n#  Additional information\nCoordination: Monique Zahn, SIB Training Group.\n\nWe will recommend 0.25 ECTS credits for this course (given a passed exam at the end of the course).\n\nYou are welcome to register to the SIB courses mailing list to be informed of all future courses and workshops, as well as all important deadlines using the form [here](https://lists.sib.swiss/mailman/listinfo/courses).\n\nPlease note that participation in SIB courses is subject to our [general conditions](http://www.sib.swiss/training/terms-and-conditions).\n\nSIB abides by the [ELIXIR Code of Conduct](https://elixir-europe.org/events/code-of-conduct). Participants of SIB courses are also required to abide by the same code.\n\nFor more information, please contact [training@sib.swiss](mailto://training@sib.swiss).","url":"https://www.sib.swiss/training/course/20231013_DOCK","@id":"https://www.sib.swiss/training/course/20231013_DOCK","http://purl.org/dc/terms/conformsTo":{"@id":"https://bioschemas.org/profiles/CourseInstance/1.0-RELEASE","@type":"CourseInstance"},"about":[{"@type":"Event","name":"Docker and Singularity for Reproducible Research: Getting Started with Containers"}],"courseMode":["online","synchronous"],"keywords":"reproducibility,training,container,data management,data security,high-performance computing,rémy bruggmann group","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Streamed","addressCountry":"Switzerland"}},"endDate":"2023-10-13","inLanguage":"en-GB","instructor":[{"@type":"Person","name":"Geert van Geest"}],"organizer":[{"@type":"Organization","@id":"https://ror.org/002n09z45","name":"SIB Swiss Institute of Bioinformatics"}],"offers":[{"@type":"Offer","name":"Academic Price","price":100,"eligibleCustomerType":{"@type":"BusinessEntityType","name":"Academic"},"priceCurrency":"CHF"},{"@type":"Offer","name":"Industry Price","price":500,"priceCurrency":"CHF","eligibleCustomerType":{"@type":"BusinessEntityType","name":"Industrial"}}],"startDate":"2023-10-13"}]}</script>
+</head>
+
+<body>
+
+            <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTVR4GD" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+    <header>
+    <nav
+        class="
+        relative
+        w-full
+        flex flex-wrap
+        items-center
+        justify-between
+        text-gray-500
+        hover:text-gray-700
+        focus:text-gray-700
+        shadow-lg
+        navbar navbar-expand-lg navbar-light
+        ">
+        <div class="container-fluid w-full flex flex-wrap items-start justify-between px-6">
+
+            <div class="items-center">
+                <a class="
+            flex
+            items-center
+            text-gray-900
+            hover:text-gray-900
+            focus:text-gray-900
+            mt-4
+            mb-3
+            mr-1
+            "
+                    href="https://www.sib.swiss" target="sib">
+                    <img class="w-36" src="https://www.sib.swiss/training/images/sib_logo.svg" alt="" />
+                </a>
+
+            </div>
+            <!-- Collapsible wrapper -->
+
+            <!-- Right elements -->
+            <div>
+                <button
+                    class="
+            navbar-toggler
+            text-gray-500
+            border-0
+            hover:shadow-none hover:no-underline
+            py-2
+            px-2.5
+            bg-transparent
+            focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+        "
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+
+
+
+            <div class="collapse navbar-collapse flex items-center relative" id="navbarSupportedContent">
+
+
+                <div>
+                    <ul class="navbar-nav flex justify-end flex-col pl-0 list-style-none mr-auto">
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/careers" target="sib_website">
+                                <span class="px-2">Careers</span></a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/contact" target="sib_website">
+                                <span class="px-2">Contact</span></a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/directory" target="sib_website">
+                                <span class="px-2">Directory</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200
+                                         "
+                                href="https://www.sib.swiss/training/upcoming-training-courses">
+                                <span class="px-2">
+                                    Training courses
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200
+                                         "
+                                    href="https://www.sib.swiss/training/e-learning">
+                                <span class="px-2">e-learning</span></a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200
+                                     "
+                                href="https://www.sib.swiss/training/training-materials">
+                                <span class="px-2">Course materials</span></a>
+                        </li>
+                        
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/training/in-silico-talks" target="sib_website">
+                                <span class="px-2">In silico talks</span></a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/training/who-can-benefit" target="sib_website">
+                                <span class="px-2">Who can benefit</span></a>
+                        </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link py-4 inline-block text-gray-600  no-underline hover:bg-gray-200 focus:bg-gray-200"
+                                href="https://www.sib.swiss/training/training-group" target="sib_website">
+                                <span class="px-2">Training group</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
+    </nav>
+
+</header>
+
+    <div id="app">
+            <div class="course_page">
+
+        <h1 class="text-center text-2xl sm:text-3xl font-bold mt-6 mb-4 px-4">
+            <img class="w-16 inline mr-3" src="https://www.sib.swiss/training/images/course-black.svg" alt="">
+            <span class="block lg:inline">Docker and Singularity for Reproducible Research: Getting Started with Containers</span>
+        </h1>
+
+        <div class="container mx-auto">
+            <div class="border-2 border-black rounded-sm">
+                <div class="lg:flex justify-between py-8 pl-4 lg:pl-12 pr-24">
+                    <div class="lg:w-1/4 text-xl">
+                        <div class="flex">
+                            <div class="w-16">
+                                <img class="w-8 inline mr-3" src="https://www.sib.swiss/training/images/calendar.svg" alt="">
+                            </div>
+                            <div>
+                                <div class="font-bold">26 April 2023</div>
+                                <div class="flex align-middle mb-4">
+                                    <img class="w-3 inline mr-1"
+                                        src="https://www.sib.swiss/training/images/streamed.svg"
+                                        alt="">
+                                    Streamed
+                                </div>
+
+
+                                                                    Application deadline:
+                                    <br>12 April 2023
+                                    <br>
+                                    <br>
+                                                                                                    Cancellation deadline:
+                                    <br>12 April 2023
+                                
+                            </div>
+                        </div>
+
+                        <div class="flex mt-4">
+
+                            <div class="w-16 shrink-0">
+                                <img class="w-8 inline mr-3" src="https://www.sib.swiss/training/images/course-black.svg" alt="">
+                            </div>
+                            <div>Geert van Geest</div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="mt-8 lg:mt-0 lg:w-1/4 uppercase flex flex-col justify-between text-xl">
+                        <div class="pb-4 flex">
+                            <div class="w-16 shrink-0">
+                                <img class="w-8 inline mr-3" src="https://www.sib.swiss/training/images/eprouvette.svg" alt="">
+                            </div>
+                                                            <div>
+                                                                            <div>
+                                            Data management
+                                        </div>
+                                                                            <div>
+                                            Programming and Computing Techniques
+                                        </div>
+                                                                    </div>
+                                                    </div>
+
+                                                    <div class="py-4 flex">
+                                <div class="w-16">
+                                    <img class="w-8" src="https://www.sib.swiss/training/images/level.svg" alt="">
+                                </div>
+                                <div>
+                                    Beginner
+                                </div>
+                            </div>
+                        
+                        <div class="py-4 flex">
+                            <div class="w-16">
+                                <img class="w-8" src="https://www.sib.swiss/training/images/money.svg" alt="">
+                            </div>
+                            <div>
+                                ACADEMIC: 100 CHF
+                                <br>
+                                FOR-PROFIT: 500 CHF
+                            </div>
+                        </div>
+
+
+
+                                                    <div class="py-4 flex">
+                                <div class="w-16">
+                                    ECTS
+                                </div>
+                                <div>
+                                    0.25 credits
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                    <div class="lg:w-1/4">
+
+                                                                                    <div>
+                                    Check out the
+                                    <br>
+                                    <a href="https://sib-swiss.github.io/containers-introduction-training/latest/" target="_blank">Course material</a>
+                                </div>
+                                <br>
+                                <br>
+                            
+                            
+
+                            <br><br>
+                                                            Next course(s):
+                                <table class="table-auto">
+                                                                            <tr>
+                                            <td class="w-28">
+                                                <a class="text-sm course_instance upcoming"
+                                                    href="https://www.sib.swiss/training/course/20231013_DOCK">
+                                                    13 Oct 2023
+                                                </a>
+                                            </td>
+                                            <td class="w-12 text-right pr-1">
+                                                <img class="inline w-6" alt=""
+                                                    src="https://www.sib.swiss/training/images/streamed.svg" />
+                                            </td>
+                                            <td>
+                                                Streamed
+                                            </td>
+                                        </tr>
+                                                                    </table>
+                            
+                                            </div>
+                </div>
+            </div>
+
+
+            <div class="py-16 px-2 lg:px-0">
+                <!-- span style="color: red;">**This course is now full.** You can still apply, in which case your application will be put onto the waiting list and you will be recontacted IF and ONLY IF a seat becomes available. Thank you for your understanding.</span-->
+<!-- **<span style="color: red;">This course is now full with a long waiting list. If you do not want to miss your chance to be part of the next session and remain informed about all training activities at SIB, we highly recommend you to keep an eye on our list of[ upcoming events](https://www.sib.swiss/training/upcoming-training-courses) and subscribe to our [courses mailing list here](https://lists.sib.swiss/mailman/listinfo/courses) (if not yet done). Thank you for your understanding. </span>**-->
+<h1>Overview</h1>
+<p>Reproducible analysis in bioinformatics goes beyond good documentation and sharing code. Often, analyses depend on an entire environment with many different programs, libraries and settings. For the sake of reproducibility, but also for productivity, you might want to store, reuse, and share your environments using container software such as Docker and Singularity. Containerization is a lightweight and scalable way of working with such isolated environments. For example, with Docker you can develop, store and manage environments based on Linux operating systems which can run in mostly any computer.</p>
+<p>Often, bioinformatic calculations also require large memory and CPU resources, therefore you might want to use a shared computer environment (e.g. a HPC cluster). However, to run Docker you need to have privileged rights (i.e. as root), which is not the case for Singularity, a program that enables you to run environments from a wide range of resources (including Docker) in a safe manner without the need for privileged access. Combining Singularity and Docker thus makes you extremely flexible in how, when and where you use your computer environments and those of others.</p>
+<p>To introduce you to working with containers in the context of bioinformatics research, we will take a practical approach with several hands-on exercises to go through the basics of using, developing and sharing containers.</p>
+<p>The course materials can be found in the dedicated <a href="https://sib-swiss.github.io/containers-introduction-training/latest/">GitHub page</a>.</p>
+<h1>Audience</h1>
+<p>This course is addressed to bioinformaticians and life scientists that are doing bioinformatic analyses and want to get introduced to containers.</p>
+<h1>Learning outcomes</h1>
+<p>At the end of the course, the participants are expected to:</p>
+<ul>
+<li>Understand the basic concepts and terminology associated with virtualization with containers</li>
+<li>Customize, store, manage and share containerized environments with Docker</li>
+<li>Describe and understand the essential differences between Docker and Singularity</li>
+<li>Use Singularity to run containers on a shared computer environment (e.g. a HPC cluster)</li>
+</ul>
+<h1>Prerequisites</h1>
+<h5>Knowledge / competencies</h5>
+<p>This course is designed for those interested to work with containers in the context of bioinformatics. Practical experience on the basic UNIX commands is required. You can test your skills with Unix with the quiz <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2BEWeOKLbIRGBT_aDEGPce1FOaVYBbhBiaqcaHoBKNB27MQ/viewform?usp=sf_link">here</a>. If you do not feel comfortable with UNIX commands, you can refresh your knowledge with our <a href="https://edu.sib.swiss/course/view.php?id=82">Unix fundamentals</a> e-learning module.</p>
+<h5>Technical</h5>
+<p>You are required to bring your own laptop with <a href="https://docs.docker.com/get-docker/">Docker pre-installed</a>, and have created an account on <a href="https://hub.docker.com/">dockerhub</a>. Note that you need admin rights in your computer to install and use Docker. In addition, Windows users require a recent version of <a href="https://docs.docker.com/docker-for-windows/install/">Windows</a>.</p>
+<h1>Schedule</h1>
+<p>The schedule and course material are in the dedicated <a href="https://sib-swiss.github.io/containers-introduction-training/latest/course_schedule/">GitHub page</a>.</p>
+<h1>Application</h1>
+<!--<span style="color: red;">**This course is now full.** You can still apply, in which case your application will be put onto the waiting list and you will be recontacted IF and ONLY IF a seat becomes available. Thank you for your understanding.</span> -->
+<!--**<span style="color: red;">This course is now full with a long waiting list.</span>**-->
+<p>SIB courses usually open for applications 1-2 months before the course takes place. If not yet done, I suggest you sign up for our mailing list <a href="https://lists.sib.swiss/mailman/listinfo/courses">here</a> so that you are informed when the courses accept applications as some courses fill up very quickly.</p>
+<p>Registration fees for academics are <strong>100 CHF</strong> and <strong>500 CHF</strong> for for-profit companies. While participants are registered on a first come, first served basis, exceptions may be made to ensure diversity and equity, which may increase the time before your registration is confirmed.</p>
+<p>Applications will close as soon as the places will be filled up. Deadline for free-of-charge cancellation is set to <strong>12/04/2023</strong>. Cancellation after this date will not be reimbursed.</p>
+<p>You will be informed by email of your registration confirmation. Upon reception of the confirmation email, participants will be asked to confirm attendance by paying the fees within 5 days.</p>
+<h1>Venue and Time</h1>
+<p>This course will only be streamed.</p>
+<!-- University of Lausanne, [Génopode building](https://planete.unil.ch/plan/), (Metro M1 line, Sorge station).
+University of Basel, Klingelbergstrasse 61, Sky Lounge Biozentrum Annex, 13th Floor.
+Universität Bern, room 331 / 3. OG West, Hochschulstrasse 4.
+University of Fribourg, [Building Pérolles PER21](http://www.unifr.ch/map/fr/perolles.php), room D130.
+University of Geneva, Centre Médical Universitaire (CMU). -->
+<p>The course will start at 9:00 CET and end around 17:00 CET. Precise information will be provided to the participants in due time.</p>
+<h1>Additional information</h1>
+<p>Coordination: Diana Marek</p>
+<p>We will recommend 0.25 ECTS credits for this course (given a passed exam at the end of the course).</p>
+<p>You are welcome to register to the SIB courses mailing list to be informed of all future courses and workshops, as well as all important deadlines using the form <a href="https://lists.sib.swiss/mailman/listinfo/courses">here</a>.</p>
+<p>Please note that participation in SIB courses is subject to our <a href="http://www.sib.swiss/training/terms-and-conditions">general conditions</a>.</p>
+<p>SIB abides by the <a href="https://elixir-europe.org/events/code-of-conduct">ELIXIR Code of Conduct</a>. Participants of SIB courses are also required to abide by the same code.</p>
+<p>For more information, please contact <a href="mailto://training@sib.swiss">training@sib.swiss</a>.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- leas us you email modal -->
+    <div class="
+        modal
+        fade
+        fixed
+        top-0
+        left-0
+        hidden
+        w-full
+        h-full
+        outline-none
+        overflow-x-hidden overflow-y-auto
+      "
+        id="modalLeaveUsEmail" tabindex="-1" aria-labelledby="modalLeaveUsEmail" aria-modal="true" role="dialog">
+        <div
+            class="
+          modal-dialog modal-dialog-centered modal-dialog-scrollable
+          relative
+          w-auto
+          pointer-events-none
+        ">
+            <div
+                class="
+            modal-content
+            border-none
+            shadow-lg
+            relative
+            flex flex-col
+            w-full
+            pointer-events-auto
+            bg-white bg-clip-padding
+            rounded-md
+            outline-none
+            text-current
+          ">
+                <div
+                    class="
+              modal-header
+              flex flex-shrink-0
+              items-center
+              justify-between
+              p-4
+              border-b border-gray-200
+              rounded-t-md
+            ">
+                    <h5 class="text-xl font-medium leading-normal text-gray-800" id="modalLeaveUsEmailLabel">
+                        Leave us your email
+                    </h5>
+                    <button type="button"
+                        class="
+                btn-close
+                box-content
+                w-4
+                h-4
+                p-1
+                text-black
+                border-none
+                rounded-none
+                opacity-50
+                focus:shadow-none focus:outline-none focus:opacity-100
+                hover:text-black hover:opacity-75 hover:no-underline
+              "
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body relative p-4">
+                    <iframe src="https://www.sib.swiss/form/embed.php?id=51040"
+                        style="width: 100%; height: 375px; border: none; overflow: hidden;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <footer>
+        <div class="container mx-auto">
+
+            <div class="px-1 lg:flex justify-between">
+
+                <div class="lg:w-1/3">
+                    <h2>About SIB</h2>
+                    The SIB Swiss Institute of Bioinformatics is an internationally recognized non-profit organization,
+                    dedicated to biological and biomedical data science. The institute contributes to keeping
+                    Switzerland at the forefront of innovation by fostering progress in biological research and
+                    enhancing health.
+                    <br><br>
+                    <a href="https://www.sib.swiss" target="sib_website">What we do »</a>
+                </div>
+
+                <div class="mt-16 lg:mt-0 lg:w-1/3">
+                    <h2>About Training</h2>
+                    The SIB Training courses ensure that bioinformaticians and life scientists make the best of the
+                    latest advances in the field of computational biology.
+                    <br><br>
+                    <a href="https://www.sib.swiss/training/training-group">What we do »</a>
+                </div>
+
+                <div class="mt-16 lg:mt-0">
+                    <h2>Contact</h2>
+
+                    Quartier Sorge - Batiment Amphipole<br>
+                    1015 Lausanne / Switzerland
+                    <br><br>
+                    Tel: +41 21 692 40 50
+                    <br><br>
+                    <a href="mailto:training@sib.swiss">Contact us »</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <h2>Partners</h2>
+                <ul>
+                    <li><a href="http://www.elixir-europe.org/" target="sib"> <img
+                                src="https://www.sib.swiss/templates/sib/images/partners/logo_elixir.svg"
+                                alt="Elixir Switzerland" style="width: 119px; height: 58px;"> </a></li>
+                    <li><a href="https://www.fao.org/home/en" target="blank"> <img
+                                src="https://www.sib.swiss/templates/sib/images/partners/logo_food_agricultur.png"
+                                alt="Food and Agriculture Organization" class="d-none d-md-inline-block"></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    <button type="button"
+        class="btn-back-to-top hidden fixed bg-white text-sib_blue bottom-12 right-8 rounded-full p-2 shadow-md opacity-60"
+        title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false"
+            data-prefix="far" data-icon="arrow-alt-circle-up" class="w-6 h-6">
+            <path fill="currentColor"
+                d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
+        </svg>
+    </button>
+
+    <script src="https://www.sib.swiss/training/js/website.js?id=58d2fd5886e225ef8dffd70244f8e41f" defer></script>
+    </body>
+
+</html>
