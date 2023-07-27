@@ -198,4 +198,28 @@ class ExtractionTest < Test::Unit::TestCase
     sample = events.detect { |e| e[:start] = '2023-04-26' }
     assert sample[:online]
   end
+
+  test 'tolerates analytics script tags' do
+    file = fixture_file('proteomicsml.html')
+    base_uri = 'https://proteomicsml.org/'
+
+    extractor = Tess::Rdf::LearningResourceExtractor.new(file.read, :rdfa, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.detect { |r| r[:url] == base_uri }
+    assert_equal params[:url], 'https://proteomicsml.org/'
+    assert_equal 'ProteomicsML', params[:title]
+    assert params[:description].include?('ProteomicsML provides ready-made datasets')
+    assert_equal 'https://spdx.org/licenses/CC-BY-4.0.html', params[:licence]
+    assert_equal ['http://edamontology.org/0121', 'http://edamontology.org/3474',
+                  'http://edamontology.org/data_2536', 'http://edamontology.org/data_3670',
+                  'http://edamontology.org/topic_0091'].sort,
+                 params[:scientific_topic_uris].sort
+    assert_equal ['bioinformatics', 'community platform', 'deep learning', 'detectability', 'educational platform',
+                  'fragmentation', 'ion mobility', 'machine learning', 'proteomics', 'retention time'].sort,
+                 params[:keywords].sort
+    assert_equal ['PhD students', 'Postdoctoral researchers', 'Students'].sort, params[:target_audience].sort
+    assert_equal ['tutorials'], params[:resource_type]
+  end
 end

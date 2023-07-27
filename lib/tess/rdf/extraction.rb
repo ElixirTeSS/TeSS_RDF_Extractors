@@ -1,6 +1,14 @@
 module Tess
   module Rdf
     module Extraction
+      RDF::Reader
+      # Workaround for https://github.com/ruby-rdf/rdf-rdfa/issues/32
+      class DummyReader
+        def initialize(*args); end
+        def to_sym; :dummy_reader; end
+        def new(*args); []; end
+      end
+
       attr_reader :_graph
 
       def initialize(source, format, base_uri: nil)
@@ -14,6 +22,12 @@ module Tess
           end
 
           JSON::LD::Context.add_preloaded('http://schema.org/', ctx)
+        end
+        # Workaround for https://github.com/ruby-rdf/rdf-rdfa/issues/32
+        if @reader.is_a?(RDF::RDFa::Reader)
+          readers = @reader.instance_variable_get(:@readers) || {}
+          readers['text/plain'] = DummyReader.new
+          @reader.instance_variable_set(:@readers, readers)
         end
       end
 
