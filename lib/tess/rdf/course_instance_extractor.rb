@@ -1,6 +1,11 @@
 module Tess
   module Rdf
     class CourseInstanceExtractor < EventExtractor
+      def transform(params)
+        params[:event_types] = [:workshops_and_courses]
+        super(params)
+      end
+
       def self.type_query
         RDF::Query.new do
           pattern RDF::Query::Pattern.new(:individual, RDF.type, RDF::Vocab::SCHEMA.CourseInstance)

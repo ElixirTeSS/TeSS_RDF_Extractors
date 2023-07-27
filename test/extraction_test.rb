@@ -14,6 +14,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "https://www.ebi.ac.uk/training/events/interproscan", interpro[:url]
     assert_equal ["InterProScan", "Proteins (proteins)"], interpro[:keywords].sort
     assert_equal ["Function analysis", "Gene and protein families", "Protein domain", "Protein sequence", "Protein sequence analysis"].sort, interpro[:scientific_topic_names].sort
+    assert_nil interpro[:event_types]
   end
 
   test 'extract courses from json-ld' do
@@ -39,7 +40,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "CB10 1SD", rna_seq[:postcode]
     assert_equal "GB", rna_seq[:country]
     assert_equal "Cambridge", rna_seq[:county]
-
+    assert_equal [:workshops_and_courses], rna_seq[:event_types]
   end
 
   test 'extract events from HTML' do
@@ -129,6 +130,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal '30', params[:capacity]
     refute params.key?(:scientific_topic_names)
     refute params.key?(:keywords)
+    assert_equal [:workshops_and_courses], params[:event_types]
   end
 
   test 'extract course instance IFB JSON-LD (HTTP)' do
