@@ -21,7 +21,8 @@ module Tess
       end
 
       def self.array_attributes
-        [:scientific_topic_names, :scientific_topic_uris, :keywords, :authors, :target_audience, :resource_type, :contributors]
+        [:scientific_topic_names, :scientific_topic_uris, :keywords, :authors, :target_audience, :resource_type,
+         :contributors, :node_names]
       end
 
       def self.type_query
@@ -61,7 +62,8 @@ module Tess
             end,
             *difficulty_level_queries(material_uri),
             *audience_queries(material_uri),
-            *topic_queries(material_uri)
+            *topic_queries(material_uri),
+            node_query(material_uri)
         ]
       end
     end

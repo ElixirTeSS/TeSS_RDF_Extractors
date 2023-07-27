@@ -36,6 +36,10 @@ module Tess
           params[:keywords] = params[:keywords].first.split(',').map(&:strip)
         end
 
+        if params[:node_names]&.any?
+          params[:node_names].map! { |n| n.sub(/ELIXIR\s?/i, '') }
+        end
+
         params
       end
 

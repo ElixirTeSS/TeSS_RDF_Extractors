@@ -111,6 +111,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ["Students"], params[:target_audience]
     assert_equal ["slides"], params[:resource_type]
     assert_equal ["Bérénice Batut", "Saskia Hiltemann"], params[:contributors]
+    assert params[:node_names].include?('Belgium')
   end
 
   test 'extract course instance IFB JSON-LD (HTTPS)' do
@@ -167,6 +168,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal '2022-08-25', params[:end]
     assert_equal ['training', 'biostatistics', 'raphael gottardo group'].sort, params[:keywords].sort
     assert_equal 'Patricia Palagi', params[:organizer]
+    assert params[:node_names].include?('Switzerland')
   end
 
   test 'handle JSON-LD containing https://schema prefix instead' do

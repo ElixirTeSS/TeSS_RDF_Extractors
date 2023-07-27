@@ -44,6 +44,14 @@ module Tess
           end
         ]
       end
+
+      def node_query(uri)
+        RDF::Query.new do
+          pattern RDF::Query::Pattern.new(uri, RDF::Vocab::SCHEMA.provider, :providers)
+          pattern RDF::Query::Pattern.new(:providers, RDF.type, RDF::Vocab::SCHEMA.Organization)
+          pattern RDF::Query::Pattern.new(:providers, RDF::Vocab::SCHEMA.name, :node_names, optional: true)
+        end
+      end
     end
   end
 end

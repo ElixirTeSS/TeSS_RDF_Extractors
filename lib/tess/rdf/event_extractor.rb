@@ -35,7 +35,8 @@ module Tess
       end
 
       def self.array_attributes
-        [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors, :course_mode]
+        [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors, :course_mode,
+         :node_names]
       end
 
       def self.type_query
@@ -122,7 +123,8 @@ module Tess
             pattern RDF::Query::Pattern.new(:contact_details, RDF::Vocab::SCHEMA.name, :contact_name, optional: true)
           end,
           *audience_queries(uri),
-          *topic_queries(uri)
+          *topic_queries(uri),
+          node_query(uri)
         ]
       end
     end
