@@ -224,4 +224,34 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ['PhD students', 'Postdoctoral researchers', 'Students'].sort, params[:target_audience].sort
     assert_equal ['tutorials'], params[:resource_type]
   end
+
+  test 'online flag' do
+    base_uri = 'https://www.ebi.ac.uk/api/v1/ebi-training-courses-tess?source=trainingcontenthub'
+
+    # online courseMode
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(fixture_file('ebi-course-online.json'), :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal 'https://www.ebi.ac.uk/training/events/plant-genomes-data-discovery', params[:url]
+    assert_true params[:online], 'online flag should be present and set to true'
+
+    # Non-online courseMode
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(fixture_file('ebi-course-face-to-face.json'), :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal 'https://www.ebi.ac.uk/training/events/ccpbiosim-workshop-structural-bioinformatics-resources-and-tools-molecular-dynamics-simulations', params[:url]
+    assert_false params[:online], 'online flag should be present and set to false'
+
+    # No courseMode provided
+    e = JSON.parse(fixture_file('ebi-course-face-to-face.json').read)
+    e['hasCourseInstance'].each { |ci| ci.delete('courseMode') }
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(JSON.generate(e), :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal 'https://www.ebi.ac.uk/training/events/ccpbiosim-workshop-structural-bioinformatics-resources-and-tools-molecular-dynamics-simulations', params[:url]
+    refute params.key?(:online), 'online flag should not be present'
+  end
 end

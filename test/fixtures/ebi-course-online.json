@@ -1,0 +1,37 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Course",
+  "name": "Plant genomes: from data to discovery",
+  "description": "<p>This course is currently under development, please check back again soon for further details.</p>\r\n",
+  "url": "https://www.ebi.ac.uk/training/events/plant-genomes-data-discovery",
+  "keywords": "",
+  "provider": {
+    "@type": "Organization",
+    "name": null,
+    "url": "",
+    "email": ""
+  },
+  "audience": "Academics, Bioinformaticians, Biologists, Chemists, Core facility managers, Graduate students, Industry, Life science researchers, Master students, PhD students, Physicians, Principal investigators, Postdoctoral researchers, Staff scientists, Industry scientists, Clinical researchers",
+  "hasCourseInstance": [
+    {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "location": {
+        "@type": "Place",
+        "name": null,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": null,
+          "addressCountry": null,
+          "addressRegion": null,
+          "postalCode": null
+        }
+      },
+      "url": "https://www.ebi.ac.uk/training/events/plant-genomes-data-discovery",
+      "startDate": "2024-11-18",
+      "endDate": "2024-11-22",
+      "maximumAttendeeCapacity": "30",
+      "organizer": "European Bioinformatics Institute (EBI)"
+    }
+  ]
+}

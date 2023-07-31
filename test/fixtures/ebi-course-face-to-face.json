@@ -1,0 +1,43 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Course",
+  "name": "CCPBioSim workshop: structural bioinformatics resources and tools for molecular dynamics simulations",
+  "description": "<p><span><span><span><span><span><span>This introductory workshop will provide hands-on training on protein and structural bioinformatics resources in the context of molecular dynamics, biomolecular modelling, and simulations. The workshop is sponsored by the Collaborative Computational Project for Biomolecular Simulation (</span></span></span></span></span></span><a href=\"https://www.ccpbiosim.ac.uk/\"><span><span><span><span><span><span><span><span>CCPBioSim</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>).</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Participants will gain knowledge and skills for searching, selecting, and assessing publicly available protein biodata for use in downstream methods relating to biomolecular modelling and molecular dynamics simulations. The workshop will begin with an introduction to basic concepts in genomics and associated resources, then to protein resources, their uses and limitations, and validation of both experimentally and predicted protein structures.&nbsp;</span></span></span></span></span></span></p>\r\n\r\n<p><span><span><span><span><span><span>Finally, the workshop will cover variant effect prediction and offer participants hands-on group projects to bring together the previous days’ training with highly-experienced mentors. During this time, participants will work with simulated datasets to answer small research questions, then present findings thereafter. Participants will also get the chance to network with one another, trainers, and workshop organisers.</span></span></span></span></span></span></p>\r\n",
+  "url": "https://www.ebi.ac.uk/training/events/ccpbiosim-workshop-structural-bioinformatics-resources-and-tools-molecular-dynamics-simulations",
+  "keywords": "",
+  "provider": {
+    "@type": "Organization",
+    "name": "European Bioinformatics Institute",
+    "url": "",
+    "email": ""
+  },
+  "audience": "Academics, Bioinformaticians, Biologists, Chemists, Core facility managers, Graduate students, Industry, Life science researchers, Master students, PhD students, Physicians, Principal investigators, Postdoctoral researchers, Staff scientists, Industry scientists, Clinical researchers",
+  "hasCourseInstance": [
+    {
+      "@type": "CourseInstance",
+      "courseMode": "Face-to-face",
+      "location": {
+        "@type": "Place",
+        "name": "European Bioinformatics Institute",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hinxton",
+          "addressCountry": "GB",
+          "addressRegion": "Cambridge",
+          "postalCode": "CB10 1SD"
+        }
+      },
+      "url": "https://www.ebi.ac.uk/training/events/ccpbiosim-workshop-structural-bioinformatics-resources-and-tools-molecular-dynamics-simulations",
+      "startDate": "2023-09-19",
+      "endDate": "2023-09-22",
+      "maximumAttendeeCapacity": "30",
+      "organizer": "European Bioinformatics Institute (EBI)",
+      "instructor": [
+        {
+          "@type": "Person",
+          "name": "Piv Gopalasingam"
+        }
+      ]
+    }
+  ]
+}

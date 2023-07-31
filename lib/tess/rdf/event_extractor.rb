@@ -19,7 +19,9 @@ module Tess
         params[:contact] = contact.join(' - ') unless contact.empty?
 
         course_mode = params.delete(:course_mode) || []
-        params[:online] = true if course_mode.include?('online')
+        if course_mode.any?
+          params[:online] = course_mode.any? { |c| c =~ /\s*online\s*/i }
+        end
 
         extract_topics(params)
 
