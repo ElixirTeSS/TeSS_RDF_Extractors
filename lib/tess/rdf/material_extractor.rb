@@ -9,6 +9,12 @@ module Tess
         doi = params.delete(:doi)
         params[:doi] = doi if doi && doi =~ /10\.\d{4,}/
 
+        competency_required = params.delete(:competency_required)
+        params[:prerequisites] = markdownify_list(competency_required) if competency_required
+
+        teaches = params.delete(:teaches)
+        params[:learning_objectives] = markdownify_list(teaches) if teaches
+
         extract_topics(params)
 
         super(params)
@@ -17,12 +23,13 @@ module Tess
       private
 
       def self.singleton_attributes
-        [:url, :title, :description, :licence, :remote_created_date, :difficulty_level, :doi]
+        [:url, :title, :description, :licence, :remote_created_date, :difficulty_level, :doi, :version,
+         :date_created, :date_modified, :date_published, :status]
       end
 
       def self.array_attributes
         [:scientific_topic_names, :scientific_topic_uris, :keywords, :authors, :target_audience, :resource_type,
-         :contributors, :node_names]
+         :contributors, :node_names, :competency_required, :teaches]
       end
 
       def self.type_query
@@ -43,6 +50,10 @@ module Tess
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.license, :licence, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.learningResourceType, :resource_type, optional: true)
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.identifier, :doi, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.version, :version, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.competencyRequired, :competency_required, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.teaches, :teaches, optional: true)
+              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.creativeWorkStatus, :status, optional: true)
             end,
             RDF::Query.new do
               pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.genre, :scientific_topics)

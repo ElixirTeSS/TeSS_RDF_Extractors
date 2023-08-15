@@ -160,6 +160,13 @@ module Tess
         params
       end
 
+      def markdownify_list(array)
+        if array.length > 1
+          array.map { |c| " * #{c}" }.join("\n")
+        else
+          array.first
+        end
+      end
     end
   end
 end

@@ -17,6 +17,8 @@ module Tess
         [
           RDF::Query.new do
             pattern RDF::Query::Pattern.new(course_instance_uri, RDF::Vocab::SCHEMA.courseMode, :course_mode, optional: true)
+            pattern RDF::Query::Pattern.new(course_instance_uri, RDF::Vocab::SCHEMA.coursePrerequisites, :prereqs, optional: true)
+            pattern RDF::Query::Pattern.new(course_instance_uri, RDF::Vocab::SCHEMA.teaches, :teaches, optional: true)
           end
         ] + super
       end

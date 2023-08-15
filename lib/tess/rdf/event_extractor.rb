@@ -23,6 +23,12 @@ module Tess
           params[:online] = course_mode.any? { |c| c =~ /\s*online\s*/i }
         end
 
+        prereqs = params.delete(:prereqs)
+        params[:prerequisites] = markdownify_list(prereqs) if prereqs
+
+        teaches = params.delete(:teaches)
+        params[:learning_objectives] = markdownify_list(teaches) if teaches
+
         extract_topics(params)
 
         super(params)
@@ -38,7 +44,7 @@ module Tess
 
       def self.array_attributes
         [:keywords, :scientific_topic_names, :scientific_topic_uris, :host_institutions, :sponsors, :course_mode,
-         :node_names]
+         :node_names, :prereqs, :teaches]
       end
 
       def self.type_query
