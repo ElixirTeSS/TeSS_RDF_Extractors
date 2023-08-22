@@ -171,6 +171,7 @@ module Tess
 
       def extract_location(subject: resource)
         postal_address_query = [
+          [:postal_address, RDF.type, RDF::Vocab::SCHEMA.PostalAddress],
           [:postal_address, RDF::Vocab::SCHEMA.name, :venue, { optional: true }],
           [:postal_address, RDF::Vocab::SCHEMA.streetAddress, :street_address, { optional: true }],
           [:postal_address, RDF::Vocab::SCHEMA.addressLocality, :locality, { optional: true }],
@@ -194,7 +195,8 @@ module Tess
           [subject, RDF::Vocab::SCHEMA.location, :postal_address],
           *postal_address_query).first
 
-        location ||= {}
+        # Text
+        location ||= { venue: extract_value(RDF::Vocab::SCHEMA.location) }
 
         # VirtualLocation
         virtual = query(

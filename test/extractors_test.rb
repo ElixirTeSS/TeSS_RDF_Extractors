@@ -83,6 +83,19 @@ class ExtractorsTest < Test::Unit::TestCase
     assert_empty location
   end
 
+  test 'extract location from Text' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "location": "Somewhere cool"
+}])
+    location = course_instance_extractor(json).send(:extract_location)
+    assert_equal "Somewhere cool", location.delete(:venue)
+    assert_empty location
+  end
+
   test 'extract coursePrerequisites' do
     json = %(
 [{
