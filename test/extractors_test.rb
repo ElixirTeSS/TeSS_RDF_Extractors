@@ -124,6 +124,57 @@ class ExtractorsTest < Test::Unit::TestCase
                  " * [Course Object](https://example.com/course)", course_extractor(json).send(:extract_course_prerequisites)
   end
 
+  test 'extract keywords from comma-separated string' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "Course",
+  "name": "Dummy Course",
+  "keywords": "a, b, c",
+  "hasCourseInstance": [{"@type" : "CourseInstance"}]
+}])
+    assert_equal ['a', 'b', 'c'], course_extractor(json).send(:extract_keyword_like, RDF::Vocab::SCHEMA.keywords)
+  end
+
+  test 'extract keywords from DefinedTerms and Text' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "Course",
+  "name": "Dummy Course",
+  "keywords": [{
+    "@type": "DefinedTerm",
+    "name": "a"
+  }, "b", "c"],
+  "hasCourseInstance": [{"@type" : "CourseInstance"}]
+}])
+    assert_equal ['a', 'b', 'c'], course_extractor(json).send(:extract_keyword_like, RDF::Vocab::SCHEMA.keywords)
+  end
+
+  test 'extract audience' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "Course",
+  "name": "Dummy Course",
+  "audience": [
+    {
+      "@type": "EducationalAudience",
+      "educationalRole": "students"
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "people"
+    },
+    {
+      "@type": "Audience",
+      "name": "researchers"
+    }
+  ],
+  "hasCourseInstance": [{"@type" : "CourseInstance"}]
+}])
+    assert_equal ['students', 'people', 'researchers'], course_extractor(json).send(:extract_audience)
+  end
 
   private
 
