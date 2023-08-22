@@ -2,80 +2,43 @@ module Tess
   module Rdf
     class MaterialExtractor
       include Tess::Rdf::Extraction
-      extend Tess::Rdf::SharedQueries
 
-      def transform(params)
-        # Rough check to see if the DOI is actually a DOI
-        doi = params.delete(:doi)
-        params[:doi] = doi if doi && doi =~ /10\.\d{4,}/
+      def extract_params
+        params = super
 
-        competency_required = params.delete(:competency_required)
-        params[:prerequisites] = markdownify_list(competency_required) if competency_required
+        legacy_topics = query([resource, RDF::Vocab::SCHEMA.genre, :scientific_topics],
+              [:scientific_topics, RDF::RDFS.label, :scientific_topic_names]).map { |v| v[:scientific_topic_names] }
+        if legacy_topics.any?
+          params[:scientific_topic_names] ||= []
+          params[:scientific_topic_names] |= legacy_topics
+        end
 
-        teaches = params.delete(:teaches)
-        params[:learning_objectives] = markdownify_list(teaches) if teaches
+        params[:prerequisites] = markdownify_list extract_names_or_values(RDF::Vocab::SCHEMA.competencyRequired)
+        params[:learning_objectives] = markdownify_list extract_names_or_values(RDF::Vocab::SCHEMA.teaches)
 
-        extract_topics(params)
+        params[:licence] = extract_value(RDF::Vocab::SCHEMA.license)
+        params[:remote_created_date] = extract_value(RDF::Vocab::DC.date)
+        params[:difficulty_level] = extract_names_or_values(RDF::Vocab::SCHEMA.educationalLevel).first
+        identifier = extract_value(RDF::Vocab::SCHEMA.identifier)
+        params[:doi] = identifier if identifier && identifier =~ /10\.\d{4,}/
+        params[:version] = extract_value(RDF::Vocab::SCHEMA.version)
+        params[:date_created] = extract_value(RDF::Vocab::SCHEMA.dateCreated)
+        params[:date_modified] = extract_value(RDF::Vocab::SCHEMA.dateModified)
+        params[:date_published] = extract_value(RDF::Vocab::SCHEMA.datePublished)
+        params[:status] = extract_value(RDF::Vocab::SCHEMA.creativeWorkStatus)
 
-        super(params)
-      end
+        params[:authors] = (extract_names(RDF::Vocab::SCHEMA.author) | extract_names(RDF::Vocab::SIOC.has_creator)).sort
+        params[:contributors] = extract_names(RDF::Vocab::SCHEMA.contributor)
+        params[:target_audience] = extract_audience
+        params[:resource_type] = extract_values(RDF::Vocab::SCHEMA.learningResourceType)
 
-      private
-
-      def self.singleton_attributes
-        [:url, :title, :description, :licence, :remote_created_date, :difficulty_level, :doi, :version,
-         :date_created, :date_modified, :date_published, :status]
-      end
-
-      def self.array_attributes
-        [:scientific_topic_names, :scientific_topic_uris, :keywords, :authors, :target_audience, :resource_type,
-         :contributors, :node_names, :competency_required, :teaches]
+        remove_blanks(params)
       end
 
       def self.type_query
         RDF::Query.new do
           pattern RDF::Query::Pattern.new(:individual, RDF.type, RDF::Vocab::SCHEMA.CreativeWork)
         end
-      end
-
-      def self.individual_queries(res)
-        material_uri = res.individual
-        [
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.name, :title, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.description, :description, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::DC.date, :remote_created_date, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.keywords, :keywords, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.url, :url, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.license, :licence, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.learningResourceType, :resource_type, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.identifier, :doi, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.version, :version, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.competencyRequired, :competency_required, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.teaches, :teaches, optional: true)
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.creativeWorkStatus, :status, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.genre, :scientific_topics)
-              pattern RDF::Query::Pattern.new(:scientific_topics, RDF::RDFS.label, :scientific_topic_names, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SIOC.has_creator, :author_obs)
-              pattern RDF::Query::Pattern.new(:author_obs, RDF::Vocab::SCHEMA.name, :authors, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.author, :author_obs)
-              pattern RDF::Query::Pattern.new(:author_obs, RDF::Vocab::SCHEMA.name, :authors, optional: true)
-            end,
-            RDF::Query.new do
-              pattern RDF::Query::Pattern.new(material_uri, RDF::Vocab::SCHEMA.contributor, :contributor_obs)
-              pattern RDF::Query::Pattern.new(:contributor_obs, RDF::Vocab::SCHEMA.name, :contributors, optional: true)
-            end,
-            *difficulty_level_queries(material_uri),
-            *audience_queries(material_uri),
-            *topic_queries(material_uri),
-            node_query(material_uri)
-        ]
       end
     end
   end

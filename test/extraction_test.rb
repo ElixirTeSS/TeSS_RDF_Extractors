@@ -77,7 +77,7 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 4, resources.count
     params = resources.detect { |r| r[:url] == base_uri }
-    assert_equal params[:url], "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html"
+    assert_equal "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html", params[:url]
     assert_equal "Hands-on for 'De Bruijn Graph Assembly' tutorial", params[:title]
     assert params[:description].start_with?('The questions this')
     assert_equal "https://spdx.org/licenses/CC-BY-4.0.html", params[:licence]
@@ -100,7 +100,7 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 2, resources.count
     params = resources.detect { |r| r[:url] == base_uri }
-    assert_equal params[:url], "https://training.galaxyproject.org/training-material/topics/metagenomics/slides/introduction.html"
+    assert_equal "https://training.galaxyproject.org/training-material/topics/metagenomics/slides/introduction.html", params[:url]
     assert_equal "Introduction to 'Metagenomics'", params[:title]
     assert_equal "Slides for Metagenomics", params[:description]
     assert_equal "https://spdx.org/licenses/CC-BY-4.0.html", params[:licence]
@@ -123,7 +123,7 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 1, resources.count
     params = resources.first
-    assert_equal params[:url], "https://www.france-bioinformatique.fr/formation/etbii/"
+    assert_equal "https://www.france-bioinformatique.fr/formation/etbii/", params[:url]
     assert_equal "Ecole Thématique de Bioinformatique Intégrative - session 2023 / Integrative Bioinforformatics training school - 2023 session", params[:title]
     assert params[:description].start_with?("Dans l’objectif de développer et fédérer")
     assert_equal '2023-01-16', params[:start]
@@ -143,7 +143,7 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 1, resources.count
     params = resources.first
-    assert_equal params[:url], "https://www.france-bioinformatique.fr/formation/etbii/"
+    assert_equal "https://www.france-bioinformatique.fr/formation/etbii/",  params[:url]
     assert_equal "Ecole Thématique de Bioinformatique Intégrative - session 2023 / Integrative Bioinforformatics training school - 2023 session", params[:title]
     assert params[:description].start_with?("Dans l’objectif de développer et fédérer")
     assert_equal '2023-01-16', params[:start]
@@ -210,7 +210,7 @@ class ExtractionTest < Test::Unit::TestCase
 
     assert_equal 1, resources.count
     params = resources.detect { |r| r[:url] == base_uri }
-    assert_equal params[:url], 'https://proteomicsml.org/'
+    assert_equal 'https://proteomicsml.org/', params[:url]
     assert_equal 'ProteomicsML', params[:title]
     assert params[:description].include?('ProteomicsML provides ready-made datasets')
     assert_equal 'https://spdx.org/licenses/CC-BY-4.0.html', params[:licence]

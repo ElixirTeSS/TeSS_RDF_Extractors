@@ -8,15 +8,22 @@ module Tess
         end
       end
 
-      # The CourseInstance is bound to `individual`, which we pass up to the events extractor.
-      # We take some basic metadata from the Course, but these will be overwritten if the same properties are defined on
-      # the CourseInstance.
-      def self.individual_queries(res)
-        course_uri = res.course
-        [
-            *difficulty_level_queries(course_uri),
-            *event_queries(course_uri)
-        ] + super
+      def extract_params
+        # Take some metadata from Course
+        course_params = {}
+        with_resource(course) do
+          course_params = super
+        end
+        course_params[:difficulty_level] ||=
+          extract_names_or_values(RDF::Vocab::SCHEMA.educationalLevel, subject: course).first
+
+        # ...and override with more specific metadata from CourseInstance
+        course_instance_params = super
+        course_params.merge(course_instance_params)
+      end
+
+      def course
+        @_resource&.course
       end
     end
   end
