@@ -93,6 +93,7 @@ module Tess
         params[:title] = extract_value(RDF::Vocab::SCHEMA.name)
         params[:description] = extract_value(RDF::Vocab::SCHEMA.description)
         params[:url] = extract_value(RDF::Vocab::SCHEMA.url)
+        params[:url] ||= resource.value if resource.is_a?(RDF::URI)
         params[:keywords] = extract_keyword_like(RDF::Vocab::SCHEMA.keywords)
         params[:node_names] = extract_nodes
         params.merge!(extract_topics)

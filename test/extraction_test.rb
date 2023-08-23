@@ -254,4 +254,20 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal 'https://www.ebi.ac.uk/training/events/ccpbiosim-workshop-structural-bioinformatics-resources-and-tools-molecular-dynamics-simulations', params[:url]
     refute params.key?(:online), 'online flag should not be present'
   end
+
+  test 'uses @id as url in json-ld' do
+    file = fixture_file('no-url.json')
+
+    extractor = Tess::Rdf::LearningResourceExtractor.new(file.read, :jsonld)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    rnacentral = resources.detect { |r| r[:url] == 'https://www.ebi.ac.uk/training/online/courses/rnacentral' }
+    assert_equal 'RNAcentral: Exploring non-coding RNAs', rnacentral[:title]
+    assert rnacentral[:description].include?('Non-coding RNAs (ncRNAs) are essential for all life')
+    assert_equal ['ncRNA', 'lncRNA', 'microRNA', 'Non-coding RNA'].sort, rnacentral[:keywords].sort
+    assert_equal ['Functional, regulatory and non-coding RNA', 'rna'].sort, rnacentral[:scientific_topic_names].sort
+    assert_equal ['PhD students', 'Clinicians'].sort, rnacentral[:target_audience].sort
+    assert_equal ['e-learning'], rnacentral[:resource_type].sort
+  end
 end

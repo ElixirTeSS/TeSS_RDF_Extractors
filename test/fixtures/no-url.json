@@ -1,0 +1,41 @@
+{
+  "@context": "http://schema.org",
+  "@type": "LearningResource",
+  "@id": "https://www.ebi.ac.uk/training/online/courses/rnacentral",
+  "dct:conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
+    "@type": "CreativeWork"
+  },
+  "description": "Non-coding RNAs (ncRNAs) are essential for all life and carry out a wide range of functions.&nbsp;RNAcentral is a database of ncRNA sequences that provides a unified access point to ncRNA annotations from more than forty&nbsp;member databases and helps provide insight into RNA function.\r\n",
+  "keywords": "ncRNA, lncRNA, microRNA, Non-coding RNA",
+  "name": "RNAcentral: Exploring non-coding RNAs",
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "edam:topic_0659",
+      "inDefinedTermSet": "http://edamontology.org",
+      "term_code": "topic_0659",
+      "name": "Functional, regulatory and non-coding RNA",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0659"
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "edam:format_1213",
+      "inDefinedTermSet": "http://edamontology.org",
+      "term_code": "format_1213",
+      "name": "rna",
+      "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Fformat_1213"
+    }
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": [
+      "PhD students",
+      "Clinicians"
+    ]
+  },
+  "learningResourceType": [
+    "e-learning"
+  ],
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0) license, except where further licensing details are provided"
+}
