@@ -13,16 +13,7 @@ module Tess
 
       def initialize(source, format, base_uri: nil)
         @reader = RDF::Reader.for(format).new(source, base_uri: base_uri)
-        if format == :jsonld && !JSON::LD::Context::PRELOADED['http://schema.org/']
-          puts 'Pre-loading schema.org context...'
-          begin
-            ctx = JSON::LD::Context.new.parse('http://schema.org/docs/jsonldcontext.jsonld')
-          rescue JSON::LD::JsonLdError::LoadingRemoteContextFailed
-            ctx = JSON::LD::Context.new.parse(File.join(File.dirname(__FILE__), 'schemaorgcontext.jsonld'))
-          end
 
-          JSON::LD::Context.add_preloaded('http://schema.org/', ctx)
-        end
         # Workaround for https://github.com/ruby-rdf/rdf-rdfa/issues/32
         if @reader.is_a?(RDF::RDFa::Reader)
           readers = @reader.instance_variable_get(:@readers) || {}
