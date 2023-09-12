@@ -6,13 +6,6 @@ module Tess
       def extract_params
         params = super
 
-        legacy_topics = query([resource, RDF::Vocab::SCHEMA.genre, :scientific_topics],
-              [:scientific_topics, RDF::RDFS.label, :scientific_topic_names]).map { |v| v[:scientific_topic_names] }
-        if legacy_topics.any?
-          params[:scientific_topic_names] ||= []
-          params[:scientific_topic_names] |= legacy_topics
-        end
-
         params[:prerequisites] = markdownify_list extract_names_or_values(RDF::Vocab::SCHEMA.competencyRequired)
         params[:learning_objectives] = markdownify_list extract_names_or_values(RDF::Vocab::SCHEMA.teaches)
 
