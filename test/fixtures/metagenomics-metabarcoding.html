@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://genomics.ed.ac.uk/sites/default/files/tab_0.png" type="image/png" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://genomics.ed.ac.uk/services/metagenomics-metabarcoding" />
+<link rel="shortlink" href="http://genomics.ed.ac.uk/node/683" />
+<meta name="google-site-verification" content="-QNpFCH_pPjk_4mlLp8G2rXaiRLMZh5Te8W2_8UVBK4" />
+  <title>Metagenomics and Metabarcoding | Edinburgh Genomics</title>
+  <style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/modules/system/system.base.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/system/system.menus.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/system/system.messages.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/system/system.theme.css?q4gtcl");
+</style>
+<style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/calendar/css/calendar_multiday.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/date/date_api/date.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/field/theme/field.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/node/node.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/search/search.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/modules/user/user.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/views/css/views.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/ckeditor/css/ckeditor.css?q4gtcl");
+</style>
+<style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/ctools/css/ctools.css?q4gtcl");
+</style>
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" media="all" />
+<style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/css/bootstrap.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/css/base.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/css/default.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/css/compatibility.css?q4gtcl");
+</style>
+<style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/sites/all/themes/genomics_genome/css/style.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/themes/genomics_genome/css/tablet.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/all/themes/genomics_genome/css/phone.css?q4gtcl");
+</style>
+<style type="text/css" media="all">
+@import url("http://genomics.ed.ac.uk/sites/default/files/fontyourface/font.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/default/files/fontyourface/local_fonts/Exo_Bold-normal-normal/stylesheet.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/default/files/fontyourface/local_fonts/Exo_Demi_Bold-normal-normal/stylesheet.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/default/files/fontyourface/local_fonts/Exo_Regular-normal-normal/stylesheet.css?q4gtcl");
+@import url("http://genomics.ed.ac.uk/sites/default/files/fontyourface/local_fonts/Oxygen-normal-normal/stylesheet.css?q4gtcl");
+</style>
+
+<!--[if lte IE 7]>
+<link type="text/css" rel="stylesheet" href="http://genomics.ed.ac.uk/sites/all/themes/genomics_genome/css/ie.css?q4gtcl" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://genomics.ed.ac.uk/sites/all/themes/genomics_genome/css/ie6.css?q4gtcl" media="all" />
+<![endif]-->
+  <script type="text/javascript" src="http://genomics.ed.ac.uk/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/misc/drupal.js?q4gtcl"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/sites/all/modules/behavior_weights/behavior_weights.js?q4gtcl"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/js/tb-megamenu-frontend.js?q4gtcl"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/sites/all/modules/contrib/tb_megamenu/js/tb-megamenu-touch.js?q4gtcl"></script>
+<script type="text/javascript" src="http://genomics.ed.ac.uk/sites/all/modules/contrib/google_analytics/googleanalytics.js?q4gtcl"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-106782453-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"genomics_genome","theme_token":"q18qFvcroWA_q8fFPKi8cDwYVtC6MBQu6zeWoti1eD4","js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/behavior_weights\/behavior_weights.js":1,"sites\/all\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"sites\/all\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/4.4.0\/css\/font-awesome.min.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/bootstrap.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/base.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/default.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/compatibility.css":1,"sites\/all\/themes\/genomics_genome\/css\/style.css":1,"sites\/all\/themes\/genomics_genome\/css\/tablet.css":1,"sites\/all\/themes\/genomics_genome\/css\/phone.css":1,"sites\/default\/files\/fontyourface\/font.css":1,"public:\/\/fontyourface\/local_fonts\/Exo_Bold-normal-normal\/stylesheet.css":1,"public:\/\/fontyourface\/local_fonts\/Exo_Demi_Bold-normal-normal\/stylesheet.css":1,"public:\/\/fontyourface\/local_fonts\/Exo_Regular-normal-normal\/stylesheet.css":1,"public:\/\/fontyourface\/local_fonts\/Oxygen-normal-normal\/stylesheet.css":1,"sites\/all\/themes\/genomics_genome\/css\/ie.css":1,"sites\/all\/themes\/genomics_genome\/css\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});
+//--><!]]>
+</script>
+  <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Metagenomics and Metabarcoding",
+    "description": "This course focuses on the computational methods used to analyse the wealth of data produced by shotgun metagenomics and metabarcoding (Amplicon targeted metagenomics) studies. This course will provide you the insights to the DNA metabarcoding analyses from preprocessing and quality control of the raw data to the construction of OTU/ASV tables, taxon assignment, diversity analysis and differential abundance analysis using QIIME2. Further, you will also learn about methods to generate the reference-based profile to generate microbial community features like taxonomic abundances or functional profile and how to identify the ones characterizing differences between two biological conditions. You will then be introduced to methods used for assembly from metagenomics samples. Attendees will use tools to assemble metagenome assembled genomes (MAGs) from short read and long read data. We will discuss the different approaches and tools available for these assemblies and the benefits and limitations of each options. ",
+    "eventType": "Workshops and courses",
+    "startDate": "2019-08-28T09:00",
+    "endDate": "2019-08-30T17:00",
+    "location": {
+      "name": "The King's Buildings, The University of Edinburgh",
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "West Mains Road",
+        "addressLocality": "Edinburgh",
+        "postalCode": "EH9 3JN",
+        "addressCountry": "UK"
+      }
+    },
+    "contact": {
+      "@type": "Person",
+      "name": "Edinburgh Genomics Training Team",
+      "email": "edge-training@ed.ac.uk"
+    },
+    "hostInstitution": {
+      "@type": "Organization",
+      "name": "Edinburgh Genomics"
+    },
+    "url": "http://genomics.ed.ac.uk/services/metagenomics-metabarcoding",
+    "topic": ["Bioinformatics", "Genomics", "Metagenomics", "Metabarcoding", "Long-read"]
+  }
+  </script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-683 node-type-page services featured" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="floating_request" style="display: none;"><div class="close" title="Hide">»</div><a href="/node/637">Click here to request a quote</a></div>
+
+<div id="page-wrapper"><div id="page">
+
+  <div id="header"><div class="section clearfix">
+
+      <a href="/" title="Home" rel="home" id="logo">
+        <img src="/sites/all/themes/genomics_genome/images/logos-combined.svg" alt="Home" />
+      </a>
+
+          <div id="name-and-slogan" class="element-invisible">
+
+                              <div id="site-name" class="element-invisible">
+              <strong>
+                <a href="/" title="Home" rel="home"><span>Edinburgh Genomics</span></a>
+              </strong>
+            </div>
+                  
+        
+      </div> <!-- /#name-and-slogan -->
+    
+      <div class="region region-header">
+    <div id="block-block-17" class="block block-block">
+
+    
+  <div class="content">
+    <div id="request_quote_header"><a href="/contact/project-enquiry">Request a quote</a></div>
+  </div>
+</div>
+<div id="block-tb-megamenu-main-menu" class="block block-tb-megamenu">
+
+    
+  <div class="content">
+    <div  class="tb-megamenu tb-megamenu-main-menu">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-6">
+  <li  data-id="366" data-level="1" data-type="menu_item" data-class="about-us" data-xicon="" data-caption="" data-alignsub="left" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega about-us mega-align-left dropdown">
+  <a href="#"  class="dropdown-toggle" title="About us">
+        
+    About us          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--about_us_menu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-about-us-menu-block" class="block block-views">
+
+    
+  <div class="content">
+    <div class="view view-about-us-menu view-id-about_us_menu view-display-id-block view-dom-id-9862e5d358f721fcf5b6cb15248d46cb">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-us/history">About Us</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-us/our-staff">Our Team</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-us/faq">FAQ</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-us/work-us">Work with us</a></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-us/privacy-notice">Privacy Notice</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="367" data-level="1" data-type="menu_item" data-class="services" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega services dropdown">
+  <a href="#"  class="dropdown-toggle" title="Services">
+        
+    Services          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-2" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--services_menu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-services-menu-block" class="block block-views">
+
+    
+  <div class="content">
+    <div class="view view-services-menu view-id-services_menu view-display-id-block view-dom-id-b7aadf7c66139eb169f6390465d5d408">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/services/short-read-sequencing">Short Read Sequencing</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/services/bioinformatics">Bioinformatics</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/services/training">Training</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/services/long-read-sequencing">Long Read Sequencing</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="368" data-level="1" data-type="menu_item" data-class="resources" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega resources dropdown">
+  <a href="#"  class="dropdown-toggle" title="Resources">
+        
+    Resources          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-3" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--resources_menu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-resources-menu-block" class="block block-views">
+
+    
+  <div class="content">
+    <div class="view view-resources-menu view-id-resources_menu view-display-id-block view-dom-id-4db944251902cd82d60dbf1367c097a8">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/publications">Publications</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/instructions-downloading">Instructions for Downloading</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/sample-requirements">Sample requirements</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="369" data-level="1" data-type="menu_item" data-class="news-events" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega news-events dropdown">
+  <a href="#"  class="dropdown-toggle" title="News &amp; Events">
+        
+    News & Events          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-4" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--news_events_menu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-news-events-menu-block" class="block block-views">
+
+    
+  <div class="content">
+    <div class="view view-news-events-menu view-id-news_events_menu view-display-id-block view-dom-id-b36b0299532ccb6b1a67bf8623699b75">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/news-events/news">News</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="370" data-level="1" data-type="menu_item" data-class="contact" data-xicon="" data-caption="" data-alignsub="right" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega contact mega-align-right dropdown">
+  <a href="#"  class="dropdown-toggle" title="Contact">
+        
+    Contact          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-5" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--contact_us_menu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-contact-us-menu-block" class="block block-views">
+
+    
+  <div class="content">
+    <div class="view view-contact-us-menu view-id-contact_us_menu view-display-id-block view-dom-id-3d4f6782440ab4a3947e2f88d84dcb99">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/contact/contact-us-0">Contact Us</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/contact/project-enquiry">Project Enquiry</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+      </div>
+  </div>
+  </div>
+</div>
+  </div>
+
+    
+    
+  </div><div class="gradient"></div></div> <!-- /.section, /#header -->
+	
+	<div id="main-content">
+
+  	
+	      <div id="featured"><div class="section">
+          <div class="region region-featured">
+    <div id="block-easy-breadcrumb-easy-breadcrumb" class="block block-easy-breadcrumb">
+
+    
+  <div class="content">
+      <div itemscope class="easy-breadcrumb" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <span itemprop="title"><a href="/" class="easy-breadcrumb_segment easy-breadcrumb_segment-front">Home</a></span>               <span class="easy-breadcrumb_segment-separator">»</span>
+                <span class="easy-breadcrumb_segment easy-breadcrumb_segment-1" itemprop="title">Services</span>               <span class="easy-breadcrumb_segment-separator">»</span>
+                <span itemprop="title"><a href="/services/metagenomics-metabarcoding" class="easy-breadcrumb_segment easy-breadcrumb_segment-title">Metagenomics and Metabarcoding</a></span>            </div>
+  </div>
+</div>
+  </div>
+  </div></div> <!-- /.section, /#featured -->
+	
+  <div id="main-wrapper" class="clearfix"><div id="main" class="clearfix">
+
+    
+    <div id="content" class="column"><div class="section">
+                    <h1 class="title" id="page-title">
+          Metagenomics and Metabarcoding        </h1>
+                          <div class="tabs">
+                  </div>
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div id="node-683" class="node node-page node-full clearfix" about="/services/metagenomics-metabarcoding" typeof="foaf:Document">
+
+      <span property="dc:title" content="Metagenomics and Metabarcoding" class="rdf-meta element-hidden"></span>
+  
+  <div class="content clearfix">
+    <div class="field field-name-field-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><img typeof="foaf:Image" src="http://genomics.ed.ac.uk/sites/default/files/styles/simple_crop_955_x_300/public/pages/metapillar_0.png?itok=FOUtR8-m&amp;sc=9782318d9039939013629f666fdec87b" alt="" /></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded">
+
+<h3><a href="https://www.surveymonkey.co.uk/r/8MKKK96"><strong>REGISTER HERE</strong></a></h3>
+<h1> </h1>
+<h1>Date:</h1>
+<p>Wednesday 28 - Friday 30 August, 09:00 - 17:00 </p>
+<h1>Venue:</h1>
+<p>Peter Wilson Building (Room G155), The King's Buildings, The University of Edinburgh, Edinburgh, Scotland, UK</p>
+<h1>Places:</h1>
+<p>25 for each workshop</p>
+<p>You will be contacted by our finance team for full payment. Once payment is made, your place will be confirmed and full details sent by our training team.</p>
+<h1>Registration fee:</h1>
+<p>£500</p>
+<p>You can cancel up to one month before the workshop and receive a refund minus 30% for administration.</p>
+<h1>Information:</h1>
+<p><a href="mailto:edge-training@ed.ac.uk">Contact our training team</a></p>
+<p>
+ </p>
+<hr /><p><span style="font-size:14px"><span style="color:#000000">The ability to identify organisms from traces of genetic material in environmental samples has reshaped the way we see life on earth. Especially for microorganisms, where traditional identification is hard or near impossible, metagenomic techniques have granted us unprecedented insight into the microbiome of animals and the environment more broadly.</span></span></p>
+<p><span style="font-size:14px"><span style="color:#000000">This course focuses on the computational methods used to analyse the wealth of data produced by shotgun metagenomics and metabarcoding (Amplicon targeted metagenomics) studies. </span></span></p>
+<p><span style="font-size:14px"><span style="color:#000000">This course will provide you the insights to the DNA metabarcoding analyses from preprocessing and quality control of the raw data to the construction of OTU/ASV tables, taxon assignment, diversity analysis and differential abundance analysis using QIIME2. Further, you will also learn about methods to generate the reference-based profile to generate microbial community features like taxonomic abundances or functional profile and how to identify the ones characterizing differences between two biological conditions. </span></span></p>
+<p><span style="font-size:14px"><span style="color:#000000">You will then be introduced to methods used for assembly from metagenomics samples. Attendees will use tools to assemble metagenome assembled genomes (MAGs) from short read and long read data. We will discuss the different approaches and tools available for these assemblies and the benefits and limitations of each options. </span></span></p>
+<hr /><p> </p>
+<h1>Instructors</h1>
+<ul><li>
+<p><span style="font-size:12px"><span style="color:#000000">Urmi Trivedi, Bioinformatician, Edinburgh Genomics  </span></span></p>
+</li>
+<li>
+<p><span style="font-size:12px"><span style="color:#000000">Amanda Warr, Research Geneticist, Roslin Institute  </span></span></p>
+</li>
+<li>
+<p><span style="font-size:12px"><span style="color:#000000">Rob Stewart , Bioinformatician, Roslin Institute </span></span></p>
+</li>
+<li>
+<p><span style="font-size:12px"><span style="color:#000000">Albert Phillimore, Institute of Evolutionary Biology, University of Edinburgh (guest lecturer) </span></span></p>
+</li>
+<li>
+<p><span style="font-size:12px"><span style="color:#000000">Nathan Medd, Training and Outreach Manager, Edinburgh Genomics (demonstrator)</span></span></p>
+</li>
+</ul><h1>Workshop format</h1>
+<p>The workshop consists of presentations and hands-on tutorials.</p>
+<h1>Who should attend</h1>
+<p>Graduates, postgraduates, and PIs, who are using, or planning to use, metagenomic technology in their research and want to learn how to process and analyse the data produced.</p>
+<h1>Requirements</h1>
+<ul><li>A general understanding of molecular biology and genomics.</li>
+<li>A working knowledge of Linux at the level of the Edinburgh Genomics <a href="http://genomics.ed.ac.uk/services/linux-genomics">Linux for Genomics</a> workshop.</li>
+</ul><hr /><p> </p>
+<h1>Outcomes</h1>
+<p><span style="font-size:12pt"><span style="color:#000000"><span style="font-size:small">By the end of the course students should be familiar with:</span></span></span></p>
+<ul><li>
+<p><span style="font-size:12pt"><span style="color:#000000"><span style="font-size:small">Tools available to assemble MAGs from short and long read data. </span></span></span></p>
+</li>
+<li>
+<p><span style="font-size:12pt"><span style="color:#000000"><span style="font-size:small">Extraction taxonomic and functional features from shotgun metagenomic data</span></span></span></p>
+</li>
+<li>
+<p><span style="font-size:12pt"><span style="color:#000000"><span style="font-size:small">Generation ASV/OTU tables, taxonomy assignment and performing diversity analysis</span></span></span></p>
+</li>
+<li>
+<p><span style="font-size:12pt"><span style="color:#000000"><span style="font-size:small">Quality control of the metagenomic data</span></span></span></p>
+</li>
+</ul></div></div></div>  </div>
+
+  
+  
+</div>
+  </div>
+</div>
+  </div>
+
+    </div></div> <!-- /.section, /#content -->
+
+          <div id="sidebar-second" class="column sidebar"><div class="section">
+          <div class="region region-sidebar-second">
+    <div id="block-views-publications-block-2" class="block block-views">
+
+    <h2>Latest publication</h2>
+  
+  <div class="content">
+    <div class="view view-publications view-id-publications view-display-id-block_2 view-dom-id-c1fcfdee9227ee06da0ad5d0592966e7">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/resources/publications/selective-mirna-modulation-fails-activate-hiv-replication-vitro-latency">Selective miRNA Modulation Fails to Activate HIV Replication in In Vitro Latency Models</a></h3>  </div>  
+  <span class="views-field views-field-field-peoples">        <span class="field-content">López-Huertas, M. R., Morín, M., Madrid-Elena, N., Gutiérrez, C., Jiménez-Tormo, L., Santoyo, J., Sanz-Rodríguez, F., Moreno Pelayo, M. Á., Bermejo, L. G. &amp; Moreno, S.</span>  </span>  
+  <span class="views-field views-field-field-journal-publication-date">        <span class="field-content">2019</span>  </span>  
+  <span class="views-field views-field-field-journal">    <span class="views-label views-label-field-journal">In: </span>    <span class="field-content">Molecular therapy. Nucleic acids</span>  </span>  
+  <span class="views-field views-field-field-pages">        <span class="field-content">p. 323-336 </span>  </span>  
+  <span class="views-field views-field-field-number-of-pages">        <span class="field-content">14 p.</span>  </span>  
+  <div class="views-field views-field-nothing-1">        <span class="field-content"><a href="/resources/publications">More publications</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-block-16" class="block block-block">
+
+    
+  <div class="content">
+    <p><a class="twitter-timeline" href="https://twitter.com/edgenome" data-widget-id="738310864311320576"></a></p>
+<script>
+<!--//--><![CDATA[// ><!--
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+//--><!]]>
+</script>  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#sidebar-second -->
+    
+  </div></div> <!-- /#main, /#main-wrapper -->
+	</div>
+  <div id="footer-wrapper"><div class="gradient"></div><div class="section">
+
+          <div id="footer" class="clearfix">
+          <div class="region region-footer">
+    <div id="block-block-3" class="block block-block">
+
+    
+  <div class="content">
+    <div class="footer-left">Copyright © The University of Edinburgh. <a href="https://www.ed.ac.uk/about/website/website-terms-conditions" target="_blank">Terms and Conditions »</a><br />
+<a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh »</a> is a charitable body, registered in Scotland, with registration number SC005336.<br />
+Website designed and developed by <a href="https://www.starbit.co.uk" target="_blank">Starbit »</a>
+</div>
+
+<div class="footer-right">
+<div class="social_media"><a href="https://www.linkedin.com/company/edinburgh-genomics" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="https://twitter.com/@edgenome" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></div></div>  </div>
+</div>
+  </div>
+      </div> <!-- /#footer -->
+    
+  </div></div> <!-- /.section, /#footer-wrapper -->
+
+</div></div> <!-- /#page, /#page-wrapper -->
+
+<script>
+(function ($) {
+	
+	$('#floating_request .close').on('click', function() {
+		if ($('#floating_request').hasClass('closed')) {
+			$('#floating_request').animate({right: 0});
+			$('#floating_request').removeClass('closed');
+			$(this).html('»');
+		} else {
+			$('#floating_request').animate({right: "-105px"});
+			$('#floating_request').addClass('closed');
+			$(this).html('«');
+		}
+	});
+
+function init() {
+    window.addEventListener('scroll', function(e){
+			windowWidth = $(window).width();
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 50,
+            header = $("#header");
+        if (distanceY > shrinkOn) {
+						$('#logo img').attr('src','/sites/all/themes/genomics_genome/images/logos-sticky.svg');
+						$('#floating_request').show();
+            header.addClass("smaller");
+        } else {
+            if (header.hasClass("smaller")) {
+								$('#logo img').attr('src','/sites/all/themes/genomics_genome/images/logos-combined.svg');
+						$('#floating_request').hide();
+                header.removeClass("smaller");
+            }
+        }
+		
+    });
+}
+window.onload = init();
+
+$('.tb-megamenu-item.level-1 > a').append('<span class="active-dot"></span>');
+
+}(jQuery));
+</script>
+  </body>
+</html>

@@ -270,4 +270,45 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ['PhD students', 'Clinicians'].sort, rnacentral[:target_audience].sort
     assert_equal ['e-learning'], rnacentral[:resource_type].sort
   end
+
+  test 'extract material from legacy Bioconductor CreativeWork markup' do
+    file = fixture_file('bridgedbr-tutorial.html')
+    base_uri = 'https://bioconductor.org/packages/release/bioc/vignettes/BridgeDbR/inst/doc/tutorial.html'
+
+    extractor = Tess::Rdf::MaterialExtractor.new(file.read, :rdfa, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.first
+    assert_equal 'BridgeDbR Tutorial', params[:title]
+    assert_equal 'https://bioconductor.org/packages/devel/bioc/vignettes/BridgeDbR/inst/doc/tutorial.html', params[:url]
+    assert_equal ['ELIXIR RIR', 'BridgeDb'], params[:keywords]
+    assert_equal 'https://bioconductor.org/packages/release/bioc/vignettes/BridgeDbR/inst/doc/AGPL-3', params[:licence]
+    assert_equal '1.17.5', params[:version]
+    assert_equal ['Egon Willighagen'], params[:authors]
+  end
+
+  test 'extract event from legacy Edinburgh Genomics Event markup' do
+    file = fixture_file('metagenomics-metabarcoding.html')
+    base_uri = 'https://genomics.ed.ac.uk/services/metagenomics-metabarcoding'
+
+    extractor = Tess::Rdf::EventExtractor.new(file.read, :rdfa, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.first
+
+    assert_equal 'Metagenomics and Metabarcoding', params[:title]
+    assert_equal 'This course focuses on the computational methods used to analyse the wealth of data produced by shotgun metagenomics and metabarcoding (Amplicon targeted metagenomics) studies. This course will provide you the insights to the DNA metabarcoding analyses from preprocessing and quality control of the raw data to the construction of OTU/ASV tables, taxon assignment, diversity analysis and differential abundance analysis using QIIME2. Further, you will also learn about methods to generate the reference-based profile to generate microbial community features like taxonomic abundances or functional profile and how to identify the ones characterizing differences between two biological conditions. You will then be introduced to methods used for assembly from metagenomics samples. Attendees will use tools to assemble metagenome assembled genomes (MAGs) from short read and long read data. We will discuss the different approaches and tools available for these assemblies and the benefits and limitations of each options.', params[:description]
+    assert_equal 'http://genomics.ed.ac.uk/services/metagenomics-metabarcoding', params[:url]
+    assert_equal '2019-08-28T09:00', params[:start]
+    assert_equal '2019-08-30T17:00', params[:end]
+    assert_equal "The King's Buildings, The University of Edinburgh, West Mains Road", params[:venue]
+    assert_equal 'UK', params[:country]
+    assert_equal 'EH9 3JN', params[:postcode]
+    assert_equal 'Edinburgh', params[:city]
+    assert_equal 'Edinburgh Genomics Training Team - edge-training@ed.ac.uk', params[:contact]
+    assert_equal ['Bioinformatics', 'Genomics', 'Long-read', 'Metabarcoding', 'Metagenomics'], params[:scientific_topic_names]
+    assert_equal ['Edinburgh Genomics'], params[:host_institutions]
+  end
 end

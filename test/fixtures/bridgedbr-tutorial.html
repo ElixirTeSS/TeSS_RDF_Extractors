@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+    <meta name="author" content="Egon Willighagen" />
+
+    <meta name="date" content="2022-04-26" />
+
+    <title>BridgeDbR Tutorial</title>
+
+    <script>/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+    // Removed
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="application/ld+json">
+        {
+            "@context":"http://schema.org/",
+            "@type":"CreativeWork",
+            "about":"This tutorial describes how to use the BridgeDbR package for identifier mapping.",
+            "audience":[
+                "http://edamontology.org/topic_3070",
+                "http://edamontology.org/topic_3314"
+            ],
+            "genre":[
+                "http://edamontology.org/topic_0605",
+                "http://edamontology.org/operation_3282",
+                "http://edamontology.org/data_1025",
+                "http://edamontology.org/data_0982"
+            ],
+            "name":"BridgeDbR Tutorial",
+            "author":[{
+                "@type":"Person",
+                "name":"Egon Willighagen",
+                "identifier":"0000-0001-7542-0286"
+            }],
+            "difficultyLevel": "beginner",
+            "keywords":"ELIXIR RIR, BridgeDb",
+            "license":"AGPL-3",
+            "url":[
+                "https://bioconductor.org/packages/devel/bioc/vignettes/BridgeDbR/inst/doc/tutorial.html"
+            ],
+            "version":"1.17.5"
+        }
+    </script>
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+    <!-- setup 3col/9col grid for toc_float and main content  -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <div id="TOC" class="tocify">
+            </div>
+        </div>
+
+        <div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+            <div id="header">
+
+
+
+                <h1 class="title toc-ignore">BridgeDbR Tutorial</h1>
+                <p class="author-name">Egon Willighagen</p>
+                <h4 class="date">26 April 2022</h4>
+                <h4 class="package">Package</h4>
+                <p>BridgeDbR 2.6.0</p>
+
+            </div>
+
+
+            <div id="introduction" class="section level1">
+                <h1><span class="header-section-number">1</span> Introduction</h1>
+                <p><a href="https://github.com/bridgedb/BridgeDb">BridgeDb</a> is a combination of an application programming interface (API), library, and set of data files
+                    for mapping identifiers for identical objects <span class="citation">[1]</span>. Because BridgeDb is
+                    use by projects in bioinformatics, like <a href="http://wikipathways.org/">WikiPathways</a> <span class="citation">[2]</span> and
+                    <a href="http://pathvisio.org/">PathVisio</a> <span class="citation">[3]</span>,
+                    identifier mapping databases are available for gene products (including proteins), metabolites, and metabolic conversions. We are also working on a disease database mapping file.</p>
+                <p>Questions can be directed to the <a href="https://groups.google.com/forum/#!forum/bridgedb-discuss">BridgeDb Google Group</a>.</p>
+                <p>The <a href="https://doi.org/10.18129/B9.bioc.BridgeDbR">Bioconductor BridgeDbR package</a>
+                    page describes how to install the package. After installation, the library can be loaded with the following command:</p>
+                <pre class="r"><code>library(BridgeDbR)</code></pre>
+                <pre><code>## Loading required package: rJava</code></pre>
+                <p>*Note: if you have trouble with rJava (required package), please follow the instructions <a href="https://github.com/hannarud/r-best-practices/wiki/Installing-RJava-(Ubuntu)">here</a> for Ubuntu.</p>
+            </div>
+            <div id="concepts" class="section level1">
+                <h1><span class="header-section-number">2</span> Concepts</h1>
+                <p>BridgeDb has a few core concepts which are explained in this section. Much of the API requires one to
+                    be familiar with these concepts, though some are not always applicable. The first concept is an example
+                    of that: organisms, which do not apply to metabolites.</p>
+                <div id="organisms" class="section level2">
+                    <h2><span class="header-section-number">2.1</span> Organisms</h2>
+                    <p>However, for genes the organism is important: the same gene has different identifiers in different
+                        organisms. BridgeDb identifies organisms by their latin name and with a two character code. Because
+                        identifier mapping files provided by PathVisio have names with these short codes, it can be useful to
+                        have a conversion method:</p>
+                    <pre class="r"><code>code = getOrganismCode(&quot;Rattus norvegicus&quot;)
+code</code></pre>
+                    <pre><code>## [1] &quot;Rn&quot;</code></pre>
+                </div>
+                <div id="data-sources" class="section level2">
+                    <h2><span class="header-section-number">2.2</span> Data Sources</h2>
+                    <p>Identifiers have a context and this context is often a database. For example, metabolite identfiers
+                        can be provided by the Human Metabolome Database (HMDB), ChemSpider, PubChem, ChEBI, and many others. Similarly,
+                        gene product identifiers can be provided by databases like Ensembl, (NCBI) Entrez Gene, Uniprot etc. Such a database providing identifiers is called a data source in BridgeDb.</p>
+                    <p>Importantly, each such data source is identified by a human readable long name and by a short
+                        system code. This package has methods to interconvert one into the other:</p>
+                    <pre class="r"><code>fullName &lt;- getFullName(&quot;Ce&quot;)
+fullName</code></pre>
+                    <pre><code>## [1] &quot;ChEBI&quot;</code></pre>
+                    <pre class="r"><code>code &lt;- getSystemCode(&quot;ChEBI&quot;)
+code</code></pre>
+                    <pre><code>## [1] &quot;Ce&quot;</code></pre>
+                </div>
+                <div id="identifier-patterns" class="section level2">
+                    <h2><span class="header-section-number">2.3</span> Identifier Patterns</h2>
+                    <p>Another useful aspect of BridgeDb is that it knows about the patterns of identifiers. If this
+                        pattern is unique enough, it can be used used to automatically find the data sources that
+                        match a particular identifier. For example:</p>
+                    <pre class="r"><code>getMatchingSources(&quot;HMDB00555&quot;)</code></pre>
+                    <pre><code>##  [1] &quot;EMBL&quot;                             &quot;NCBI Protein&quot;
+##  [3] &quot;HGNC&quot;                             &quot;KEGG Pathway&quot;
+##  [5] &quot;HMDB&quot;                             &quot;LipidBank&quot;
+##  [7] &quot;ICD-11&quot;                           &quot;NCI Pathway Interaction Database&quot;
+##  [9] &quot;Wikipedia&quot;                        &quot;SUPFAM&quot;
+## [11] &quot;SWISS-MODEL&quot;                      &quot;VMH metabolite&quot;</code></pre>
+                    <pre class="r"><code>getMatchingSources(&quot;ENSG00000100030&quot;)</code></pre>
+                    <pre><code>##  [1] &quot;EMBL&quot;                             &quot;NCBI Protein&quot;
+##  [3] &quot;OpenTargets&quot;                      &quot;HGNC&quot;
+##  [5] &quot;LipidBank&quot;                        &quot;ICD-11&quot;
+##  [7] &quot;NCI Pathway Interaction Database&quot; &quot;Wikipedia&quot;
+##  [9] &quot;SUPFAM&quot;                           &quot;Ensembl&quot;
+## [11] &quot;SWISS-MODEL&quot;                      &quot;VMH metabolite&quot;</code></pre>
+                </div>
+                <div id="identifier-mapping-databases" class="section level2">
+                    <h2><span class="header-section-number">2.4</span> Identifier Mapping Databases</h2>
+                    <p>The BridgeDb package primarily provides the software framework, and not identifier mapping
+                        data. Identifier Mapping databases can be downloaded from various websites. The package
+                        knows about the download location (provided by PathVisio), and we can query for all gene
+                        product identifier mapping databases:</p>
+                    <pre class="r"><code>getBridgeNames()</code></pre>
+                </div>
+                <div id="downloading" class="section level2">
+                    <h2><span class="header-section-number">2.5</span> Downloading</h2>
+                    <p>The package provides
+                        a convenience method to download such identifier mapping databases. For example, we can save the
+                        identifier mapping database for rat to the current folder with:</p>
+                    <pre class="r"><code>dbLocation &lt;- getDatabase(&quot;Rattus norvegicus&quot;,location=getwd())</code></pre>
+                    <p>The dbLocation variable then contains the location of the identifier mapping file that was
+                        downloaded.</p>
+                    <p>Mapping databases can also be manually downloaded for genes, metabolites, and gene variants
+                        from <a href="https://bridgedb.github.io/data/gene_database/">https://bridgedb.github.io/data/gene_database/</a>:</p>
+                    <ul>
+                        <li>Genes, Transcripts, and Proteins</li>
+                        <li>Metabolites</li>
+                        <li>Metabolic Interactions</li>
+                    </ul>
+                    <p>Add the dbLocation with the following lines (first obtain in which folder, aka working directory ‘wd’, you are currently).
+                        Add the correct folder location at the dots:</p>
+                    <pre class="r"><code>getwd()
+dbLocation &lt;- (&quot;/home/..../BridgeDb/wikidata_diseases.bridge&quot;)</code></pre>
+                </div>
+                <div id="loading-databases" class="section level2">
+                    <h2><span class="header-section-number">2.6</span> Loading Databases</h2>
+                    <p>Once you have downloaded an identifier mapping database, either manually or via the getDatabase()
+                        method, you need to load the database for the identifier mappings to become available.</p>
+                    <pre class="r"><code>mapper &lt;- loadDatabase(dbLocation)</code></pre>
+                </div>
+            </div>
+            <div id="mapping-identifiers" class="section level1">
+                <h1><span class="header-section-number">3</span> Mapping Identifiers</h1>
+                <p>With a loaded database, identifiers can be mapped. The mapping method uses system codes. So, to
+                    map the human Entrez Gene identifier (system code: L) 196410 to Affy identifiers (system code: X) we
+                    use:</p>
+                <pre class="r"><code>location &lt;- getDatabase(&quot;Homo sapiens&quot;)
+mapper &lt;- loadDatabase(location)
+map(mapper, &quot;L&quot;, &quot;196410&quot;, &quot;X&quot;)</code></pre>
+                <p>Mind you, this returns more than one identifier, as BridgeDb is generally a one to many mapping database.</p>
+                <div id="mapping-multiple-identifiers" class="section level2">
+                    <h2><span class="header-section-number">3.1</span> Mapping multiple identifiers</h2>
+                    <p>For mapping multiple identifiers, for example in a data frame, you can use the new “maps()”
+                        convenience method. Let’s assume we have a data frame, data, with a HMDB identifier in the second column,
+                        we can get Wikidata identifiers with this code:</p>
+                    <pre class="r"><code>input = data.frame(
+  source = rep(&quot;Ch&quot;, length(data[,2])),
+  identifier = data[,2]
+)
+wikidata = maps(mapper, input, &quot;Wd&quot;)</code></pre>
+                </div>
+            </div>
+            <div id="metabolomics" class="section level1">
+                <h1><span class="header-section-number">4</span> Metabolomics</h1>
+                <p>While you can download the gene and protein identifier mapping databases with the <em>getDatabase()</em> method,
+                    this mapping database cannot be used for metabolites. The mapping database for metabolites will have to
+                    be downloaded manually from Figshare, e.g. the
+                    <a href="https://figshare.com/articles/Metabolite_BridgeDb_ID_Mapping_Database_20180201_/5845134">February 2018 release</a>
+                    version. A full overview of mappings files can be found in this
+                    <a href="https://figshare.com/collections/Metabolite_BridgeDb_ID_Mapping_Database/4456148">Figshare collection</a>.</p>
+                <p>Each mapping file record will allow you to download the <em>.bridge</em> file with the mappings.</p>
+                <p>If reproducibility is important to you, you can download the file with (mind you, these files are
+                    quite large):</p>
+                <pre class="r"><code>file &lt;- &quot;metabolites_20180201.bridge&quot;
+download.file(
+  &quot;https://ndownloader.figshare.com/files/10358973&quot;,
+  location
+)
+location = normalizePath(file)
+mapper &lt;- loadDatabase(location)</code></pre>
+                <p>With this mapper you can then map metabolite identifiers:</p>
+                <pre class="r"><code>map(mapper, &quot;456&quot;, source=&quot;Cs&quot;, target=&quot;Ck&quot;)</code></pre>
+            </div>
+            <div id="references" class="section level1 unnumbered">
+                <h1>References</h1>
+                <div id="refs" class="references">
+                    <div id="ref-VanIersel2010">
+                        <p>1. Iersel M van, Pico A, Kelder T, Gao J, Ho I, Hanspers K, Conklin B, Evelo C: <strong>The BridgeDb framework: Standardized access to gene, protein and metabolite identifier mapping services</strong>. <em>BMC Bioinformatics</em> 2010, <strong>11</strong>:5+.</p>
+                    </div>
+                    <div id="ref-Pico2008">
+                        <p>2. Pico AR, Kelder T, Iersel MP van, Hanspers K, Conklin BR, Evelo C: <strong>WikiPathways: Pathway editing for the people</strong>. <em>PLoS Biol</em> 2008, <strong>6</strong>:e184+.</p>
+                    </div>
+                    <div id="ref-VanIersel2008">
+                        <p>3. Iersel MP van, Kelder T, Pico AR, Hanspers K, Coort S, Conklin BR, Evelo C: <strong>Presenting and exploring biological pathways with PathVisio</strong>. <em>BMC Bioinformatics</em>, <strong>9</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    // add bootstrap table styles to pandoc tables
+    function bootstrapStylePandocTables() {
+        $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+    }
+    $(document).ready(function () {
+        bootstrapStylePandocTables();
+    });
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+    $(document).ready(function () {
+        window.buildTabsets("TOC");
+    });
+
+    $(document).ready(function () {
+        $('.tabset-dropdown > .nav-tabs > li').click(function () {
+            $(this).parent().toggleClass('nav-tabs-open');
+        });
+    });
+</script>
+
+<!-- code folding -->
+
+<script>
+    $(document).ready(function ()  {
+
+        // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+        $('.unlisted.unnumbered').addClass('toc-ignore')
+
+        // move toc-ignore selectors from section div to header
+        $('div.section.toc-ignore')
+            .removeClass('toc-ignore')
+            .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+        // establish options
+        var options = {
+            selectors: "h1,h2,h3",
+            theme: "bootstrap3",
+            context: '.toc-content',
+            hashGenerator: function (text) {
+                return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+            },
+            ignoreSelector: ".toc-ignore",
+            scrollTo: 0
+        };
+        options.showAndHide = true;
+        options.smoothScroll = true;
+
+        // tocify
+        var toc = $("#TOC").tocify(options).data("toc-tocify");
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      styles: {
+        ".MathJax_Display": {
+           "text-align": "center",
+           padding: "0px 150px 0px 65px",
+           margin: "0px 0px 0.5em"
+        },
+        "@media screen and (max-width: 991px)": {
+            ".MathJax_Display": {
+               "text-align": "center",
+               padding: "0 0 0 0"
+            }
+         }
+      }
+    }
+  });
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+    (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function ()  {
+
+        // Map "enter" keypress to the same action as a cursor click
+        function navigateLink(e) {
+            if (e.key === "Enter") {
+                $(this).trigger("click");
+            }
+        }
+
+        var toc_items = document.querySelectorAll(".tocify-item");
+        for (var i = 0; i < toc_items.length; i++) {
+            // The link role tells screen readers this is for navigation
+            toc_items.item(i).setAttribute("role", "link");
+            // tabindex = 0 allows selection via keyboard tab presses
+            toc_items.item(i).setAttribute("tabindex", "0");
+            // Listen for "Enter" keypress when item is selected
+            toc_items.item(i).addEventListener("keydown", navigateLink);
+        }
+    });
+</script>
+
+</body>
+</html>
