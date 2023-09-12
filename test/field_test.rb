@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ExtractorsTest < Test::Unit::TestCase
+class FieldTest < Test::Unit::TestCase
   test 'extract location from Place' do
     json = %(
 [{
@@ -174,6 +174,27 @@ class ExtractorsTest < Test::Unit::TestCase
   "hasCourseInstance": [{"@type" : "CourseInstance"}]
 }])
     assert_equal ['students', 'people', 'researchers'], course_extractor(json).send(:extract_audience)
+  end
+
+  test 'infer end date from start date and duration' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Advanced Statistics: Statistical Modelling",
+  "description": "**This course is now full.",
+  "url": "https://webapp2.vital-it.ch/courseadmin/website/course/20220822_XXXX3",
+  "@id": "https://webapp2.vital-it.ch/courseadmin/website/course/20220822_XXXX3",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/CourseInstance/0.8-DRAFT-2020_10_06",
+    "@type": "CreativeWork"
+  },
+  "keywords": "training,biostatistics,raphael gottardo group",
+  "location": "Lausanne",
+  "startDate": "2022-08-22",
+  "duration": "P1Y1M1W3DT4H"
+}])
+    assert_equal '2023-10-02', course_instance_extractor(json).extract_params[:end].to_s
   end
 
   private

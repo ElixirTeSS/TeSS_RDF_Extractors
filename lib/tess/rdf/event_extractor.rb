@@ -11,8 +11,8 @@ module Tess
         params[:start] = extract_value(RDF::Vocab::SCHEMA.startDate)
         params[:end] = extract_value(RDF::Vocab::SCHEMA.endDate)
         params[:duration] = extract_value(RDF::Vocab::SCHEMA.duration)
-        if !params[:end] && params[:start] && duration
-          params[:end] = modify_date(params[:start], duration)
+        if !params[:end] && params[:start] && params[:duration]
+          params[:end] = modify_date(params[:start], params[:duration])
         end
 
         params[:online] = extract_online
