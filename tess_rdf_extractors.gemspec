@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'tess_rdf_extractors'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2023-09-12'
   s.summary     = 'Tools for parsing TeSS event & training material details from Bioschemas & schema.org markup.'
   s.authors     = ['Finn Bacall']

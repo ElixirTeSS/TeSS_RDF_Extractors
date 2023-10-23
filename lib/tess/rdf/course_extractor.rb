@@ -14,8 +14,8 @@ module Tess
         with_resource(course) do
           course_params = super
         end
-        course_params[:difficulty_level] ||=
-          extract_names_or_values(RDF::Vocab::SCHEMA.educationalLevel, subject: course).first
+        # course_params[:difficulty_level] ||=
+        #          extract_names_or_values(RDF::Vocab::SCHEMA.educationalLevel, subject: course).first
 
         # ...and override with more specific metadata from CourseInstance
         course_instance_params = super
