@@ -248,6 +248,13 @@ module Tess
           [:audience, RDF::RDFS.label, :target_audience, { optional: true }]).map { |a| a[:target_audience] }.compact
       end
 
+      def extract_mentions(subject: resource)
+        query(
+          [subject, RDF::Vocab::SCHEMA.mentions, :mention],
+          [:mention, RDF::Vocab::SCHEMA.name, :name, { optional: true }],
+          [:mention, RDF::Vocab::SCHEMA.url, :url, { optional: true }]).map { |a| { title: a[:name], url: a[:url] } }.compact
+      end
+
       def parse_value(value)
         # Using 'value.class.name' instead of just 'value' here or things like RDF::Literal::DateTime fall into the RDF::Literal block
         # Not using 'value.class' because 'case' uses '===' for comparison and RDF::URI === RDF::URI is false!

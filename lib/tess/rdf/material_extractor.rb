@@ -24,6 +24,7 @@ module Tess
         params[:contributors] = extract_names(RDF::Vocab::SCHEMA.contributor)
         params[:target_audience] = extract_audience
         params[:resource_type] = extract_values(RDF::Vocab::SCHEMA.learningResourceType)
+        params[:external_resources_attributes] = extract_mentions
 
         remove_blanks(params)
       end

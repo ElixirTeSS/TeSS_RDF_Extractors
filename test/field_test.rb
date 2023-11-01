@@ -197,6 +197,33 @@ class FieldTest < Test::Unit::TestCase
     assert_equal '2023-10-02', course_instance_extractor(json).extract_params[:end].to_s
   end
 
+  test 'extract tools from mentions' do
+    json = %(
+[{
+  "@context": "http://schema.org",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Galaxy",
+      "url": "https://bio.tools/galaxy",
+      "description": "Open, web-based platform for data intensive biomedical research"
+    },{
+      "@type": "Dataset",
+      "name": "European Genome-phenome Archive",
+      "url": "https://www.ebi.ac.uk/ega/home",
+      "description": "The EGA archives a large number of datasets, the access to which is controlled by a Data Access Committee (DAC)."
+    }
+  ]
+}])
+    assert_equal [{ title: 'Galaxy', url: 'https://bio.tools/galaxy' },
+                  { title: 'European Genome-phenome Archive', url: 'https://www.ebi.ac.uk/ega/home' }], learning_resource_extractor(json).send(:extract_mentions)
+  end
+
   private
 
   def course_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')
@@ -207,6 +234,12 @@ class FieldTest < Test::Unit::TestCase
 
   def course_instance_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')
     ex = Tess::Rdf::CourseInstanceExtractor.new(StringIO.new(fixture), format, base_uri: base_uri)
+    ex.instance_variable_set(:@_temp_resource, ex.resources.first.individual)
+    ex
+  end
+
+  def learning_resource_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')
+    ex = Tess::Rdf::LearningResourceExtractor.new(StringIO.new(fixture), format, base_uri: base_uri)
     ex.instance_variable_set(:@_temp_resource, ex.resources.first.individual)
     ex
   end
