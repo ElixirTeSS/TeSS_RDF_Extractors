@@ -167,7 +167,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal '2022-08-22', params[:start]
     assert_equal '2022-08-25', params[:end]
     assert_equal ['training', 'biostatistics', 'raphael gottardo group'].sort, params[:keywords].sort
-    assert_equal 'Patricia Palagi', params[:organizer]
+    assert_equal 'Patricia Palagi (https://orcid.org/0000-0001-9062-6303), SIB Swiss Institute of Bioinformatics (https://ror.org/002n09z45)', params[:organizer]
     assert params[:node_names].include?('Switzerland')
   end
 
@@ -310,5 +310,19 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal 'Edinburgh Genomics Training Team - edge-training@ed.ac.uk', params[:contact]
     assert_equal ['Bioinformatics', 'Genomics', 'Long-read', 'Metabarcoding', 'Metagenomics'], params[:scientific_topic_names]
     assert_equal ['Edinburgh Genomics'], params[:host_institutions]
+  end
+
+  test 'extract multiple organizers as comma-separated string' do
+    file = fixture_file('ifb-multi-organizers.json')
+    base_uri = 'https://catalogue.france-bioinformatique.fr/api/event/591/?format=json-ld'
+
+    extractor = Tess::Rdf::CourseInstanceExtractor.new(file.read, :jsonld, base_uri: base_uri)
+    resources = extractor.extract
+
+    assert_equal 1, resources.count
+    params = resources.first
+
+    assert_equal "https://catalogue.france-bioinformatique.fr/api/organisation/CIRAD/?format=json-ld, https://catalogue.france-bioinformatique.fr/api/organisation/INRAE/?format=json-ld, https://catalogue.france-bioinformatique.fr/api/organisation/IRD/?format=json-ld, https://catalogue.france-bioinformatique.fr/api/team/South%20Green/?format=json-ld",
+                 params[:organizer]
   end
 end

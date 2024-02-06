@@ -1,0 +1,95 @@
+[
+  {
+    "@id": "https://catalogue.france-bioinformatique.fr/api/event/591/?format=json-ld",
+    "@type": [
+      "https://schema.org/CourseInstance"
+    ],
+    "https://schema.org/description": [
+      {
+        "@type": "https://schema.org/Text",
+        "@value": "Ce module vise à fournir une expérience d’analyse de données de génomique.\r\nLes technologies Next Generation Sequencing (NGS) ont conduit à une production massive de\r\ndonnées « Omiques » pour les plantes cultivées majeures, ce qui demande de nouvelles\r\napproches d’analyses haut débit. La connaissance de ces approches et des outils qui en\r\ndécoulent pour analyser la séquence et la structure des génomes, les annoter et caractériser\r\nleur diversité et leurs profils d’expression permet d’aborder des questions de recherche\r\nbiologique avancée sur la diversité et l’adaptation des plantes. Les espèces prises en\r\nconsidération sont des espèces phares des instituts de recherche agronomique de Montpellier\r\net font partie des cultures les plus importantes pour l’agriculture mondiale. Des plateformes\r\nd’outils bioinformatiques récents reposant sur des centres de calcul et de stockage haute\r\ncapacité, sont en place pour analyser des jeux de données originales permettant de mieux\r\ncomprendre comment les génomes de plantes évoluent et s’expriment. L’ensemble de ces\r\nconnaissances Findable, Accessible, Interoperable, Reusable car intégré dans des systèmes\r\nd’information peut soutenir l'identification de gènes responsables de caractères adaptatifs ou\r\nde production. La mobilisation de jeunes chercheurs sur ces sujets est primordiale tant la\r\ndemande est importante.\r\nLe module est structuré sous la forme de cours et de travaux tutorés avec la rencontre de\r\ngénéticiens et de bioinformaticiens permettant d’appréhender les formes variées des progrès\r\nen bioanalyse génomique. Il permet d’acquérir les lignes directrices pour l’accès, l'utilisation\r\net l'analyse de différents types de données omique (e.g. (épi)génomique, transcriptomique,\r\nprotéique, métabolique) en vue d’accélérer les recherches en génomique fonctionnelle et\r\nbiotechnologie des plantes.\r\nL’évaluation sera faite sur la base de la participation et de la qualité du projet proposé par\r\nl’étudiant en fin de module, individuellement ou en binôme, suivant les consignes détaillées en\r\ndébut de module"
+      }
+    ],
+    "https://schema.org/endDate": [
+      {
+        "@type": "https://schema.org/Date",
+        "@value": "2024-03-08"
+      }
+    ],
+    "https://schema.org/location": [
+      {
+        "@id": "_:N6703f4fcf2b04f2d8b90e5b0341f8f09"
+      }
+    ],
+    "https://schema.org/maximumAttendeeCapacity": [
+      {
+        "@type": "https://schema.org/Integer",
+        "@value": "50"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@type": "https://schema.org/Text",
+        "@value": "BIGomics, Génomique Comparative Biopolis"
+      }
+    ],
+    "https://schema.org/offers": [
+      {
+        "@type": "https://schema.org/Demand",
+        "@value": "Free to academics"
+      }
+    ],
+    "https://schema.org/organizer": [
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/organisation/CIRAD/?format=json-ld"
+      },
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/organisation/INRAE/?format=json-ld"
+      },
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/organisation/IRD/?format=json-ld"
+      },
+      {
+        "@id": "https://catalogue.france-bioinformatique.fr/api/team/South%20Green/?format=json-ld"
+      }
+    ],
+    "https://schema.org/startDate": [
+      {
+        "@type": "https://schema.org/Date",
+        "@value": "2024-03-04"
+      }
+    ],
+    "https://schema.org/url": [
+      {
+        "@type": "https://schema.org/URL",
+        "@value": "https://cibio.up.pt/en/events/bigomics-high-throughput-genetic-diversity-analyses-of-tropical-crops/"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6703f4fcf2b04f2d8b90e5b0341f8f09",
+    "@type": [
+      "https://schema.org/PostalAddress"
+    ],
+    "https://schema.org/addressCountry": [
+      {
+        "@value": "France"
+      }
+    ],
+    "https://schema.org/addressLocality": [
+      {
+        "@value": "Montpellier"
+      }
+    ],
+    "https://schema.org/postalCode": [
+      {
+        "@value": ""
+      }
+    ],
+    "https://schema.org/streetAddress": [
+      {
+        "@value": "Salle 159 Batiment 3 CIRAD Lavalette, Avenue Agropolis"
+      }
+    ]
+  }
+]
