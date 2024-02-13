@@ -255,6 +255,25 @@ module Tess
           [:mention, RDF::Vocab::SCHEMA.url, :url, { optional: true }]).map { |a| { title: a[:name], url: a[:url] } }.compact
       end
 
+      def extract_names_or_ids(predicate, subject: resource)
+        query([subject, predicate, :thing],
+              [:thing, RDF::Vocab::SCHEMA.name, :name, { optional: true }],
+              [:thing, RDF::Vocab::SCHEMA.url, :url, { optional: true }]).map do |r|
+          if r[:name].nil?
+            r[:thing]
+          else
+            v = r[:name]
+            if r[:thing]
+              v += " (#{r[:thing]})"
+            elsif r[:url]
+              v += " (#{r[:url]})"
+            end
+            v
+          end
+        end.compact.uniq.sort
+      end
+
+
       def parse_value(value)
         # Using 'value.class.name' instead of just 'value' here or things like RDF::Literal::DateTime fall into the RDF::Literal block
         # Not using 'value.class' because 'case' uses '===' for comparison and RDF::URI === RDF::URI is false!

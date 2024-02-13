@@ -224,6 +224,38 @@ class FieldTest < Test::Unit::TestCase
                   { title: 'European Genome-phenome Archive', url: 'https://www.ebi.ac.uk/ega/home' }], learning_resource_extractor(json).send(:extract_mentions)
   end
 
+  test 'extract multiple organizers' do
+    json = %(
+[{
+  "@context": "http://schema.org",
+  "@type": "CourseInstance",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "organizer": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0001-9062-6303",
+      "name": "Patricia Palagi"
+    },
+    {
+      "@type": "Person",
+      "name": "Someone"
+    },
+    {
+      "@type": "Organization",
+      "name": "SIB Swiss Institute of Bioinformatics",
+      "url": "https://www.sib.swiss/"
+    },
+    {
+      "@id" : "https://cool.guys"
+    }
+  ]
+}])
+    assert_equal 'Patricia Palagi (https://orcid.org/0000-0001-9062-6303), SIB Swiss Institute of Bioinformatics (https://www.sib.swiss/), Someone, https://cool.guys',
+                 course_instance_extractor(json).send(:extract_names_or_ids, RDF::Vocab::SCHEMA.organizer).join(', ')
+  end
   private
 
   def course_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')

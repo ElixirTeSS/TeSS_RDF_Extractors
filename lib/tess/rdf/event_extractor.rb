@@ -18,7 +18,7 @@ module Tess
         params[:online] = extract_online
         params.merge!(extract_location)
 
-        params[:organizer] = extract_names_or_values(RDF::Vocab::SCHEMA.organizer).first
+        params[:organizer] = extract_names_or_ids(RDF::Vocab::SCHEMA.organizer).join(', ')
 
         params[:capacity] = extract_value(RDF::Vocab::SCHEMA.maximumAttendeeCapacity)
 
