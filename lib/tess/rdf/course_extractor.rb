@@ -16,7 +16,7 @@ module Tess
         end
         # course_params[:difficulty_level] ||=
         #          extract_names_or_values(RDF::Vocab::SCHEMA.educationalLevel, subject: course).first
-        course_params[:external_resources_attributes] = extract_mentions
+        course_params[:external_resources] = extract_mentions
         # ...and override with more specific metadata from CourseInstance
         course_instance_params = super
         course_params.merge(course_instance_params)
