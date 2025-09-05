@@ -36,7 +36,7 @@ module Tess
         params[:prerequisites] = extract_course_prerequisites
         params[:learning_objectives] = markdownify_list extract_names_or_values(RDF::Vocab::SCHEMA.teaches)
         params[:target_audience] = extract_audience
-        params[:language] = extract_names_or_values(RDF::Vocab::SCHEMA.inLanguage).first
+        params[:language] = extract_language
 
         remove_blanks(params)
       end

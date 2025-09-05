@@ -263,9 +263,9 @@ class FieldTest < Test::Unit::TestCase
   "@context": "https://schema.org/",
   "@type": "CourseInstance",
   "name": "Dummy Course",
-  "inLanguage": "en"
+  "inLanguage": "en-GB"
 }])
-    assert_equal 'en', course_instance_extractor(json).extract_params[:language]
+    assert_equal 'en', course_instance_extractor(json).send(:extract_language)
 
     json = %(
 [{
@@ -277,7 +277,7 @@ class FieldTest < Test::Unit::TestCase
     "name" : "de"
   }
 }])
-    assert_equal 'de', course_instance_extractor(json).extract_params[:language]
+    assert_equal 'de', course_instance_extractor(json).send(:extract_language)
   end
 
   private

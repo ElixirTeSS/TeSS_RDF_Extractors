@@ -256,9 +256,7 @@ module Tess
       end
 
       def extract_language(subject: resource)
-        query(
-          [subject, RDF::Vocab::SCHEMA.inLanguage, :language],
-          [:language, RDF::Vocab::SCHEMA.name, :language, { optional: true }])
+        extract_names_or_values(RDF::Vocab::SCHEMA.inLanguage, subject: subject).first&.split('-')&.first
       end
 
       def extract_names_or_ids(predicate, subject: resource)
