@@ -256,6 +256,30 @@ class FieldTest < Test::Unit::TestCase
     assert_equal 'Patricia Palagi (https://orcid.org/0000-0001-9062-6303), SIB Swiss Institute of Bioinformatics (https://www.sib.swiss/), Someone, https://cool.guys',
                  course_instance_extractor(json).send(:extract_names_or_ids, RDF::Vocab::SCHEMA.organizer).join(', ')
   end
+
+  test 'extract language' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course",
+  "inLanguage": "en"
+}])
+    assert_equal 'en', course_instance_extractor(json).extract_params[:language]
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course",
+  "inLanguage": {
+    "@type": "Language",
+    "name" : "de"
+  }
+}])
+    assert_equal 'de', course_instance_extractor(json).extract_params[:language]
+  end
+
   private
 
   def course_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')

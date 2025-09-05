@@ -255,6 +255,12 @@ module Tess
           [:mention, RDF::Vocab::SCHEMA.url, :url, { optional: true }]).map { |a| { title: a[:name], url: a[:url] } }.compact
       end
 
+      def extract_language(subject: resource)
+        query(
+          [subject, RDF::Vocab::SCHEMA.inLanguage, :language],
+          [:language, RDF::Vocab::SCHEMA.name, :language, { optional: true }])
+      end
+
       def extract_names_or_ids(predicate, subject: resource)
         query([subject, predicate, :thing],
               [:thing, RDF::Vocab::SCHEMA.name, :name, { optional: true }],
