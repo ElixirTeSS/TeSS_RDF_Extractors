@@ -20,8 +20,8 @@ module Tess
         params[:date_published] = extract_value(RDF::Vocab::SCHEMA.datePublished)
         params[:status] = extract_value(RDF::Vocab::SCHEMA.creativeWorkStatus)
 
-        params[:authors] = (extract_names(RDF::Vocab::SCHEMA.author) | extract_names(RDF::Vocab::SIOC.has_creator)).sort
-        params[:contributors] = extract_names(RDF::Vocab::SCHEMA.contributor)
+        params[:authors] = (extract_people(RDF::Vocab::SCHEMA.author) | extract_names(RDF::Vocab::SIOC.has_creator).sort)
+        params[:contributors] = extract_people(RDF::Vocab::SCHEMA.contributor)
         params[:target_audience] = extract_audience
         params[:resource_type] = extract_values(RDF::Vocab::SCHEMA.learningResourceType)
         params[:external_resources] = extract_mentions

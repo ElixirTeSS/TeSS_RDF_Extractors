@@ -105,7 +105,23 @@ module Tess
               [:thing, RDF::Vocab::SCHEMA.name, :name]).map { |r| r[:name] }.compact.uniq.sort
       end
 
-      def extract_person(predicate, subject: resource)
+      def extract_people(predicate, subject: resource)
+        query([subject, predicate, :person],
+              [:person, RDF::Vocab::SCHEMA.name, :name],
+              [:person, RDF::Vocab::SCHEMA.identifier, :identifier, { optional: true }]).map do |n|
+          p = { name: n[:name] }
+          # Check `identifier` and `@id` for ORCID
+          [:person, :identifier].each do |attr|
+            if n[attr]
+              match = n[attr].match(/(\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d[\dx])/i)
+              p[:orcid] = match[1] if match
+            end
+          end
+          p
+        end.compact
+      end
+
+      def extract_contact(predicate, subject: resource)
         query([subject, predicate, :person],
               [:person, RDF::Vocab::SCHEMA.name, :name, { optional: true }],
               [:person, RDF::Vocab::SCHEMA.email, :email, { optional: true }]).first

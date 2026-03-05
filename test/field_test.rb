@@ -280,6 +280,92 @@ class FieldTest < Test::Unit::TestCase
     assert_equal 'de', course_instance_extractor(json).send(:extract_language)
   end
 
+  test 'extract authors' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "name": "Dummy Material",
+  "author": {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0001-9062-6303",
+      "name": "Patricia Palagi"
+  }
+}])
+    authors = learning_resource_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.author)
+    assert_equal 1, authors.length
+    assert_equal '0000-0001-9062-6303', authors.first[:orcid]
+    assert_equal 'Patricia Palagi', authors.first[:name]
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "name": "Dummy Material",
+  "author": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Patricia Palagi",
+      "identifier": "https://orcid.org/0000-0001-9062-6303"
+  }
+}])
+    authors = learning_resource_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.author)
+    assert_equal 1, authors.length
+    assert_equal '0000-0001-9062-6303', authors.first[:orcid]
+    assert_equal 'Patricia Palagi', authors.first[:name]
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "name": "Dummy Material",
+  "author": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Thomas B. Hickey",
+      "identifier": "  0000-0002-1694-233X  "
+  }
+}])
+    authors = learning_resource_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.author)
+    assert_equal 1, authors.length
+    assert_equal '0000-0002-1694-233X', authors.first[:orcid]
+    assert_equal 'Thomas B. Hickey', authors.first[:name]
+
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
+  "name": "Dummy Material",
+  "author": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Patricia Palagi",
+      "identifier": "https://something.that.isnt.an.orcid"
+  }
+}])
+    authors = learning_resource_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.author)
+    assert_equal 1, authors.length
+    assert_nil authors.first[:orcid]
+    assert_equal 'Patricia Palagi', authors.first[:name]
+  end
+
   private
 
   def course_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')

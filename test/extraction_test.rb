@@ -84,10 +84,13 @@ class ExtractionTest < Test::Unit::TestCase
     refute params.key?(:scientific_topic_names)
     refute params.key?(:scientific_topic_uris)
     assert_equal ["assembly"], params[:keywords]
-    assert_equal ["Helena Rasche", "Saskia Hiltemann", "Simon Gladman"], params[:authors]
+    people = [{ name: 'Simon Gladman'},
+              { name: 'Helena Rasche', orcid: '0000-0001-9760-8992'},
+              { name: 'Saskia Hiltemann', orcid: '0000-0003-3803-468X'}].sort_by { |p| p[:name] }
+    assert_equal people, params[:authors].sort_by { |p| p[:name] }
     assert_equal ["Students"], params[:target_audience]
     assert_equal ["hands-on tutorial"], params[:resource_type]
-    assert_equal ["Helena Rasche", "Saskia Hiltemann", "Simon Gladman"], params[:contributors]
+    assert_equal people, params[:contributors].sort_by { |p| p[:name] }
     assert_equal "Beginner", params[:difficulty_level]
   end
 
@@ -107,10 +110,12 @@ class ExtractionTest < Test::Unit::TestCase
     refute params.key?(:scientific_topic_names)
     assert_equal ["http://edamontology.org/topic_3174"], params[:scientific_topic_uris]
     refute params.key?(:keywords)
-    assert_equal ["Bérénice Batut", "Saskia Hiltemann"], params[:authors]
+    people = [{ name: 'Bérénice Batut', orcid: '0000-0001-9852-1987'},
+              { name: 'Saskia Hiltemann', orcid: '0000-0003-3803-468X'}].sort_by { |p| p[:name] }
+    assert_equal people, params[:authors].sort_by { |p| p[:name] }
     assert_equal ["Students"], params[:target_audience]
     assert_equal ["slides"], params[:resource_type]
-    assert_equal ["Bérénice Batut", "Saskia Hiltemann"], params[:contributors]
+    assert_equal people, params[:contributors].sort_by { |p| p[:name] }
     assert params[:node_names].include?('Belgium')
   end
 
@@ -285,7 +290,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ['ELIXIR RIR', 'BridgeDb'], params[:keywords]
     assert_equal 'https://bioconductor.org/packages/release/bioc/vignettes/BridgeDbR/inst/doc/AGPL-3', params[:licence]
     assert_equal '1.17.5', params[:version]
-    assert_equal ['Egon Willighagen'], params[:authors]
+    assert_equal [{ name: 'Egon Willighagen', orcid: '0000-0001-7542-0286' }], params[:authors]
   end
 
   test 'extract event from legacy Edinburgh Genomics Event markup' do

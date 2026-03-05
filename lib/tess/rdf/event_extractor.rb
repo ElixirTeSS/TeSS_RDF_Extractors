@@ -22,7 +22,7 @@ module Tess
 
         params[:capacity] = extract_value(RDF::Vocab::SCHEMA.maximumAttendeeCapacity)
 
-        contact = extract_person(RDF::Vocabulary::Term.new('http://schema.org/contact', attributes: {}))
+        contact = extract_contact(RDF::Vocabulary::Term.new('http://schema.org/contact', attributes: {}))
         params[:contact] = [contact[:name], contact[:email]].compact.join(' - ') if contact
 
         legacy_topics = extract_values(RDF::Vocabulary::Term.new('http://schema.org/topic', attributes: {}))
