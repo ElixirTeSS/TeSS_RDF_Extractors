@@ -75,7 +75,7 @@ class ExtractionTest < Test::Unit::TestCase
     extractor = Tess::Rdf::LearningResourceExtractor.new(file.read, :rdfa, base_uri: base_uri)
     resources = extractor.extract
 
-    assert_equal 4, resources.count
+    assert_equal 1, resources.count
     params = resources.detect { |r| r[:url] == base_uri }
     assert_equal "https://training.galaxyproject.org/training-material/topics/assembly/tutorials/debruijn-graph-assembly/tutorial.html", params[:url]
     assert_equal "Hands-on for 'De Bruijn Graph Assembly' tutorial", params[:title]
@@ -101,7 +101,7 @@ class ExtractionTest < Test::Unit::TestCase
     extractor = Tess::Rdf::LearningResourceExtractor.new(file.read, :rdfa, base_uri: base_uri)
     resources = extractor.extract
 
-    assert_equal 2, resources.count
+    assert_equal 1, resources.count
     params = resources.detect { |r| r[:url] == base_uri }
     assert_equal "https://training.galaxyproject.org/training-material/topics/metagenomics/slides/introduction.html", params[:url]
     assert_equal "Introduction to 'Metagenomics'", params[:title]

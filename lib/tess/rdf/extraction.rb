@@ -49,7 +49,9 @@ module Tess
       end
 
       def resources
-        graph.query(self.class.type_query)
+        graph.query(self.class.type_query).uniq.reject do |s|
+          graph.query([:s, :p, s.individual]).any? { |sub| sub.subject != s.individual }
+        end
       end
 
       def extract(&block)
