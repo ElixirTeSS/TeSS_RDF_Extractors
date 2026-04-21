@@ -366,6 +366,76 @@ class FieldTest < Test::Unit::TestCase
     assert_equal 'Patricia Palagi', authors.first[:name]
   end
 
+  test 'extract instructors' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "instructor": {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0001-9062-6303",
+      "name": "Patricia Palagi"
+  }
+}])
+    instructors = course_instance_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.instructor)
+    assert_equal 1, instructors.length
+    assert_equal '0000-0001-9062-6303', instructors.first[:orcid]
+    assert_equal 'Patricia Palagi', instructors.first[:name]
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "instructor": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Patricia Palagi",
+      "identifier": "https://orcid.org/0000-0001-9062-6303"
+  }
+}])
+    instructors = course_instance_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.instructor)
+    assert_equal 1, instructors.length
+    assert_equal '0000-0001-9062-6303', instructors.first[:orcid]
+    assert_equal 'Patricia Palagi', instructors.first[:name]
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "instructor": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Thomas B. Hickey",
+      "identifier": "  0000-0002-1694-233X  "
+  }
+}])
+    instructors = course_instance_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.instructor)
+    assert_equal 1, instructors.length
+    assert_equal '0000-0002-1694-233X', instructors.first[:orcid]
+    assert_equal 'Thomas B. Hickey', instructors.first[:name]
+
+
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "instructor": {
+      "@type": "Person",
+      "@id": "#aperson",
+      "name": "Patricia Palagi",
+      "identifier": "https://something.that.isnt.an.orcid"
+  }
+}])
+    instructors = course_instance_extractor(json).send(:extract_people, RDF::Vocab::SCHEMA.instructor)
+    assert_equal 1, instructors.length
+    assert_nil instructors.first[:orcid]
+    assert_equal 'Patricia Palagi', instructors.first[:name]
+  end
+
   private
 
   def course_extractor(fixture, format: :jsonld, base_uri: 'https://example.com/my.json')

@@ -174,6 +174,7 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal ['training', 'biostatistics', 'raphael gottardo group'].sort, params[:keywords].sort
     assert_equal 'Patricia Palagi (https://orcid.org/0000-0001-9062-6303), SIB Swiss Institute of Bioinformatics (https://ror.org/002n09z45)', params[:organizer]
     assert params[:node_names].include?('Switzerland')
+    assert_equal [{ name: 'Mauro Delorenzi' }, { name: 'Rachel Jeitziner Marcone' }], params[:instructors].sort_by { |p| p[:name] }
   end
 
   test 'handle JSON-LD containing https://schema prefix instead' do
