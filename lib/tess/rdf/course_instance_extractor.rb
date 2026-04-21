@@ -4,6 +4,8 @@ module Tess
       def extract_params
         params = super
         params[:event_types] = [:workshops_and_courses]
+        params[:contributors] = extract_people(RDF::Vocab::SCHEMA.contributor)
+        params[:instructors] = extract_people(RDF::Vocab::SCHEMA.instructor)
         remove_blanks(params)
       end
 
