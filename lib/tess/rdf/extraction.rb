@@ -1,6 +1,8 @@
 module Tess
   module Rdf
     module Extraction
+      DURATION_REGEX = /\AP(?:(?<years>\d+)Y)?(?:(?<months>\d+)M)?(?:(?<weeks>\d+)W)?(?:(?<days>\d+)D)?(?:T(?:(?<hours>\d+)H)?(?:(?<minutes>\d+)M)?(?:(?<seconds>\d+(?:\.\d+)?)S)?)?\z/
+
       RDF::Reader
       # Workaround for https://github.com/ruby-rdf/rdf-rdfa/issues/32
       class DummyReader
@@ -312,22 +314,31 @@ module Tess
       end
 
       def modify_date(date, duration)
-        match = duration.match(/\AP(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)W)?(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?\z/)
+        match = duration.match(DURATION_REGEX)
         return date unless match
 
-        years, months, weeks, days, hours, minutes, seconds = match.captures.map { |v| v ? v.to_f : 0 }
+        d = match.named_captures
+        d.each do |k, v|
+          d[k] = if v.nil?
+                   0
+                 elsif k == 'seconds' && v.include?('.')
+                   v.to_f
+                 else
+                   v.to_i
+                 end
+        end
 
         if date.is_a?(String)
           date = date.include?('T') ? DateTime.parse(date) : Date.parse(date)
         end
 
         # Years/months need to shift by calendar units (via >>), not fixed day counts
-        date = date >> (years * 12 + months).to_i
+        date = date >> (d['years'] * 12 + d['months']).to_i
 
         # Days/weeks/hours/minutes/seconds are fixed durations
-        total_days = weeks * 7 + days
+        total_days = d['weeks'] * 7 + d['days']
         if date.is_a?(DateTime)
-          date + total_days + Rational(hours, 24) + Rational(minutes, 24 * 60) + Rational(seconds, 86400)
+          date + total_days + Rational(d['hours'], 24) + Rational(d['minutes'], 24 * 60) + Rational(d['seconds'], 86400)
         else
           date + total_days
         end
