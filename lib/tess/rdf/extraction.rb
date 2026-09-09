@@ -312,35 +312,25 @@ module Tess
       end
 
       def modify_date(date, duration)
-        if date.is_a?(String)
-          date = Date.parse(date)
-        end
-        matches = duration.match(/P([^T]+)T?(.*)/)
-        date_period = matches[1]
+        match = duration.match(/\AP(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)W)?(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?\z/)
+        return date unless match
 
-        date_period.scan(/(\d+)([YMWD])/).each do |match|
-          value = match[0].to_i
-          case match[1]
-            when 'Y'
-              date = date >> (12 * value)
-            when 'M'
-              date = date >> value
-            when 'W'
-              date = date + (7 * value)
-            when 'D'
-              date = date + value
-          end
+        years, months, weeks, days, hours, minutes, seconds = match.captures.map { |v| v ? v.to_f : 0 }
+
+        if date.is_a?(String)
+          date = date.include?('T') ? DateTime.parse(date) : Date.parse(date)
         end
-        # time_period = matches[2]
-        #
-        # time_period.scan(/(\d+)([HMS])/).each do |match|
-        #   case match[1]
-        #     when 'H'
-        #     when 'M'
-        #     when 'S'
-        #   end
-        # end
-        date
+
+        # Years/months need to shift by calendar units (via >>), not fixed day counts
+        date = date >> (years * 12 + months).to_i
+
+        # Days/weeks/hours/minutes/seconds are fixed durations
+        total_days = weeks * 7 + days
+        if date.is_a?(DateTime)
+          date + total_days + Rational(hours, 24) + Rational(minutes, 24 * 60) + Rational(seconds, 86400)
+        else
+          date + total_days
+        end
       end
 
       def markdownify_link(name, url = nil)

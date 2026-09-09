@@ -197,6 +197,27 @@ class FieldTest < Test::Unit::TestCase
     assert_equal '2023-10-02', course_instance_extractor(json).extract_params[:end].to_s
   end
 
+  test 'infer end datetime from start datetime and duration' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Advanced Statistics: Statistical Modelling",
+  "description": "**This course is now full.",
+  "url": "https://webapp2.vital-it.ch/courseadmin/website/course/20220822_XXXX3",
+  "@id": "https://webapp2.vital-it.ch/courseadmin/website/course/20220822_XXXX3",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/CourseInstance/0.8-DRAFT-2020_10_06",
+    "@type": "CreativeWork"
+  },
+  "keywords": "training,biostatistics,raphael gottardo group",
+  "location": "Lausanne",
+  "startDate": "2022-08-22T09:00:00",
+  "duration": "PT8H"
+}])
+    assert_equal '2022-08-22T17:00:00+00:00', course_instance_extractor(json).extract_params[:end].to_s
+  end
+
   test 'extract tools from mentions' do
     json = %(
 [{
