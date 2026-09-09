@@ -1,6 +1,8 @@
 module Tess
   module Rdf
     module Extraction
+      DURATION_REGEX = /\AP(?:(?<years>\d+)Y)?(?:(?<months>\d+)M)?(?:(?<weeks>\d+)W)?(?:(?<days>\d+)D)?(?:T(?:(?<hours>\d+)H)?(?:(?<minutes>\d+)M)?(?:(?<seconds>\d+(?:\.\d+)?)S)?)?\z/
+
       RDF::Reader
       # Workaround for https://github.com/ruby-rdf/rdf-rdfa/issues/32
       class DummyReader
@@ -312,35 +314,34 @@ module Tess
       end
 
       def modify_date(date, duration)
-        if date.is_a?(String)
-          date = Date.parse(date)
-        end
-        matches = duration.match(/P([^T]+)T?(.*)/)
-        date_period = matches[1]
+        match = duration.match(DURATION_REGEX)
+        return date unless match
 
-        date_period.scan(/(\d+)([YMWD])/).each do |match|
-          value = match[0].to_i
-          case match[1]
-            when 'Y'
-              date = date >> (12 * value)
-            when 'M'
-              date = date >> value
-            when 'W'
-              date = date + (7 * value)
-            when 'D'
-              date = date + value
-          end
+        d = match.named_captures
+        d.each do |k, v|
+          d[k] = if v.nil?
+                   0
+                 elsif k == 'seconds' && v.include?('.')
+                   v.to_f
+                 else
+                   v.to_i
+                 end
         end
-        # time_period = matches[2]
-        #
-        # time_period.scan(/(\d+)([HMS])/).each do |match|
-        #   case match[1]
-        #     when 'H'
-        #     when 'M'
-        #     when 'S'
-        #   end
-        # end
-        date
+
+        if date.is_a?(String)
+          date = date.include?('T') ? DateTime.parse(date) : Date.parse(date)
+        end
+
+        # Years/months need to shift by calendar units (via >>), not fixed day counts
+        date = date >> (d['years'] * 12 + d['months']).to_i
+
+        # Days/weeks/hours/minutes/seconds are fixed durations
+        total_days = d['weeks'] * 7 + d['days']
+        if date.is_a?(DateTime)
+          date + total_days + Rational(d['hours'], 24) + Rational(d['minutes'], 24 * 60) + Rational(d['seconds'], 86400)
+        else
+          date + total_days
+        end
       end
 
       def markdownify_link(name, url = nil)
