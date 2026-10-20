@@ -14,6 +14,8 @@ class ExtractionTest < Test::Unit::TestCase
     assert_equal "https://www.ebi.ac.uk/training/events/interproscan", interpro[:url]
     assert_equal ["InterProScan", "Proteins (proteins)"], interpro[:keywords].sort
     assert_equal ["Function analysis", "Gene and protein families", "Protein domain", "Protein sequence", "Protein sequence analysis"].sort, interpro[:scientific_topic_names].sort
+    assert_equal [{ name: "EMBL-EBI", url: "https://www.ebi.ac.uk", see_also: [] }],
+                 interpro[:providers]
     assert_nil interpro[:event_types]
   end
 

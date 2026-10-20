@@ -24,9 +24,13 @@ module Tess
         end
       end
 
-      def query(*patterns)
+      def query(*patterns, optional: [])
         results = []
         query = RDF::Query.new(patterns.map { |p| RDF::Query::Pattern.new(*p) })
+        unless optional.empty?
+          optional_query = RDF::Query.new(optional.map { |p| RDF::Query::Pattern.new(*p) })
+          query = SPARQL::Algebra::Operator::LeftJoin.new(query, optional_query)
+        end
         query.execute(@_graph).each do |solution|
           results << solution.bindings.transform_values { |v| parse_value(v) }
         end
@@ -88,6 +92,7 @@ module Tess
         params[:url] = extract_value(RDF::Vocab::SCHEMA.url)
         params[:url] ||= resource.value if resource.is_a?(RDF::URI)
         params[:keywords] = extract_keyword_like(RDF::Vocab::SCHEMA.keywords)
+        params[:providers] = extract_providers
         params[:node_names] = extract_nodes
         params.merge!(extract_topics)
 
@@ -147,6 +152,33 @@ module Tess
                   end
 
         values
+      end
+
+      def extract_providers(subject: resource)
+        providers = {}
+
+        query([subject, RDF::Vocab::SCHEMA.provider, :provider],
+              [:provider, RDF.type, RDF::Vocab::SCHEMA.Organization],
+              [:provider, RDF::Vocab::SCHEMA.name, :name],
+              [:provider, RDF::Vocab::SCHEMA.url, :url],
+              [:provider, RDF::Vocab::SCHEMA.sameAs, :same_as, { optional: true }],
+              optional: [
+                [:provider, RDF::Vocab::SCHEMA.subjectOf, :subject_of],
+                [:subject_of, RDF::Vocab::SCHEMA.url, :subject_of_url, { optional: true }]
+              ]).each do |p|
+          provider_key = p[:url]
+          providers[provider_key] ||= {
+            name: p[:name],
+            url: p[:url],
+            see_also: []
+          }
+          providers[provider_key][:see_also] << p[:provider]
+          providers[provider_key][:see_also] << p[:same_as]
+          providers[provider_key][:see_also] << p[:subject_of]
+          providers[provider_key][:see_also] << p[:subject_of_url]
+        end
+
+        providers.values.each { |provider| provider[:see_also] = provider[:see_also].compact.uniq }
       end
 
       def extract_nodes(subject: resource)

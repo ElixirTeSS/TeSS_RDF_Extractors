@@ -176,6 +176,92 @@ class FieldTest < Test::Unit::TestCase
     assert_equal ['students', 'people', 'researchers'], course_extractor(json).send(:extract_audience)
   end
 
+  test 'extract providers with see_also' do
+    json = %(
+[{
+  "@context": "https://schema.org/",
+  "@type": "CourseInstance",
+  "name": "Dummy Course Instance",
+  "url": "https://course.example.org",
+  "about": {
+    "@type": "DefinedTerm",
+    "url": "https://unrelated.example.org/topic"
+  },
+  "provider": [
+    {
+      "@type": "Organization",
+      "name": "Example Org",
+      "url": "https://example.org",
+      "sameAs": ["https://example.org/a", "https://example.org/b"],
+      "subjectOf": "https://example.org/c"
+    },
+    {
+      "@type": "Organization",
+      "name": "Only SubjectOf",
+      "url": "https://subject.example.org",
+      "subjectOf": "https://subject.example.org/page"
+    },
+    {
+      "@type": "Organization",
+      "name": "Wrapped SubjectOf",
+      "url": "https://wrapped.example.org",
+      "subjectOf": {
+        "@type": "CreativeWork",
+        "url": "https://wrapped.example.org/page"
+      }
+    },
+    {
+      "@id": "https://plain.example.org",
+      "@type": "Organization",
+      "name": "No SubjectOf",
+      "url": "https://plain.example.org"
+    },
+    {
+      "@id": "https://same.example.org/provider",
+      "@type": "Organization",
+      "name": "Only SameAs",
+      "url": "https://same.example.org",
+      "sameAs": ["https://same.example.org", "https://same.example.org/page"]
+    },
+    {
+      "@type": "Organization",
+      "name": "Empty SubjectOf",
+      "url": "https://empty.example.org",
+      "subjectOf": {
+        "@type": "CreativeWork"
+      }
+    }
+  ]
+}])
+
+    providers = course_instance_extractor(json).send(:extract_providers)
+    assert_equal 6, providers.length
+
+    example = providers.find { |p| p[:name] == 'Example Org' }
+    assert_equal 'https://example.org', example[:url]
+    assert_equal ['https://example.org/a', 'https://example.org/b', 'https://example.org/c'].sort, example[:see_also].sort
+
+    subject_only = providers.find { |p| p[:name] == 'Only SubjectOf' }
+    assert_equal 'https://subject.example.org', subject_only[:url]
+    assert_equal ['https://subject.example.org/page'], subject_only[:see_also]
+
+    wrapped = providers.find { |p| p[:name] == 'Wrapped SubjectOf' }
+    assert_equal 'https://wrapped.example.org', wrapped[:url]
+    assert_equal ['https://wrapped.example.org/page'], wrapped[:see_also]
+
+    plain = providers.find { |p| p[:name] == 'No SubjectOf' }
+    assert_equal 'https://plain.example.org', plain[:url]
+    assert_equal ['https://plain.example.org'], plain[:see_also]
+
+    same_as_only = providers.find { |p| p[:name] == 'Only SameAs' }
+    assert_equal 'https://same.example.org', same_as_only[:url]
+    assert_equal ['https://same.example.org', 'https://same.example.org/provider', 'https://same.example.org/page'].sort, same_as_only[:see_also].sort
+
+    empty_subject = providers.find { |p| p[:name] == 'Empty SubjectOf' }
+    assert_equal 'https://empty.example.org', empty_subject[:url]
+    assert_equal [], empty_subject[:see_also]
+  end
+
   test 'infer end date from start date and duration' do
     json = %(
 [{
